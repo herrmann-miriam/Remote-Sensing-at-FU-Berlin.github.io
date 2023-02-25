@@ -42,8 +42,6 @@
       
     
     
-      <link rel="stylesheet" href="../../css/timeago.css">
-    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -1158,21 +1156,6 @@ writeRaster(dfr, &quot;prop_forest_area.tif&quot;, format=&quot;GTiff&quot;, ove
 <p>You can see in the QGIS project that the current processing flow is not yet perfect, as we are losing a small part of the image edges (the created raster does not have exactly the same size as the input image). This is not fully solvable as long as the x- and y-ranges of the input image are not evenly dividable by the selected grid cell size. Related problems have been discussed in the theoretical part of today's course session. </p>
 <p>So you have now learned all the processing steps required to calculate landscape metrics from a land-cover map in R. For training and better understanding the code, I would recommend to adjust the code above a bit to calculate some more landscape metrics and also compare metrics amongst the different input-datasets with varying spatial resolution. In next week's practical exercise you will have to use the work-flow learned here, to solve a small ecological question.</p>
 
-  <hr>
-<div class="md-source-file">
-  <small>
-    
-      Letztes Update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-02-25T12:17:14+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-02-25</span>
-      
-        <br>
-        Erstellt:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-02-25T12:17:14+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-02-25</span>
-      
-    
-  </small>
-</div>
-
 
 
 
@@ -1255,10 +1238,6 @@ writeRaster(dfr, &quot;prop_forest_area.tif&quot;, format=&quot;GTiff&quot;, ove
     
     
       <script src="../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
-      
-        <script src="../../js/timeago.min.js"></script>
-      
-        <script src="../../js/timeago_mkdocs_material.js"></script>
       
         <script src="../../javascripts/mathjax.js"></script>
       
