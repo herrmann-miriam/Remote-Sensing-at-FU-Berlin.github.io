@@ -9,13 +9,17 @@
       
       
       
+        <link rel="prev" href="../../landscape_metrics/landscape_metrics/">
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      
+        <link rel="next" href="../../MSRS_1_GEE_basics/MSRS_1_GEE_basics/">
+      
+      <link rel="icon" href="../../assets/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.14">
     
     
       
-        <title>Tut spatial autocorrelation - Fernerkundung und Geoinformatik</title>
+        <title>Calculating semivariograms and Autocorrelograms - Fernerkundung und Geoinformatik</title>
       
     
     
@@ -79,7 +83,7 @@
   <nav class="md-header__inner md-grid" aria-label="Kopfzeile">
     <a href="../.." title="Fernerkundung und Geoinformatik" class="md-header__button md-logo" aria-label="Fernerkundung und Geoinformatik" data-md-component="logo">
       
-  <img src="../../logo.png" alt="logo">
+  <img src="../../assets/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -95,7 +99,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Tut spatial autocorrelation
+              Calculating semivariograms and Autocorrelograms
             
           </span>
         </div>
@@ -167,6 +171,8 @@
         
   
   
+    
+  
 
 
   
@@ -178,7 +184,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../qgis/01-GUI/" class="md-tabs__link">
+      <a href="../../qgis/01-GUI/" class="md-tabs__link md-tabs__link--active">
         Fabian
       </a>
     </li>
@@ -210,7 +216,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="../.." title="Fernerkundung und Geoinformatik" class="md-nav__button md-logo" aria-label="Fernerkundung und Geoinformatik" data-md-component="logo">
       
-  <img src="../../logo.png" alt="logo">
+  <img src="../../assets/logo.png" alt="logo">
 
     </a>
     Fernerkundung und Geoinformatik
@@ -236,16 +242,16 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-        
-      
-      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
       
       
       
@@ -254,7 +260,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_1">
           <span class="md-nav__icon md-icon"></span>
           Fabian
@@ -429,18 +435,18 @@
               
   
   
+    
+  
   
     
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
       
       
       
-        
-      
-      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1_2" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_2" checked>
       
       
       
@@ -449,7 +455,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_2_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_2_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_1_2">
           <span class="md-nav__icon md-icon"></span>
           R
@@ -490,7 +496,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../BFAST/BFAST.md" class="md-nav__link">
+      <a href="../../BFAST/BFAST/" class="md-nav__link">
         Analysing time series with BFAST and NPPHEN
       </a>
     </li>
@@ -504,7 +510,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../landscape_metrics/landscape_metrics.md" class="md-nav__link">
+      <a href="../../landscape_metrics/landscape_metrics/" class="md-nav__link">
         Calculation of Landscape Metrics from a Land-cover raster map in R
       </a>
     </li>
@@ -516,11 +522,90 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../spatial_autocorrelation.md" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Calculating semivariograms and Autocorrelograms
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Calculating semivariograms and Autocorrelograms
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Inhaltsverzeichnis">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhaltsverzeichnis
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#calculating-semivariograms-and-autocorrelograms" class="md-nav__link">
+    Calculating semivariograms and Autocorrelograms
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#datasets-used-in-this-tutorial" class="md-nav__link">
+    Datasets used in this Tutorial
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-getting-familiar-with-the-dataset" class="md-nav__link">
+    Step 1: Getting familiar with the dataset
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-calculating-the-semivariogram" class="md-nav__link">
+    Step 2: Calculating the Semivariogram
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-calculating-the-autocorrelogram" class="md-nav__link">
+    Step 3: Calculating the Autocorrelogram
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-calculating-a-semivariogram-for-a-raster-file" class="md-nav__link">
+    Step 4: Calculating a Semivariogram for a Raster-file
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -570,7 +655,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../MSRS_1_GEE_basics/MSRS_1_GEE_basics.md" class="md-nav__link">
+      <a href="../../MSRS_1_GEE_basics/MSRS_1_GEE_basics/" class="md-nav__link">
         Preparing time series data stacks with Google Earth Engine
       </a>
     </li>
@@ -584,7 +669,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../MSRS_1_GEE_basics2/MSRS_1_GEE_basics2.md" class="md-nav__link">
+      <a href="../../MSRS_1_GEE_basics2/MSRS_1_GEE_basics2/" class="md-nav__link">
         Preparing annual time series data stacks with Google Earth Engine and conducting time series analysis in R
       </a>
     </li>
@@ -745,7 +830,7 @@
                   
 
   
-    <a href="https://github.com/Remote-Sensing-at-FU-Berlin/Remote-Sensing-at-FU-Berlin.github.io/tree/main/docs/spatial_autocorrelation/Tut_spatial_autocorrelation.md" title="Seite editieren" class="md-content__button md-icon">
+    <a href="https://github.com/Remote-Sensing-at-FU-Berlin/Remote-Sensing-at-FU-Berlin.github.io/tree/main/docs/spatial_autocorrelation/spatial_autocorrelation.md" title="Seite editieren" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
     </a>
@@ -942,6 +1027,42 @@ plot(var_ras)
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Fußzeile" >
+        
+          
+          <a href="../../landscape_metrics/landscape_metrics/" class="md-footer__link md-footer__link--prev" aria-label="Zurück: Calculation of Landscape Metrics from a Land-cover raster map in R" rel="prev">
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <div class="md-ellipsis">
+                <span class="md-footer__direction">
+                  Zurück
+                </span>
+                Calculation of Landscape Metrics from a Land-cover raster map in R
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../MSRS_1_GEE_basics/MSRS_1_GEE_basics/" class="md-footer__link md-footer__link--next" aria-label="Weiter: Preparing time series data stacks with Google Earth Engine" rel="next">
+            <div class="md-footer__title">
+              <div class="md-ellipsis">
+                <span class="md-footer__direction">
+                  Weiter
+                </span>
+                Preparing time series data stacks with Google Earth Engine
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">
