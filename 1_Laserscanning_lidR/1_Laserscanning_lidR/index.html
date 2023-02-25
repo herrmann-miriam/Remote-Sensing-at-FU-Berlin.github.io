@@ -110,6 +110,41 @@
     
     
     
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Suche" placeholder="Suche" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Suche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Zurücksetzen" aria-label="Zurücksetzen" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Suche wird initialisiert
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
     
       <div class="md-header__source">
         <a href="https://github.com/Remote-Sensing-at-FU-Berlin/Remote-Sensing-at-FU-Berlin.github.io/" title="Zum Repository" class="md-source" data-md-component="source">
@@ -999,10 +1034,10 @@
 <li>The payload, that is the point cloud itself.</li>
 </ul>
 <p>The function readLAS() reads and creates an object that contains both the header and the payload. We will now start the practical part by running the following code in R. Make sure that you also carefully read the comments provided in the code. We will now first load all the required packages. R will give you a warning message in case a package is not installed yet. If this is the case, please install the packages either through the main menu of Rstudio by selecting "Tools" =&gt; "Install packages" and then following the appearing dialogue, or by entering the corresponding R code to install the packages into the console. E.g., to install the package "raster" use the code:</p>
-<pre><code>install.packages("raster")
-</code></pre>
+<div class="highlight"><pre><span></span><code>install.packages(&quot;raster&quot;)
+</code></pre></div>
 <p>But now let's load the packages and the dataset</p>
-<pre><code>############################
+<div class="highlight"><pre><span></span><code>############################
 ## Loading LiDAR data to R
 ############################
 
@@ -1025,57 +1060,57 @@ require(gstat)
 # near Karlsruhe in the South of Germany
 
 # load complete dataset (the path has to be adapted)
-las &lt;- readLAS("D:/Studium/Projekt_1/ALS/BR01.laz")
-</code></pre>
+las &lt;- readLAS(&quot;D:/Studium/Projekt_1/ALS/BR01.laz&quot;)
+</code></pre></div>
 <p>With these lines of code, you should have now loaded the ALS data. To make sure that the data is loaded correctly we can run:</p>
-<pre><code># check summary of loaded dataset
+<div class="highlight"><pre><span></span><code># check summary of loaded dataset
 summary(las)
-</code></pre>
+</code></pre></div>
 <p>This should give us the following outputs:</p>
 <p><img alt="" src="../assets/Fig01.png" /></p>
 <p>We can see quite a lot of information is being displayed, but we will not go into every detail. A few points that are quite interesting is that we can see for example the total number of <strong>points</strong> is 1.74 million and based on the coordinates provided in the <strong>extent</strong> attribute we can see that the area covers roughly 130 x 130 m. We can also see that the file currently has no <strong>coordinate reference</strong> system assigned. </p>
 <p>By simply using the readLAS() command, we loaded the complete dataset into R - this is a quite good choice in many situations, but as we can see at the <strong>memory</strong> attribute, we also loaded a quite large dataset of 205.5 MB (hence the original file size of the compressed laz-file was increased by a factor of almost 10 since the original laz-file has a size of approximately 23 MB). </p>
 <p>In some cases, we might be interested in not loading the complete dataset but for example only the positional data while we might not be interested in loading information about intensity of scan-angle. Or we might only be interested in a specific type of returns, for example we might be interested in only using "first return" data (that is all 3D points that were recorded when the laser beam interacted with an object for the first time while we want to disregard any returns that followed) In such cases, the lidR package provides some options to read only parts of the dataset as exemplified in the code below:</p>
-<pre><code># It is also possible to only load specific subsets of the data
-# by either using the "select" argument to only load certain columns
+<div class="highlight"><pre><span></span><code># It is also possible to only load specific subsets of the data
+# by either using the &quot;select&quot; argument to only load certain columns
 # of the dataset (columns are attributes - such as x, y, z position,
 # scan angle, return number, etc.)
 # or by using the filter argument to only load certain rows (data points) of the
 # dataset - for the latter the options are listed here
-readLAS(filter = "-help")
+readLAS(filter = &quot;-help&quot;)
 # load only 3D points and discard other information
-las_xyz &lt;- readLAS("D:/00_FUB/3_lehre/2_Projekt_1/1_tree_attributes/Practicals/2_LiDAR/BR01.laz", select="xyz")
+las_xyz &lt;- readLAS(&quot;D:/00_FUB/3_lehre/2_Projekt_1/1_tree_attributes/Practicals/2_LiDAR/BR01.laz&quot;, select=&quot;xyz&quot;)
 # load complete dataset but only first returns
-las_fr &lt;- readLAS("D:/00_FUB/3_lehre/2_Projekt_1/1_tree_attributes/Practicals/2_LiDAR/BR01.laz", "-keep_first")
-</code></pre>
+las_fr &lt;- readLAS(&quot;D:/00_FUB/3_lehre/2_Projekt_1/1_tree_attributes/Practicals/2_LiDAR/BR01.laz&quot;, &quot;-keep_first&quot;)
+</code></pre></div>
 <p><strong>MINI-EXERCISE:</strong> Try to tun the lines above and check how the size of the loaded datasets has changed (<strong>memory</strong> attribute) using the <strong>summary</strong> command learned already above.</p>
 <p>As stated above, a typical lidar dataset does not only contain information about the point locations but also additional information. In the datasets we loaded so far, we can check what kind of additional data is stored by running:</p>
-<pre><code>names(las@data)
-</code></pre>
+<div class="highlight"><pre><span></span><code>names(las@data)
+</code></pre></div>
 <p>This will result in the following output:</p>
 <p><img alt="" src="../assets/Fig01a.png" /></p>
 <p>So we can see that each of the LiDAR point does not only have a X, Y and Z coordinate but many additional attributes that can be used during the analysis. Even though many of these attributes are not typically being used to extract information of the targeted variable (e.g., forest parameters). The only exceptions are Intensity and ReturnNumber which both normally carry some relevant information about the object with which the laser beam interacted. </p>
 <h3 id="2-visualizing-lidar-data-with-lidr">2. Visualizing LiDAR data with lidR<a class="headerlink" href="#2-visualizing-lidar-data-with-lidr" title="Permanent link">&para;</a></h3>
 <p>The lidR package takes advantage of the rgl package to provide a versatile and interactive 3D viewer with points coloured by Z coordinates on a black background as default. The very basic way to render a point cloud is the function plot().</p>
-<pre><code>plot(las)
-</code></pre>
+<div class="highlight"><pre><span></span><code>plot(las)
+</code></pre></div>
 <p>This will lead to the following plot:</p>
 <p><img alt="" src="../assets/Fig02.png" /></p>
 <p>Be aware that the plot is actually interactive and in 3D. That is, by clicking and keeping the mouse-button clicked and then moving the mouse, you can rotate and shift the plot. Using the mouse-wheel you can zoom in and out. Try to play around a bit with this until you get familiar with the navigation in the plot.</p>
 <p>As is most R-plots, it is possible to refine and adapt the plot with numerous settings. Here is code for two examples. In the first example, the color of the points (which was determined by the height of the points in the first plot) will be set based on ScanAngle and in the second based on Intensity of the LiDAR returns. In both cases, the background will be set to white.</p>
-<pre><code># Plot las object by scan angle, 
+<div class="highlight"><pre><span></span><code># Plot las object by scan angle, 
 # make the background white, 
 # display XYZ axis and  scale colors
-plot(las, color = "ScanAngle", bg = "white", axis = TRUE, legend = TRUE)
+plot(las, color = &quot;ScanAngle&quot;, bg = &quot;white&quot;, axis = TRUE, legend = TRUE)
 # use LiDAR intensity as color, use the break argument to improve color scale
-plot(las, color = "Intensity", breaks = "quantile", bg = "white")
-</code></pre>
+plot(las, color = &quot;Intensity&quot;, breaks = &quot;quantile&quot;, bg = &quot;white&quot;)
+</code></pre></div>
 <p>This will result in the following two plots:</p>
 <p><img alt="" src="../assets/Fig03.png" />
 <img alt="" src="../assets/Fig04.png" /></p>
 <p>As you can see, the x and y dimensions are not showing the actual coordinates of the area but start from the origin 0, 0. However, the heights (z axis) actually show their true values. In the current plots these are values above sea level. While these plots are quite nice, there are many cases where a transect view of the point cloud may be more efficient to visually examine the details of a LiDAR point cloud, particularly if the dataset shows a forest. In the lidR package it is also possible to depict transect views, but there are several steps necessary to achieve this. </p>
 <p>First, we have to clip the point-cloud to remain only a small strip (= the transect). There is a dedicated function to do this and we have to define the start point and the end point of the transect as well as a width (in meter). We can do this with the following code:</p>
-<pre><code># make transect plot
+<div class="highlight"><pre><span></span><code># make transect plot
 # have a look at y and y coordinates to define start and end point
 # point coordinates have to lay between min and max of X and Y variables
 summary(las$X)
@@ -1087,19 +1122,19 @@ p2 &lt;- c(476758, 5429075)
 
 # clip transect
 las_tr &lt;- clip_transect(las, p1, p2, width = 2, xz = TRUE)
-</code></pre>
+</code></pre></div>
 <p>Now we clipped out a small transect of our plot and we can visualize it using the <strong>ggplot</strong> function. You might already be familiar with ggplot from other courses in which you used R. It is probably the most famous R-package for preparing more advanced plots and there is ample literature on the package on the internet. I will hence not go into the details of the parameters here, but you can play around a bit for example with the parameter used for coloring the points (argument "color = Z") as well as the point size (argument "size = 0.5").</p>
-<pre><code># plot transect
+<div class="highlight"><pre><span></span><code># plot transect
 ggplot(las_tr@data, aes(X,Z, color = Z)) + 
   geom_point(size = 0.5) + 
   coord_equal() + 
   theme_minimal() +
   scale_color_gradientn(colours = height.colors(50))
-</code></pre>
+</code></pre></div>
 <p>This will result in the following plot:</p>
 <p><img alt="" src="../assets/Fig05.png" /></p>
 <p>Since creating a transect plot requires several steps and we might be interested in plotting transects a bit more frequently later on, we can define a custom function that allows us to plot a transect view of our dataset. I will not go into details to explain what the function does exactly here, but we will use it a few times in the parts below. Hence, simple run the complete code below in R and the function will become available in the next parts of the tutorial.</p>
-<pre><code># prepare function to make transect plotting more easy
+<div class="highlight"><pre><span></span><code># prepare function to make transect plotting more easy
 plot_crossection &lt;- function(las,
                              p1 = c(min(las@data$X), mean(las@data$Y)),
                              p2 = c(max(las@data$X), mean(las@data$Y)),
@@ -1110,43 +1145,43 @@ plot_crossection &lt;- function(las,
   p &lt;- ggplot(data_clip@data, aes(X,Z)) + geom_point(size = 0.5) + coord_equal() + theme_minimal()
 
   if (!is.null(colour_by))
-    p &lt;- p + aes(color = !!colour_by) + labs(color = "")
+    p &lt;- p + aes(color = !!colour_by) + labs(color = &quot;&quot;)
 
   return(p)
 }
-</code></pre>
+</code></pre></div>
 <h3 id="ground-classification">Ground classification<a class="headerlink" href="#ground-classification" title="Permanent link">&para;</a></h3>
 <p>Classification of ground points is an important step in processing point cloud data. Distinguishing between ground and non-ground points allows creation of a continuous model of terrain elevation often referred to as "digital terrain model" (DTM). DTMs are useful for many applications such as calculating the run-off in hydrological models, determining suitable positions for wind turbines or deriving aspect and slope information. Many algorithms to classify ground points have been reported in the literature and lidR currently provides two of them: Progressive Morphological Filter (PMF) and Cloth Simulation Function (CSF) usable with the function classify_ground(). The lidRplugins package provides an additional algorithm called Multiscale Curvature Classification (MCC).</p>
 <p>The implementation of PMF algorithm in lidR is based on the method described in Zhang et al. (2003) with some technical modifications. The original method is raster-based, while lidR performs point-based morphological operations because lidR is a point cloud oriented software. The main step of the methods are summarised in the  following figure (taken from the lidR book).</p>
 <p><img alt="" src="../assets/Fig06.png" /></p>
 <p>The pmf() function requires defining the following input parameters: <strong>ws</strong> (window size or sequence of window sizes), and <strong>th</strong> (threshold size or sequence of threshold heights). More experienced users may experiment with these parameters to achieve best classification accuracy, however the lidR also contains the util_makeZhangParam() function that includes the default parameter values described in Zhang et al. (2003).</p>
 <p>To conduct a ground classification on our dataset, we run the following lines of code:</p>
-<pre><code>las &lt;- classify_ground(las, algorithm = pmf(ws = 5, th = 3))
-plot(las, color = "Classification", size = 3, bg = "white")
-</code></pre>
+<div class="highlight"><pre><span></span><code>las &lt;- classify_ground(las, algorithm = pmf(ws = 5, th = 3))
+plot(las, color = &quot;Classification&quot;, size = 3, bg = &quot;white&quot;)
+</code></pre></div>
 <p>This will take a moment of processing time and then we can have a look at the classification be using the plot_crossection function that we defined above:</p>
-<pre><code># have a look at the classification in a transect view
+<div class="highlight"><pre><span></span><code># have a look at the classification in a transect view
 # define start and end point
 p1 &lt;- c(476715, 5429035)
 p2 &lt;- c(476758, 5429075)
 plot_crossection(las, p1 , p2, colour_by = factor(Classification))
-</code></pre>
+</code></pre></div>
 <p>This results in the following plot</p>
 <p><img alt="" src="../assets/Fig07.png" /></p>
 <p>We can see that the result is not yet perfect as some points that were classified as ground appear to be rather part of the understorey of the forest (some example points are marked in the black box). In the following we will address this issue be refining the PMF algorithm by using not only a single window size but three different window sizes and providing a sequence of threshold heights. In the given case, the provided settings will lead to a quite decent result, but you can try out other parameters as well. The optimal set of parameters may vary depending on your dataset. For example areas with very rough terrain may require other settings than rather flat areas.</p>
-<pre><code># adjust ground classification algorithm
+<div class="highlight"><pre><span></span><code># adjust ground classification algorithm
 ws &lt;- seq(3, 12, 3)
 th &lt;- seq(0.1, 1.5, length.out = length(ws))
 las &lt;- classify_ground(las, algorithm = pmf(ws = ws, th = th))
 plot_crossection(las, p1 , p2, colour_by = factor(Classification))
-</code></pre>
+</code></pre></div>
 <p>Running this code will take a bit more time since multiple window sizes and thresholds are applied. Finally, this should result in the following plot:</p>
 <p><img alt="" src="../assets/Fig08.png" /></p>
 <p>This results looks quite nice and almost all of the points that were classified as ground (green color) look plausible. The classification is stored as an additional attribute in the las-file and we can use the attribute to filter the file and obtain only points that were classified as ground point. The following code does exactly this and then plots the ground points:</p>
-<pre><code># filter ground points and plot them
+<div class="highlight"><pre><span></span><code># filter ground points and plot them
 gnd &lt;- filter_ground(las)
-plot(gnd, size = 3, bg = "white")
-</code></pre>
+plot(gnd, size = 3, bg = &quot;white&quot;)
+</code></pre></div>
 <p>This will result in the following plot:</p>
 <p><img alt="" src="../assets/Fig09.png" /></p>
 <p>In this tutorial we only get to know one of the methods that is available in lidR to classify ground control points. If you at some point work with an own dataset and face problems in obtaining a high-quality ground classification, it might be worthwhile to examine the alternative methods of the package which are described with more details in the lidR book (see link at the beginning of this tutorial). </p>
@@ -1158,13 +1193,13 @@ plot(gnd, size = 3, bg = "white")
 <p>This method is based on triangular irregular network (TIN) of ground point data to derive a bivariate function for each triangle, which is then used to estimate the values at unsampled locations (between known ground points).</p>
 <p>Planar facets of each generated triangle are used to interpolate. Used with a Delaunay triangulation, this is the most simple solution because it involves no parameters. The Delaunay triangulation is unique and the linear interpolation is parameter-free. The drawbacks of the method are that it creates a non-smooth DTM and that it cannot extrapolate the terrain outside the convex hull delimited by the ground points since there are no triangle facets outside the convex hull. Moreover, the interpolation is weak at the edges because large irrelevant triangles are often created. It’s therefore important to compute the triangulation with a buffer to be able to crop the DTM and clear the edge artifacts.</p>
 <p>To run the interpolation with TIN execute the following code:</p>
-<pre><code># calculate a digital terrain model from the classified
+<div class="highlight"><pre><span></span><code># calculate a digital terrain model from the classified
 # ground points. Three methods are available:
 
 # tin
 dtm_tin &lt;- rasterize_terrain(gnd, res = 0.5, algorithm = tin())
-plot_dtm3d(dtm_tin, bg = "white")
-</code></pre>
+plot_dtm3d(dtm_tin, bg = &quot;white&quot;)
+</code></pre></div>
 <p>This will result in the following plot:</p>
 <p><img alt="" src="../assets/Fig10.png" /></p>
 <p>As you can see there are not many details visible. This is actually a good sign as we would normally assume that a digital terrain model in a forest is rather "smooth" surface since all LiDAR points related to object on the ground are "eliminated" during the ground-classification procedure. The only thing we can see in the figure is that a road is separating the study area into more or less two equally sized parts. The road becomes clearly visible since it is a flat area which interrupts the slightly inclined terrain. Let's have a look at the two other methods to interpolate the ground points.</p>
@@ -1172,49 +1207,49 @@ plot_dtm3d(dtm_tin, bg = "white")
 <p>Invert distance weighting (IDW) is one of the simplest and most readily available methods that can be applied to create DTMs. It is based on an assumption that the value at an unsampled point can be approximated as a weighted average of values at points within a certain cut-off distance d, or from a given number k of closest neighbours. Weights are usually inversely proportional to a power p of the distance between the location and the neighbour, which leads to the computing of an estimator.</p>
 <p>Compared to tin() this method is more robust to edge artifacts because it uses a more relevant neighbourhood but generates terrains that are “bumpy” and probably not as realistic as those generated using TINs. There are always trade-offs to different methods!</p>
 <p>To create a digital terrain model using the invert distance weighting method run:</p>
-<pre><code># invert distance weighting
+<div class="highlight"><pre><span></span><code># invert distance weighting
 dtm_idw &lt;- rasterize_terrain(gnd, algorithm = knnidw(k = 10L, p = 2))
-plot_dtm3d(dtm_idw, bg = "white")
-</code></pre>
+plot_dtm3d(dtm_idw, bg = &quot;white&quot;)
+</code></pre></div>
 <p>This will result in the following plot:</p>
 <p><img alt="" src="../assets/Fig11.png" /></p>
 <h4 id="kriging">Kriging<a class="headerlink" href="#kriging" title="Permanent link">&para;</a></h4>
 <p>Kriging is the most advanced approach and utilizes advanced geostatistical interpolation methods that take into account the relationships between the returns and their respective distances from each other. lidR uses the package gstat to perform the kriging. This method is very advanced, difficult to manipulate, and extremely slow to compute, but probably provides the best results with minimal edge artifacts.</p>
 <p>To create a digital terrain model using the kriging method run:</p>
-<pre><code># kriging
+<div class="highlight"><pre><span></span><code># kriging
 dtm_kriging &lt;- rasterize_terrain(gnd, algorithm = kriging(k = 40))
-plot_dtm3d(dtm_kriging, bg = "white")
-</code></pre>
+plot_dtm3d(dtm_kriging, bg = &quot;white&quot;)
+</code></pre></div>
 <p>This will result in the following plot:</p>
 <p><img alt="" src="../assets/Fig12.png" /></p>
 <p>If we are interested in obtaining a 2D-hillshade image of our terrain model, we can run the following code.</p>
-<pre><code># create hillshade image from digital terrain model
-dtm_prod &lt;- terrain(dtm_kriging, v = c("slope", "aspect"), unit = "radians")
+<div class="highlight"><pre><span></span><code># create hillshade image from digital terrain model
+dtm_prod &lt;- terrain(dtm_kriging, v = c(&quot;slope&quot;, &quot;aspect&quot;), unit = &quot;radians&quot;)
 dtm_hillshade &lt;- shade(slope = dtm_prod$slope, aspect = dtm_prod$aspect)
 plot(dtm_hillshade, col =gray(0:30/30), legend = FALSE)
-</code></pre>
+</code></pre></div>
 <p>This will lead to the following plot:</p>
 <p><img alt="" src="../assets/Fig13.png" /></p>
 <p>In our example dataset this is not very spectacular since we do not have a pronounced terrain situation and the area is comparably small. If data from a larger area for example covering a mountain chain is used, this option may become more interesting (at least for producing nice visualizations).</p>
 <h3 id="normalize-the-lidar-point-cloud">Normalize the LiDAR point cloud<a class="headerlink" href="#normalize-the-lidar-point-cloud" title="Permanent link">&para;</a></h3>
 <p>In many application fields, we might be interested in extracting the height of objects from a LiDAR point cloud. And with height I am referring to the height of objects above the ground and not above sea level. For example, we might want to know how high certain buildings or trees are. With LiDAR data this information can be easily obtained for large areas and with a very good precision of a few centimeters. To convert a standard LiDAR point cloud to a normalized point cloud in which the Z value of each LiDAR point indicates the height of the point above ground, we can simply subtract the digital terrain model from the LiDAR point cloud.</p>
 <p>To accomplish this in lidR - there are two different approaches. One approach requires a DTM. For example we can use the DTM calculated with the kriging approach:</p>
-<pre><code># create a normalized height point cloud
+<div class="highlight"><pre><span></span><code># create a normalized height point cloud
 # by subtracting the digital terrain model from the
 # lidar point cloud
 nlas &lt;- las - dtm_kriging
-</code></pre>
+</code></pre></div>
 <p>We can then plot the resulting point cloud and compare it with the original point cloud by plotting</p>
-<pre><code># plot the result
-plot(nlas, size = 4, bg = "white")
+<div class="highlight"><pre><span></span><code># plot the result
+plot(nlas, size = 4, bg = &quot;white&quot;)
 # and compare it to the original point cloud
-plot(las, size = 4, bg = "white")
-</code></pre>
+plot(las, size = 4, bg = &quot;white&quot;)
+</code></pre></div>
 <p>This will result in two individual plots, which were merged into one in the following plot:</p>
 <p><img alt="" src="../assets/Fig14.png" /></p>
 <p>We can clearly see the difference. While in the original point cloud, the height differences between the trees are less clear due to slope which also exists in the plot, the height differences become clearly visible in the normalized point cloud which all stand on a "flat" ground.</p>
 <p>One consequence of the normalization of the point cloud should be that all LiDAR points classified as ground points should have a Z-value 0 m. With the following plot we can have a look whether this is true:</p>
-<pre><code># this should lead to a situation where all ground points
+<div class="highlight"><pre><span></span><code># this should lead to a situation where all ground points
 # have a value of 0.0 m. We can check this with the following 
 # command. Be aware that this a nested function. That is, the
 # hist() command is used to create a histogram and the filter_ground()
@@ -1225,48 +1260,48 @@ plot(las, size = 4, bg = "white")
 # out. The dev.off() command is used to close any plot that is still
 # open.
 dev.off()
-hist(filter_ground(nlas)$Z, breaks = seq(-0.6, 0.6, 0.01), main = "", xlab = "Elevation")
-</code></pre>
+hist(filter_ground(nlas)$Z, breaks = seq(-0.6, 0.6, 0.01), main = &quot;&quot;, xlab = &quot;Elevation&quot;)
+</code></pre></div>
 <p>This will result in the following plot:</p>
 <p><img alt="" src="../assets/Fig15.png" /></p>
 <p>We can see that the assumption is more or less true but we can also see that the ground points are not all exactly at 0 m but they fluctuate between roughly -0.5 and 0.5 m. This is related to the fact that we used an interpolated DTM with a given grid size. Within a single grid cell of the DTM, the height value is exactly the same in each location of the grid cell. Hence, some ground points may lay below or above this value.</p>
 <p>If we want all ground points to have a value of zero, lidR offers a function to normalize the point cloud using the ground points without a grid-based interpolation. There are still some interpolation going on for the non-ground points but all ground-points will have a value of zero. This method can be executed with the following command:</p>
-<pre><code># create a normalized height point cloud
+<div class="highlight"><pre><span></span><code># create a normalized height point cloud
 # by subtracting the height of the lowest point nearby
 # this is similar to the just described step, but it assumes 
 # a continuous DTM without a pixel size
 nlas &lt;- normalize_height(las, knnidw())
 # the histogram plot now shows that all ground points are at zero.
-hist(filter_ground(nlas)$Z, breaks = seq(-0.6, 0.6, 0.01), main = "", xlab = "Elevation")
-</code></pre>
+hist(filter_ground(nlas)$Z, breaks = seq(-0.6, 0.6, 0.01), main = &quot;&quot;, xlab = &quot;Elevation&quot;)
+</code></pre></div>
 <p>And the corresponding plot confirms that now all ground plots have indeed a Z-value of 0.</p>
 <p><img alt="" src="../assets/Fig16.png" />   </p>
 <h3 id="calculate-digital-surface-models-and-canopy-height-models">Calculate digital surface models and canopy height models<a class="headerlink" href="#calculate-digital-surface-models-and-canopy-height-models" title="Permanent link">&para;</a></h3>
 <p>Digital Surface Models (DSM) and Canopy Height Models (CHM) are raster layers that represent - more or less - the highest elevation of ALS returns. In the case of a normalized point cloud, the derived surface represents the canopy height (for vegetated areas) and is referred to as CHM. When the original (non-normalized) point cloud with absolute elevations is used, the derived layer represents the elevation of the top of the canopy above sea level, and is referred to as DSM. Both surface models are derived using the same algorithms, with the only difference being the elevation values of the point cloud.</p>
 <p>Different methods exist to create DSMs and CHMs. In the most simple case, a grid can be created with a user-defined pixel size and the elevations of the highest point can be assigned to each grid cell. This is called point-to-raster. </p>
 <p>Point-to-raster algorithms are conceptually simple, consisting of establishing a grid at a user defined resolution and attributing the elevation of the highest point to each pixel. Algorithmic implementations are computationally simple and extremely fast. In the first example we will set the pixel size to 1 and the corresponding algorithm = p2r():</p>
-<pre><code># point-to-raster method
+<div class="highlight"><pre><span></span><code># point-to-raster method
 chm &lt;- rasterize_canopy(las, res = 0.5, algorithm = p2r())
 col &lt;- height.colors(25)
 plot(chm, col = col)
-</code></pre>
+</code></pre></div>
 <p>This will result in the following plot:</p>
 <p><img alt="" src="../assets/Fig17.png" />   </p>
 <p>As we can see the depicted height values are still showing altitudes above sea level. Hence, while we do see height differences of more than 60 m in the study area, not all of these height differences are related to the height of trees. So this would be an example of a "digital elevation model" (DSM) which is a raster which shows the height above sea level of the ground + the objects on the ground at each spatial location. If we are interested in only seeing the height of objects we need a "normalized digital elevation model" (nDSM) or in the case of forests a so called "canopy height model" (CHM). This created by either subtracting the a DTM from a DSM of the same area. Or by directly applying the same algorithm as used for calculating the DSM but this time to the already normalized point cloud:</p>
-<pre><code># point-to-raster method
+<div class="highlight"><pre><span></span><code># point-to-raster method
 chm &lt;- rasterize_canopy(nlas, res = 0.5, algorithm = p2r())
 col &lt;- height.colors(25)
 plot(chm, col = col)
-</code></pre>
+</code></pre></div>
 <p>This will result in the following plot:</p>
 <p><img alt="" src="../assets/Fig18.png" />   </p>
 <p>In some cases, the point-to-raster method has some drawbacks. For example if you have a LiDAR dataset with comparably few number of returns, you might end up with data caps in your elevation model. One alternative approach to calculate the DSMs and nDSMs is the TIN approach we already used to calculate DTMs.</p>
 <p>The triangulation algorithm works by first creating a triangular irregular network (TIN) using first returns only, followed by interpolation within each triangle to compute an elevation value for each pixel of a raster. In its simplest form, this method consists of a strict 2-D triangulation of first returns. Despite being more complex compared to the point-to-raster algorithm, an advantage of the triangulation approach is that it is parameter free and it does not output empty pixels, regardless of the resolution of the output raster (i.e. the entire area is interpolated).</p>
 <p>Like point-to-raster however, the TIN method can lead to gaps and other noise in the surface - referred to as “pits” - that are attributable to first returns that penetrated deep into the canopy. Pits can make individual tree segmentation more difficult and change the texture of the canopy in a unrealistic way. To avoid this issue the CHM is often smoothed in post processing in an attempt to produce a more realistic surface with fewer pits and less noise. To create a surface model using triangulation we use algorithm = dsmtin().</p>
-<pre><code># tin method
+<div class="highlight"><pre><span></span><code># tin method
 chm &lt;- rasterize_canopy(las, res = 0.5, algorithm = dsmtin())
 plot(chm, col = col)
-</code></pre>
+</code></pre></div>
 <p>This results in the following plot:</p>
 <p><img alt="" src="../assets/Fig19.png" />       </p>
 <p>In our dataset, the differences are quite little. </p>
@@ -1276,34 +1311,34 @@ plot(chm, col = col)
 <p>Tree tops can be detected by applying a Local Maximum Filter (LMF) on the loaded data set. The LMF in lidR is point cloud-based, meaning that it finds the tree tops from the point cloud without using any raster. The processing, however is actually very similar. For a given point, the algorithm analyzes neighbourhood points, checking if the processed point is the highest. This algorithm can be applied with the 
 Local Maximum Filter - lmf() function.</p>
 <p>The LMF can be applied with a constant size windows. In the code below with a windows size of ws = 5 meters meaning that for a given point the algorithm looks to the neigbourhood points within a 2.5 radius circle to figure out if the point is the local highest. While the algorithm does not need any CHM to work we chose to display the results on top of a CHM for better visualization.</p>
-<pre><code># detect tree tops with fixed window size of 5
+<div class="highlight"><pre><span></span><code># detect tree tops with fixed window size of 5
 ttops &lt;- locate_trees(nlas, lmf(ws = 5))
 
 # have a look at results
 chm &lt;- rasterize_canopy(nlas, res = 0.5, algorithm = p2r())
 plot(chm, col = height.colors(50))
 plot(sf::st_geometry(ttops), add = TRUE, pch = 3)
-</code></pre>
+</code></pre></div>
 <p>This will take some time for processing and then result in the following plot:</p>
 <p><img alt="" src="../assets/Fig20.png" />   </p>
 <p>We can also have a loot at the result in 3D:</p>
-<pre><code># have a look at results in 3d
-x &lt;- plot(nlas, bg = "white", size = 4)
+<div class="highlight"><pre><span></span><code># have a look at results in 3d
+x &lt;- plot(nlas, bg = &quot;white&quot;, size = 4)
 add_treetops3d(x, ttops)
-</code></pre>
+</code></pre></div>
 <p><img alt="" src="../assets/Fig21.png" />       </p>
 <p>If we are not happy with the results of this comparably simple approach, we can refine the algorithm by adjusting the search window depending on the height of the canopy assuming the trees which are less tall, also have smaller crowns. This can be accomplished by providing the algorithms with a function that describes the relation between the height of the trees and the window size and a sequence of heights for which different window sizes will be used:</p>
-<pre><code># adapt window size with height
+<div class="highlight"><pre><span></span><code># adapt window size with height
 f &lt;- function(x) {x * 0.1 + 3}
 heights &lt;- seq(0,40,10)
 ws &lt;- f(heights)
-plot(heights, ws, type = "l", ylim = c(0,6))
-</code></pre>
+plot(heights, ws, type = &quot;l&quot;, ylim = c(0,6))
+</code></pre></div>
 <p>This will result in slightly different results:</p>
-<pre><code>ttops &lt;- locate_trees(nlas, lmf(f))
+<div class="highlight"><pre><span></span><code>ttops &lt;- locate_trees(nlas, lmf(f))
 plot(chm, col = height.colors(50))
 plot(sf::st_geometry(ttops), add = TRUE, pch = 3)
-</code></pre>
+</code></pre></div>
 <p><img alt="" src="../assets/Fig22.png" />       </p>
 <p>Identifying the optimal parameter is not an easy task and may require some sort of reference data which can for example be obtained by visually interpreting a CHM or by identifying tree stem positions in the field. Even though the latter is often also prone to errors since identifying the exact position of a tree in the field is not a trivial task and on top of this, the stem position on the ground may not directly related to the top of the crown since many trees do not grow exactly vertically.</p>
 <p>The detection of tree tops is normally only the first step for the individual tree delineation/segmentation since it does not yet allow us to identify the tree crown area. lidR provides function for this task as well, but we will not demonstrate this here with our example dataset. Amongst others because our dataset is missing a coordinate reference system (which first would have to be assigned) and the functions will not immediately work. However, feel free to also try out these functions by using the example datasets delivered with lidR. The corresponding data and instruction can be found in the lidR-book (see link at the beginning of the tutorial).</p>
@@ -1311,24 +1346,24 @@ plot(sf::st_geometry(ttops), add = TRUE, pch = 3)
 <p>As very last step, we will get to know two important functions of the lidR package to calculate point cloud metrics. Point cloud metrics are an essential element of the area-based approach briefly mentioned above. The idea is that a regular grid of quadratic or hexagon-shaped polygons is overlayed with the point cloud. Then, in each grid-cell/polygon some metrics are calculated for the points located within the grid-cell/polygon. </p>
 <p>The standard deviation of point heights within a single tree crown is an example of a metric calculated at the tree level. The average distance between a point and its k-nearest neighbours is a metrics calculated at the point level. More complex metrics can even be imagined like the average distance between first and last returns within a pixel or within a tree. In the end, regardless of the scale at which metrics are calculated, they serve as proxies of forest inventory attributes or can be used as independent variables in predictive models.</p>
 <p>The standard metrics of the lidR package already include quite a lot of common and often used variables and can be obtained using the following code for either quadratic grid-cells:</p>
-<pre><code>a &lt;- pixel_metrics(nlas, func = .stdmetrics, res = 2.5)
-</code></pre>
+<div class="highlight"><pre><span></span><code>a &lt;- pixel_metrics(nlas, func = .stdmetrics, res = 2.5)
+</code></pre></div>
 <p>or a hexagon-grid:</p>
-<pre><code>b &lt;- hexagon_metrics(nlas, func = .stdmetrics, area = 20)
-</code></pre>
+<div class="highlight"><pre><span></span><code>b &lt;- hexagon_metrics(nlas, func = .stdmetrics, area = 20)
+</code></pre></div>
 <p>The names of the obtained metrics can be obtained by running:</p>
-<pre><code>a@ptr$names
-</code></pre>
+<div class="highlight"><pre><span></span><code>a@ptr$names
+</code></pre></div>
 <p>This will result in the following output:</p>
 <p><img alt="" src="../assets/Fig23.png" />   </p>
 <p>If we want to see how a 2D representation of one of the metrics looks like in either dataset we can pick out one of the variable names and run:</p>
-<pre><code>plot(a["zq80"], pal = heat.colors, axes = TRUE, key.pos = NULL, reset = FALSE)
-</code></pre>
+<div class="highlight"><pre><span></span><code>plot(a[&quot;zq80&quot;], pal = heat.colors, axes = TRUE, key.pos = NULL, reset = FALSE)
+</code></pre></div>
 <p>This will result in:</p>
 <p><img alt="" src="../assets/Fig24.png" />   </p>
 <p>or:</p>
-<pre><code>plot(b["zq80"], pal = heat.colors, axes = TRUE, key.pos = NULL, reset = FALSE)
-</code></pre>
+<div class="highlight"><pre><span></span><code>plot(b[&quot;zq80&quot;], pal = heat.colors, axes = TRUE, key.pos = NULL, reset = FALSE)
+</code></pre></div>
 <p>This will result in:</p>
 <p><img alt="" src="../assets/Fig25.png" />   </p>
 <p>These metrics can then be related for example to forest attributes inventoried in the field and regression models can be trained to first relate the field measured data to the metrics and then predict the trained model to the complete area how which laserscanning data has been collected.</p>
@@ -1339,11 +1374,11 @@ plot(sf::st_geometry(ttops), add = TRUE, pch = 3)
   <small>
     
       Letztes Update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-02-25T10:50:19+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-02-25</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-02-25T12:17:14+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-02-25</span>
       
         <br>
         Erstellt:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-02-25T10:50:19+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-02-25</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-02-25T12:17:14+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-02-25</span>
       
     
   </small>
@@ -1412,7 +1447,7 @@ plot(sf::st_geometry(ttops), add = TRUE, pch = 3)
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      CC-BY-SA-4.0 license - FU-Berlin Fernerkundung und Geoinformatik
+      Copyright &copy; CC-BY-SA-4.0 license - FU-Berlin Fernerkundung und Geoinformatik
     </div>
   
   
@@ -1427,7 +1462,7 @@ plot(sf::st_geometry(ttops), add = TRUE, pch = 3)
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["search.highlight", "content.action.edit", "content.code.copy", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.expand", "navigation.path", "navigation.top", "navigation.footer"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version": "Version ausw\u00e4hlen"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["search.suggest", "search.highlight", "content.action.edit", "content.code.copy", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.expand", "navigation.path", "navigation.top", "navigation.footer"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version": "Version ausw\u00e4hlen"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.2a6f1dda.min.js"></script>

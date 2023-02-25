@@ -110,6 +110,41 @@
     
     
     
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Suche" placeholder="Suche" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Suche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Zurücksetzen" aria-label="Zurücksetzen" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Suche wird initialisiert
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
     
       <div class="md-header__source">
         <a href="https://github.com/Remote-Sensing-at-FU-Berlin/Remote-Sensing-at-FU-Berlin.github.io/" title="Zum Repository" class="md-source" data-md-component="source">
@@ -972,14 +1007,14 @@
 <p><img alt="" src="../assets/gee_7.png" /></p>
 <p>After clicking the "arrow" button, the asset/Shapefile will be imported to t he current script and a new line will appear on the top of the script. We can define a name for the imported Shapefile by changing the default name "table" to some other term. In the given example, I changed the name to "AOI" - area of interest.</p>
 <p>In the following I will now provide the complete code for exporting MODIS NDVI data from the GEE - you can simply copy &amp; paste this code to the code editor window and you should be ready to run it. More detailed explanations can be found directly in the code and further below:</p>
-<pre><code>// Filter a MODIS image collection by date and region 
+<div class="highlight"><pre><span></span><code>// Filter a MODIS image collection by date and region 
 // Calculate an NDVI
 // Export the NDVI time series to Google Drive
 
 
 // Step 1: Define the time period to be considered 
-var sdate = '2000-01-01'
-var edate = '2020-05-25'
+var sdate = &#39;2000-01-01&#39;
+var edate = &#39;2020-05-25&#39;
 
 // Step 2: define functions requires for processing
 
@@ -988,7 +1023,7 @@ var edate = '2020-05-25'
 // ###################################
 
 var maskQA = function(image) {
-      return image.updateMask(image.select("SummaryQA").eq(0));
+      return image.updateMask(image.select(&quot;SummaryQA&quot;).eq(0));
     };
 
 // Step 3: Process the data
@@ -1000,7 +1035,7 @@ var maskQA = function(image) {
 // Load MODIS product MOD13Q1 (please check the specifications
 // in the GEE data catalogue)
 // ##############################################################
-var MODIS_VI = ee.ImageCollection("MODIS/006/MOD13Q1")
+var MODIS_VI = ee.ImageCollection(&quot;MODIS/006/MOD13Q1&quot;)
     .filterDate(sdate, edate)
     .filterBounds(AOI);
 
@@ -1015,7 +1050,7 @@ print(MODIS_best)
 // Select the NDVI band from the MODIS product 
 // ##############################################################
 
-var MODIS_ndvi = MODIS_best.select('NDVI');
+var MODIS_ndvi = MODIS_best.select(&#39;NDVI&#39;);
 print(MODIS_ndvi)
 
 // ##############################################################
@@ -1030,7 +1065,7 @@ var MODIS_ndvi_fin = MODIS_ndvi.toBands();
 
 function ymdList(imgcol){
     var iter_func = function(image, newlist){
-        var date = ee.Number.parse(image.date().format("YYYYMMdd"));
+        var date = ee.Number.parse(image.date().format(&quot;YYYYMMdd&quot;));
         newlist = ee.List(newlist);
         return ee.List(newlist.add(date))
     };
@@ -1049,16 +1084,16 @@ print(dates);
 // Export a cloud-optimized GeoTIFF.
 Export.image.toDrive({
   image: MODIS_ndvi_fin,
-  description: 'MODIS_all_00_20_sm',
+  description: &#39;MODIS_all_00_20_sm&#39;,
   scale: 250,
   maxPixels: 5937315072,
   region: AOI,
-  fileFormat: 'GeoTIFF',
+  fileFormat: &#39;GeoTIFF&#39;,
   formatOptions: {
     cloudOptimized: true
   }
 });
-</code></pre>
+</code></pre></div>
 <p>To successfully run this code, copy &amp; paste the complete code to the code editor window. Then click save or save as and the current script will be saved and appear in your list of scripts in section 1 of the code editor. Alternatively you can also access the code here:</p>
 <p><a href="https://code.earthengine.google.com/9468bf79e67904e6cb0a639aa3b7019b">https://code.earthengine.google.com/9468bf79e67904e6cb0a639aa3b7019b</a></p>
 <p>Be aware that you have to still define the Shapefile using your assets-list if you access the code via the link. After accessing and saving the script, you should be able to run the code by clicking Run.</p>
@@ -1081,14 +1116,14 @@ Export.image.toDrive({
 <p>After we managed to export all available NDVI MODIS images of the MODIS product MOD13Q1 for our area of interest, we will now try to accomplish the same but for the complete Landsat archive of the satellites Landsat 5, 7 and 8. The basic processing steps are the same, but the code itself is a bit more complex as we have to merge data from several image collections and also have to first calculate the NDVI from the original images.</p>
 <p>We will again have to load the Shapefile available in our "Assets" list as we have just learned for the MODIS example and will also again have to apply the work-around described in Step 4 to export the image acquisition dates manually by copy and pasting the dates to a text-file. I will not go into details about these steps again but simply provide the code for exporting the Landsat raster stack below. There are more detailed comments provided in the code itself. In case there are more questions related to the code, please formulate them in the Forum and I will try to reply as soon as possible. Be aware, that the data exported in this step are a bit larger as in the MODIS example (550 MB vs. 2 MB) - hence the export from the GEE might take notably longer in the Landsat case.</p>
 <p>Here is the code that should be ready to run - please go through it carefully and try to understand what is happening. It is not of utmost important to understand each individual step, but rather to understand the coarse work-flow:</p>
-<pre><code>// Filter a Landsat image collection by date and region 
+<div class="highlight"><pre><span></span><code>// Filter a Landsat image collection by date and region 
 // Calculate an NDVI
 // Export the NDVI time series to Google Drive
 
 
 // Define the time period to be considered 
-var sdate = '1986-01-01'
-var edate = '2020-05-25'
+var sdate = &#39;1986-01-01&#39;
+var edate = &#39;2020-05-25&#39;
 
 // ####################################
 // functions to perform cloud masking
@@ -1097,13 +1132,13 @@ var edate = '2020-05-25'
 // Landsat 4+5+7
 
 var cloudMaskL457 = function(image) {
-  var qa = image.select('pixel_qa');
+  var qa = image.select(&#39;pixel_qa&#39;);
   // If the cloud bit (5) is set and the cloud confidence (7) is high
-  // or the cloud shadow bit is set (3), then it's a bad pixel.
+  // or the cloud shadow bit is set (3), then it&#39;s a bad pixel.
   var cloud = qa.bitwiseAnd(1 &lt;&lt; 5)
           .and(qa.bitwiseAnd(1 &lt;&lt; 7))
           .or(qa.bitwiseAnd(1 &lt;&lt; 3))
-  // Remove edge pixels that don't occur in all bands
+  // Remove edge pixels that don&#39;t occur in all bands
   var mask2 = image.mask().reduce(ee.Reducer.min());
   return image.updateMask(cloud.not()).updateMask(mask2);
 };
@@ -1115,7 +1150,7 @@ function maskL8sr(image) {
   var cloudsBitMask = 1 &lt;&lt; 5;
 
   // Get the pixel QA band.
-  var qa = image.select('pixel_qa');
+  var qa = image.select(&#39;pixel_qa&#39;);
 
   // Both flags should be set to zero, indicating clear conditions.
   var mask = qa.bitwiseAnd(cloudShadowBitMask).eq(0)
@@ -1123,8 +1158,8 @@ function maskL8sr(image) {
 
   // Return the masked image, scaled to reflectance, without the QA bands.
   return image.updateMask(mask).divide(10000)
-      .select("B[0-9]*")
-      .copyProperties(image, ["system:time_start"]);
+      .select(&quot;B[0-9]*&quot;)
+      .copyProperties(image, [&quot;system:time_start&quot;]);
 }
 
 // #############################################
@@ -1132,12 +1167,12 @@ function maskL8sr(image) {
 // separate function for Landsat 5+7 and Landsat 8
 // #############################################
 var addNDVI_LS8 = function(image) {
-  var ndvi = image.normalizedDifference(['B5', 'B4']).rename('NDVI');
+  var ndvi = image.normalizedDifference([&#39;B5&#39;, &#39;B4&#39;]).rename(&#39;NDVI&#39;);
   return image.addBands(ndvi);
 };
 
 var addNDVI_LS5_7 = function(image) {
-  var ndvi = image.normalizedDifference(['B4', 'B3']).rename('NDVI');
+  var ndvi = image.normalizedDifference([&#39;B4&#39;, &#39;B3&#39;]).rename(&#39;NDVI&#39;);
   return image.addBands(ndvi);
 };
 
@@ -1146,13 +1181,13 @@ var addNDVI_LS5_7 = function(image) {
 // ##############################################################
 // Load the Landsat image collection of Landsat 5, 7 and 8
 // ##############################################################
-var surfaceReflectanceL5 = ee.ImageCollection('LANDSAT/LT05/C01/T1_SR')
+var surfaceReflectanceL5 = ee.ImageCollection(&#39;LANDSAT/LT05/C01/T1_SR&#39;)
     .filterDate(sdate, edate)
     .filterBounds(AOI);
-var surfaceReflectanceL7 = ee.ImageCollection('LANDSAT/LE07/C01/T1_SR')
+var surfaceReflectanceL7 = ee.ImageCollection(&#39;LANDSAT/LE07/C01/T1_SR&#39;)
     .filterDate(sdate, edate)
     .filterBounds(AOI);
-var surfaceReflectanceL8 = ee.ImageCollection("LANDSAT/LC08/C01/T1_SR")
+var surfaceReflectanceL8 = ee.ImageCollection(&quot;LANDSAT/LC08/C01/T1_SR&quot;)
     .filterDate(sdate, edate)
     .filterBounds(AOI);
 
@@ -1183,16 +1218,16 @@ print(LS8)
 // merge Landsat image collection 5 to 7
 var LS_5_7 = LS5.merge(LS7)
 // calculate NDVI for merged collection
-var LS_5_7_NDVI = LS_5_7.map(addNDVI_LS5_7).select('NDVI');
-print(LS_5_7_NDVI, "LS_5_7_NDVI");
+var LS_5_7_NDVI = LS_5_7.map(addNDVI_LS5_7).select(&#39;NDVI&#39;);
+print(LS_5_7_NDVI, &quot;LS_5_7_NDVI&quot;);
 
 // calculate NDVI for Landsat 8 collection
-var LS8_NDVI = LS8.map(addNDVI_LS8).select('NDVI');
-print(LS8_NDVI, "LS8_NDVI");
+var LS8_NDVI = LS8.map(addNDVI_LS8).select(&#39;NDVI&#39;);
+print(LS8_NDVI, &quot;LS8_NDVI&quot;);
 
 // merge all NDVI data
 var LS_NDVI_all = LS_5_7_NDVI.merge(LS8_NDVI)
-print(LS_NDVI_all, "LS_NDVI_all");
+print(LS_NDVI_all, &quot;LS_NDVI_all&quot;);
 
 // transform collection to bands
 var LS_NDVI_all_fin = LS_NDVI_all.toBands();
@@ -1202,7 +1237,7 @@ var LS_NDVI_all_clip = LS_NDVI_all_fin.clip(AOI);
 // extract acquisition dates
 function ymdList(imgcol){
     var iter_func = function(image, newlist){
-        var date = ee.Number.parse(image.date().format("YYYYMMdd"));
+        var date = ee.Number.parse(image.date().format(&quot;YYYYMMdd&quot;));
         newlist = ee.List(newlist);
         return ee.List(newlist.add(date))
     };
@@ -1223,84 +1258,84 @@ print(dates);
 // Export a cloud-optimized GeoTIFF.
 Export.image.toDrive({
   image: LS_NDVI_all_clip,
-  description: 'LS_NDVI_all_86_20',
+  description: &#39;LS_NDVI_all_86_20&#39;,
   scale: 30,
   maxPixels: 5937315072,
   region: AOI,
-  fileFormat: 'GeoTIFF',
+  fileFormat: &#39;GeoTIFF&#39;,
   formatOptions: {
     cloudOptimized: true
   }
 });
-</code></pre>
+</code></pre></div>
 <p>Alternatively, you can also access the code via this link:</p>
 <p><a href="https://code.earthengine.google.com/82beb77c79bea6813967a6ad07056c7e">https://code.earthengine.google.com/82beb77c79bea6813967a6ad07056c7e</a></p>
 <p>After you have successfully executed the code and exported the file using the same work-flow as described for MODIS, you should also download the corresponding file (named LS_NDVI_all_86_20.tif) from your google drive to the same folder where you stored the MODIS raster. The two text-files containing the image acquisition dates for MODIS and Landsat should also be in the same folder.</p>
 <h3 id="step-6-exploring-the-exported-data-in-r">Step 6: Exploring the exported data in R<a class="headerlink" href="#step-6-exploring-the-exported-data-in-r" title="Permanent link">&para;</a></h3>
 <p>As final step in this tutorial, we will load the NDVI raster-stacks exported from the GEE in R and create time-series by merging the NDVI values with the image acquisition dates stored in the text-files. We will need the exported raster-files and the text-files. So please make sure that you have all data stored in a folder and know where this folder is.</p>
 <p>Next, we open RStudio and load the required packages:</p>
-<pre><code># load required packages
+<div class="highlight"><pre><span></span><code># load required packages
 require(raster)
 require(xts)
 require(zoo)
-</code></pre>
+</code></pre></div>
 <p>In case some packages are missing, please install them (you should know how to do this by now, if not, please check the older Tutorials). Next, we will load the raster-files containing the MODIS and Landsat time series:</p>
-<pre><code>###
+<div class="highlight"><pre><span></span><code>###
 # load raster-stacks exported from the Google Earth Engine
 ###
 
 # set working directory
-setwd("D:/Multiskalige_FE/5_Practicals/1_GEE_basics_v2")
+setwd(&quot;D:/Multiskalige_FE/5_Practicals/1_GEE_basics_v2&quot;)
 # load Landsat time series with images from 1986-2020
-ls_ndvi &lt;- brick("LS_NDVI_all_86_20.tif")
+ls_ndvi &lt;- brick(&quot;LS_NDVI_all_86_20.tif&quot;)
 nlayers(ls_ndvi)
 # load MODIS time series with images from 2000-2020
-mod_ndvi &lt;- brick("MODIS_all_00_20_sm.tif")
+mod_ndvi &lt;- brick(&quot;MODIS_all_00_20_sm.tif&quot;)
 nlayers(mod_ndvi)
-</code></pre>
+</code></pre></div>
 <p>Be aware, that this time, we use the brick() command instead of the stack() command to load the raster files. This command will allow to access the raster-files in a slightly different way which increases the speed to access all raster-layers of an individual pixel (which in our case refers to a time-series). If you want to see the difference, you can re-run the code using the stack() command instead of the brick() command and you will see that one of code lines will run very slow (find out which one if you are interested!).</p>
 <p>After loading the raster stacks, we will also load the text-files containing the image acquisition dates, we copy &amp; pasted from the GEE console. We will use the following code to do this:</p>
-<pre><code>###
+<div class="highlight"><pre><span></span><code>###
 # load corresponding dates of the time series
 ###
 
 # Landsat
 
 # read table
-ls_dat &lt;- read.table("dates_ls.txt")
+ls_dat &lt;- read.table(&quot;dates_ls.txt&quot;)
 # drop every second line (containing only the id)
 ls_dat_fin &lt;- ls_dat[seq(2, nrow(ls_dat),2),]
 # transform remaining rows from factor to character
 ls_dat_fin2 &lt;- as.character(ls_dat_fin)
 # transform character-expression to dates
-ls_dat_for &lt;- as.Date(ls_dat_fin2, format = c("%Y%m%d"))
+ls_dat_for &lt;- as.Date(ls_dat_fin2, format = c(&quot;%Y%m%d&quot;))
 
 # MODIS
 
 # read table
-m_dat &lt;- read.table("dates_mod.txt")
+m_dat &lt;- read.table(&quot;dates_mod.txt&quot;)
 # drop every second line (containing only the id)
 m_dat_fin &lt;- m_dat[seq(2, nrow(m_dat),2),]
 # transform remaining rows from factor to character
 m_dat_fin2 &lt;- as.character(m_dat_fin)
 # transform character-expression to dates
-m_dat_for &lt;- as.Date(m_dat_fin2, format = c("%Y%m%d"))
-</code></pre>
+m_dat_for &lt;- as.Date(m_dat_fin2, format = c(&quot;%Y%m%d&quot;))
+</code></pre></div>
 <p>Be aware that R has an own data-type for dates. To transform the entries of the text-files into a vector containing only dates, we have to follow several processing steps as indicated in the code above. First we load the text-file into a variable. In this stage, the imported file looks like this:</p>
 <p><img alt="" src="../assets/gee_14.png" /></p>
 <p>That is, we  have the ID in one row and the actual acquisition dates in the format: YYYYMMDD in every second row. Hence, we are only interested in every second row of our variable. That is we we run the code:</p>
-<pre><code>ls_dat_fin &lt;- ls_dat[seq(2, nrow(ls_dat),2),]
-</code></pre>
+<div class="highlight"><pre><span></span><code>ls_dat_fin &lt;- ls_dat[seq(2, nrow(ls_dat),2),]
+</code></pre></div>
 <p>which will then lead to the following output:</p>
 <p><img alt="" src="../assets/gee_15.png" /></p>
 <p>We now only have the acquisition dates in the variable, but as we can see the current vector is still in the wrong format. The information on "Levels" indicates that the data type of the vector is currently "factor". We hence first transform the vector to "character" and then to a "date" vector using the lines:  </p>
-<pre><code># transform remaining rows from factor to character
+<div class="highlight"><pre><span></span><code># transform remaining rows from factor to character
 ls_dat_fin2 &lt;- as.character(ls_dat_fin)
 # transform character-expression to dates
-ls_dat_for &lt;- as.Date(ls_dat_fin2, format = c("%Y%m%d"))
-</code></pre>
+ls_dat_for &lt;- as.Date(ls_dat_fin2, format = c(&quot;%Y%m%d&quot;))
+</code></pre></div>
 <p>Now, we have prepared the acquisition dates in a way, so that they can be used to create time-series objects. But before we will do this, we will have a quick look at the raster data we exported from the Google Earth Engine. We will use a for-loop to plot some of the NDVI images of the time series. We will not plot all images, as this would take a really long time (particularly for the Landsat data which generally requires a lot more time to plot the individual NDVI images). Be aware that you can stop the ploting-loop at any time by pressing the little "stop" button in RStudio. We will plot 10 of the Landsat scenes and 40 of the MODIS scenes. Depending on the speed of your computer this may take a while. Have a look at the images that appear and reflect what you are seeing.</p>
-<pre><code>###
+<div class="highlight"><pre><span></span><code>###
 # have a brief look on the data by plotting the individual time series
 # raster of MODIS and some selected scenes of Landsat
 ###
@@ -1320,9 +1355,9 @@ for(i in 1:40){
   plot(mod_ndvi[[i]], main=m_dat_for[i], zlim=c(-5000,10000))
 
 }
-</code></pre>
+</code></pre></div>
 <p>Probably most of you observed at least two things: 1. The plotted raster data in many cases showed data gaps with NA or 0 values; 2. The NDVI images show quite clear seasonal signals with a lot more positive NDVI values during the summer months. Both of these observations are quite typical for dense time series of remote sensing data. Due to cloud cover and snow, there are many missing values included. Particularly, if no temporal mosaicing is conducted. The latter we will learn next week. We will now have a closer look at the seasonal signal by plotting NDVI time series of individual pixels. To do this, we first extract the complete NDVI time series of one MODIS and one Landsat pixel:</p>
-<pre><code>###
+<div class="highlight"><pre><span></span><code>###
 # extract NDVI time series for individual pixels
 ###
 
@@ -1332,29 +1367,29 @@ ls_ts &lt;- as.vector(ls_ndvi[45,56])
 # MODIS (here, row 1, column 1)
 m_ts &lt;- as.vector(mod_ndvi[1,1])
 m_ts[m_ts==0] &lt;- NA
-</code></pre>
+</code></pre></div>
 <p>You could easily modify the codes above to select different pixels and explore how the corresponding time-series look like. In case of the MODIS pixels, a value of 0 indicates a masked pixel which had a low data quality due to cloud-cover or snow. We hence set al values of 0 to NA.</p>
 <p>Next, we will create time series objects. Time series objects are a special kind of data type in R which typically contain some sort of observational values (in our case NDVI values) and corresponding time stamps (which in our case were prepared from the text files as described above). There are different packages in R that allow creating time series objects. Here, we use the xtc package. A summary of the most important xtc commands can be found here:</p>
 <p><a href="https://drive.google.com/open?id=1sAe2GalxPk2T3Ce8R53Zz5fqooY9Katt">https://drive.google.com/open?id=1sAe2GalxPk2T3Ce8R53Zz5fqooY9Katt</a></p>
 <p>To create the time series object, we first create a dataframe containing the NDVI values of the pixel and the time-stamps and subsequently create the xtc object:</p>
-<pre><code># prepare dataframe with NDVI values and dates
+<div class="highlight"><pre><span></span><code># prepare dataframe with NDVI values and dates
 ls.df &lt;- data.frame(ls_ts, ls_dat_for)
 m.df &lt;- data.frame(m_ts, m_dat_for)
 
 # create time series object
 ls.NDVI.ts &lt;- xts(ls.df$ls_ts, order.by=ls.df$ls_dat_for)
 mod.NDVI.ts &lt;- xts(m.df$m_ts, order.by=m.df$m_dat_for)
-</code></pre>
+</code></pre></div>
 <p>Next, we will plot the prepared time-series datasets:</p>
-<pre><code># plot the time series
+<div class="highlight"><pre><span></span><code># plot the time series
 plot(ls.NDVI.ts)
 plot(mod.NDVI.ts)
-</code></pre>
+</code></pre></div>
 <p>This will lead to the following graphs:</p>
 <p><img alt="" src="../assets/gee_16.png" />
 <img alt="" src="../assets/gee_17.png" /></p>
 <p>As we can see, both time series show a quite clear seasonal signal. The MODIS time series is notably shorter than the Landsat time series. Be aware that the two time series do not represent the exact same location and should hence not be directly compared. They are just meant to be a random example. Even though, you could adapt the code and extract a time series for pixels that are actually overlapping. The signal is most likely not directly comparable anyway as the MODIS pixels are a lot bigger than the Landsat pixels (250 m x 250 m vs. 30 m x 30 m). To get a better understanding of how the time series actually looks like, we can interpolate the gaps in the time series using some standard processing options offered by the xtc package:</p>
-<pre><code>###
+<div class="highlight"><pre><span></span><code>###
 # work with time-series object
 ###
 
@@ -1365,12 +1400,12 @@ plot(ls.NDVI.ts.ip)
 
 mod.NDVI.ts.ip &lt;- na.approx(mod.NDVI.ts)
 plot(mod.NDVI.ts.ip)
-</code></pre>
+</code></pre></div>
 <p>Running this code will lead to the two following graphs:</p>
 <p><img alt="" src="../assets/gee_18.png" />
 <img alt="" src="../assets/gee_19.png" /></p>
 <p>The interpolated time series look a lot smoother and it seems even possible to observe some trends in these new graphs. In the NDVI time series there seems to be one outlier in 2016 which does not seem to be very realistic and is most likely some sort of artefact in the raw data which was not detected by the automated pre-processing routines. In both time series, there seems to be an overall trend to increasing NDVI values. We can try to depict this trend a bit clearer by converting the high-frequency time series of approximately one observation every 16 days to an annual time-series. We can do this with the following code:</p>
-<pre><code># convert time series to yearly values
+<div class="highlight"><pre><span></span><code># convert time series to yearly values
 ls.NDVI.ts.y &lt;- to.yearly(ls.NDVI.ts)
 mod.NDVI.ts.y &lt;- to.yearly(mod.NDVI.ts)
 
@@ -1381,7 +1416,7 @@ plot(ls.NDVI.ts.y$ls.NDVI.ts.High)
 
 plot(mod.NDVI.ts.y)
 plot(mod.NDVI.ts.y$mod.NDVI.ts.High)
-</code></pre>
+</code></pre></div>
 <p>This will in total lead to four plots:</p>
 <p><img alt="" src="../assets/gee_20.png" />
 <img alt="" src="../assets/gee_21.png" />
@@ -1397,11 +1432,11 @@ plot(mod.NDVI.ts.y$mod.NDVI.ts.High)
   <small>
     
       Letztes Update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-02-25T10:50:19+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-02-25</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-02-25T12:17:14+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-02-25</span>
       
         <br>
         Erstellt:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-02-25T10:50:19+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-02-25</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-02-25T12:17:14+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-02-25</span>
       
     
   </small>
@@ -1470,7 +1505,7 @@ plot(mod.NDVI.ts.y$mod.NDVI.ts.High)
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      CC-BY-SA-4.0 license - FU-Berlin Fernerkundung und Geoinformatik
+      Copyright &copy; CC-BY-SA-4.0 license - FU-Berlin Fernerkundung und Geoinformatik
     </div>
   
   
@@ -1485,7 +1520,7 @@ plot(mod.NDVI.ts.y$mod.NDVI.ts.High)
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["search.highlight", "content.action.edit", "content.code.copy", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.expand", "navigation.path", "navigation.top", "navigation.footer"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version": "Version ausw\u00e4hlen"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["search.suggest", "search.highlight", "content.action.edit", "content.code.copy", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.expand", "navigation.path", "navigation.top", "navigation.footer"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version": "Version ausw\u00e4hlen"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.2a6f1dda.min.js"></script>

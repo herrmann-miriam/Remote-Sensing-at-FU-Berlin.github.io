@@ -110,6 +110,41 @@
     
     
     
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Suche" placeholder="Suche" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Suche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Zurücksetzen" aria-label="Zurücksetzen" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Suche wird initialisiert
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
     
       <div class="md-header__source">
         <a href="https://github.com/Remote-Sensing-at-FU-Berlin/Remote-Sensing-at-FU-Berlin.github.io/" title="Zum Repository" class="md-source" data-md-component="source">
@@ -839,31 +874,31 @@
 <p>First, we will load all required packages. R will give you a warning message in case a package is not installed yet. If this is the case, please install the packages either through the main
 menu of Rstudio by selecting "Tools" =&gt; "Install packages" and then following the appearing dialogue, or by entering the corresponding R code
 to install the packages into the console. E.g., to install the package "raster" use the code:</p>
-<pre><code>install.packages("raster")
-</code></pre>
+<div class="highlight"><pre><span></span><code>install.packages(&quot;raster&quot;)
+</code></pre></div>
 <p>After loading the packages by running:</p>
-<pre><code># load requires packages
+<div class="highlight"><pre><span></span><code># load requires packages
 require(raster)
 require(SDMTools)
 require(doParallel)
 require(foreach)
-</code></pre>
+</code></pre></div>
 <p>After all packages are successfully installed, we will load the land cover raster maps using two steps. First, change the path to the folder containing the image, then execute the "raster" command to load the image. To check whether you are in the correct folder, you can display all files of the folder using the list.files()-command.
 In this case it is important to use the "raster" command instead of the "stack" command due to the input format required by the function we will use to calculate the landscape metrics. </p>
-<pre><code>## load land-cover maps derived from S2
+<div class="highlight"><pre><span></span><code>## load land-cover maps derived from S2
 
 # set working directory to the folder where you stored the data for the tutorial
-setwd("E:/Tag2_landscape_metrics/")
+setwd(&quot;E:/Tag2_landscape_metrics/&quot;)
 list.files()
 
 # load the land cover classification raster maps
-s2_luc &lt;- raster("s2_classification.tif")   
-ls_luc &lt;- raster("ls_classification.tif")
-mod250_luc &lt;- raster("mod250_classification.tif")
-mod500_luc &lt;- raster("mod500_classification.tif")
-</code></pre>
+s2_luc &lt;- raster(&quot;s2_classification.tif&quot;)   
+ls_luc &lt;- raster(&quot;ls_classification.tif&quot;)
+mod250_luc &lt;- raster(&quot;mod250_classification.tif&quot;)
+mod500_luc &lt;- raster(&quot;mod500_classification.tif&quot;)
+</code></pre></div>
 <p>To check whether the data has been loaded correctly, we can briefly plot the four maps using the following commands:</p>
-<pre><code># open a new display window
+<div class="highlight"><pre><span></span><code># open a new display window
 x11()
 
 # change plot settings to plot all four plots in one window using 2 columns and 2 rows
@@ -874,11 +909,11 @@ plot(s2_luc)
 ploz(ls_luc)
 plot(mod250_luc)
 plot(mod500_luc)
-</code></pre>
+</code></pre></div>
 <p>This will result in the following plot:</p>
 <p><img alt="" src="../assets/r_0.png" /></p>
 <p>If we prefer to invest a bit more time into the plot to allow for an easier interpretation of the landcover classes, we can make it look a bit more like in the QGIS visualization that we saw before by running the following code:</p>
-<pre><code>## alternative, nicer-looking plot
+<div class="highlight"><pre><span></span><code>## alternative, nicer-looking plot
 
 # open a new display window
 x11()
@@ -888,7 +923,7 @@ par(mfrow=c(2,3))
 
 # prepare coloring
 cuts=c(0,1,2,3,4,5) #set breaks
-pal &lt;- colorRampPalette(c("darkgreen", "blue", "brown1", "chartreuse2", "darkgoldenrod1"))
+pal &lt;- colorRampPalette(c(&quot;darkgreen&quot;, &quot;blue&quot;, &quot;brown1&quot;, &quot;chartreuse2&quot;, &quot;darkgoldenrod1&quot;))
 
 # plot the images
 plot(s2_luc, breaks=cuts, col = pal(5), legend=F)
@@ -896,15 +931,15 @@ plot(ls_luc, breaks=cuts, col = pal(5), legend=F)
 plot(mod250_luc, breaks=cuts, col = pal(5), legend=F)
 plot(mod500_luc, breaks=cuts, col = pal(5), legend=F)
 # plot dummy to include legend
-plot(mod500_luc, col = "white", axes=F, ann=F, xaxt="n", yaxt="n", box=F, legend=F)
+plot(mod500_luc, col = &quot;white&quot;, axes=F, ann=F, xaxt=&quot;n&quot;, yaxt=&quot;n&quot;, box=F, legend=F)
 #plot legend
-legend("bottomleft", legend=c("Forest","Water","Urban","Grassland", "Bare soil"),fill=c("darkgreen", "blue", "brown1", "chartreuse2", "darkgoldenrod1"))
-</code></pre>
+legend(&quot;bottomleft&quot;, legend=c(&quot;Forest&quot;,&quot;Water&quot;,&quot;Urban&quot;,&quot;Grassland&quot;, &quot;Bare soil&quot;),fill=c(&quot;darkgreen&quot;, &quot;blue&quot;, &quot;brown1&quot;, &quot;chartreuse2&quot;, &quot;darkgoldenrod1&quot;))
+</code></pre></div>
 <p>This will look like this:</p>
 <p><img alt="" src="../assets/r_0_51.png" /></p>
 <h1 id="step-3-calculate-landscape-metrics-for-the-entire-image">Step 3: Calculate landscape metrics for the entire image<a class="headerlink" href="#step-3-calculate-landscape-metrics-for-the-entire-image" title="Permanent link">&para;</a></h1>
 <p>After successfully loading and plotting the images, we will now calculate the landscape metrics for each image. We will accomplish this using the SDMTools packages and the "ClassStat" and the "PatchStat" functions. The two functions only require the input raster (expected is a categorical raster file) and a user-defined cellsize, which in our case will be the spatial resolution of the corresponding satellite sensors. We can calculate the landscape metrics by running the following lines:</p>
-<pre><code># calculate class-stats for each image
+<div class="highlight"><pre><span></span><code># calculate class-stats for each image
 metr_s2 &lt;- ClassStat(s2_luc, cellsize=10)
 metr_ls &lt;- ClassStat(ls_luc, cellsize=30)
 metr_mod250 &lt;- ClassStat(mod250_luc, cellsize=250)
@@ -915,56 +950,56 @@ patch_s2 &lt;- PatchStat(s2_luc, cellsize=10)
 patch_ls &lt;- PatchStat(ls_luc, cellsize=30)
 patch_mod250 &lt;- PatchStat(mod250_luc, cellsize=250)
 patch_mod500 &lt;- PatchStat(mod500_luc, cellsize=500)
-</code></pre>
+</code></pre></div>
 <p>This calculation may take a few seconds. Once they are ready, we will be able to have a look at the calculated metrics and also make some comparisons between the four land-cover maps.</p>
 <p>First of all we are interested in what kind of metrics were calculated. To see the names and the definitions of the calculated metrics, we can have a look at the details of the applied functions by running the code:</p>
-<pre><code>?ClassStat
+<div class="highlight"><pre><span></span><code>?ClassStat
 ?PatchStat
-</code></pre>
+</code></pre></div>
 <p>For simply seeing the names of the metrics, we can also run:</p>
-<pre><code>colnames(metr_s2)
+<div class="highlight"><pre><span></span><code>colnames(metr_s2)
 colnames(patch_s2)
-</code></pre>
+</code></pre></div>
 <p>Now, let us have a closer look on what has actually been calculated. If we simply run the objects that were created by calling the functions, we can see that all landscape metrics have been calculated for all of the five land-cover classes in the image. Running:</p>
-<pre><code>metr_s2
-</code></pre>
+<div class="highlight"><pre><span></span><code>metr_s2
+</code></pre></div>
 <p>will result in:</p>
 <p><img alt="" src="../assets/r_1.png" /></p>
 <p>Here, it becomes clear that for each class and landscape metric, a single value is given. Some of the metrics are quite easy to interprete such as "<strong>prop.landscape</strong>" which simply  indicates the fractional cover of the land-cover class in the complete image. Hence, in this case, the values of all five classes should add-up to 1.
 For understanding also the other metrics, it is recommended to have a closer look at the details provided in the descriptions of the r-package and the citations given there.</p>
 <p>We will now try to make some comparisons of values between the four input land-cover datasets with varying spatial resolution. To do this, we will create some bar plots. To get the plots, we first have to select which landscape metric we want to have a look at and then the land-cover class for which we want to compare the values:</p>
-<pre><code>metric=10
+<div class="highlight"><pre><span></span><code>metric=10
 luc_class=2
-</code></pre>
+</code></pre></div>
 <p>Remember, for getting the names of the calculated landscape metrics we can run:</p>
-<pre><code>colnames(metr_s2)
-</code></pre>
-<p>If we want to know how the 10th calculated metric is called, we can also run:</p>
-<pre><code>colnames(metr_sw)[10]
-</code></pre>
+<div class="highlight"><pre><span></span><code>colnames(metr_s2)
+</code></pre></div>
+<p>If we want to know how the 10<sup>th</sup> calculated metric is called, we can also run:</p>
+<div class="highlight"><pre><span></span><code>colnames(metr_sw)[10]
+</code></pre></div>
 <p>Now, lets plot some comparative barplots to always compare the values of landscape metric 10 (mean patch area) calculcated for land cover class 2 (water) of Landsat with the three other input datasets:</p>
-<pre><code># selected metric and class
+<div class="highlight"><pre><span></span><code># selected metric and class
 metric=10
 luc_class = 2
 
 # make plots
 x11()
 par(mfrow=c(1,3))
-barplot(c(metr_ls[luc_class,metric], metr_s2[luc_class,metric]), xlab="Landsat vs. S2", main=paste0(colnames(metr_ls)[metric]), cex.axis=1.5, cex.lab = 1.5)
-barplot(c(metr_ls[luc_class,metric], metr_mod250[luc_class,metric]), xlab="Landsat vs. MODIS 250 m", main=paste0(colnames(metr_ls)[metric]), cex.axis=1.5, cex.lab = 1.5)
-barplot(c(metr_ls[luc_class,metric], metr_mod500[luc_class,metric]), xlab="Landsat vs. MODIS 500 m", main=paste0(colnames(metr_ls)[metric]), cex.axis=1.5, cex.lab = 1.5)
-</code></pre>
+barplot(c(metr_ls[luc_class,metric], metr_s2[luc_class,metric]), xlab=&quot;Landsat vs. S2&quot;, main=paste0(colnames(metr_ls)[metric]), cex.axis=1.5, cex.lab = 1.5)
+barplot(c(metr_ls[luc_class,metric], metr_mod250[luc_class,metric]), xlab=&quot;Landsat vs. MODIS 250 m&quot;, main=paste0(colnames(metr_ls)[metric]), cex.axis=1.5, cex.lab = 1.5)
+barplot(c(metr_ls[luc_class,metric], metr_mod500[luc_class,metric]), xlab=&quot;Landsat vs. MODIS 500 m&quot;, main=paste0(colnames(metr_ls)[metric]), cex.axis=1.5, cex.lab = 1.5)
+</code></pre></div>
 <p>This will result in:</p>
 <p><img alt="" src="../assets/r_2.png" /></p>
 <p>We can see that even though we calculated the same metric, for the same class and the same landscape with the same extent, the differences in spatial resolution of the input datasets, leads to quite strong differences in mean patch area. The differences are stronger, the stronger the resolution differences are. However, this of course also depends on the applied metric and land-cover class. You can now try to make some more comparisons, by changing the variables <strong>metric</strong> and <strong>luc_class</strong> in the code and then re-run the plot command.</p>
 <h1 id="step-4-calculate-landscape-metrics-for-a-grid">Step 4: Calculate landscape metrics for a grid<a class="headerlink" href="#step-4-calculate-landscape-metrics-for-a-grid" title="Permanent link">&para;</a></h1>
 <p>So far, we calculated a single landscape metric for the whole land-cover map. In our case, the landscape is still comparably small in size so calculating a single metric for the whole landscape, may make sense for some applications. However, in many other cases, we might either have a larger landscape at hand or we might be interested to also see how our landscape varies in terms of its metrics at a finer spatial grain as compared to the complete landscape. In the following, we will adjust the code used above to calculate landscape metrics for smaller sub-parts of the land-cover maps.</p>
 <p>This will require that we put the calculation into a loop and before running this loop we will have to create a  grid with a user-defined grid cell size. In the following, the code will be presented step by step. First we define the grid-cell size:</p>
-<pre><code># define a tile size for which you want to compute the landscape metrics
+<div class="highlight"><pre><span></span><code># define a tile size for which you want to compute the landscape metrics
 tile_size &lt;- 500
-</code></pre>
+</code></pre></div>
 <p>In our case this would mean 500 m - but this will depend on the applied coordinate reference system. As we are using data in the metric UTM coordinate reference system, the 500 is fine. It would be more complicated when using the geographic coordinate system with Latitude and Longitude as in this case the grid cell size would have to be defined in geographic degrees. Next, we define the input dataset for which we want to create the grid and extract its extent. In this case, we will use the land-cover map derived from Sentinel-2</p>
-<pre><code># define the land-use map you want to use as input
+<div class="highlight"><pre><span></span><code># define the land-use map you want to use as input
 inp &lt;- s2_luc
 
 # use extent of raster layer to prepare grid cells
@@ -973,21 +1008,21 @@ e &lt;- extent(inp)
 
 # check what e looks like by running
 e
-</code></pre>
+</code></pre></div>
 <p>This will result in the following:</p>
 <p><img alt="" src="../assets/r_3.png" /></p>
 <p>We can see that the variable e contains the outer margins of our input image with minimum and maximum x and y coordinates, respectively. From this, we will now derive the total width and height of the area the image is covering by running (the results will be in meter as we are in the metric coordinate system):</p>
-<pre><code># get x and y ranges
+<div class="highlight"><pre><span></span><code># get x and y ranges
 x_ra &lt;- (e[2]-e[1]) 
 y_ra &lt;- (e[4]-e[3])
-</code></pre>
+</code></pre></div>
 <p>Then we will set the grid-cell size by assigning the user-defined value from above to two variables, representing the x and y direction. The two variables will be required in the code below. Be aware that we in theory could also use non-quadratic grid cells, but for now, let's just stay with the quadratic cells.</p>
-<pre><code># set x,y lengths of grid to user defined tile size
+<div class="highlight"><pre><span></span><code># set x,y lengths of grid to user defined tile size
 x_r &lt;- tile_size
 y_r &lt;- tile_size
-</code></pre>
+</code></pre></div>
 <p>Now we are ready to run a nested for-loop to create the grid cell coordinates:</p>
-<pre><code># create list to store the results of the tile coordinates
+<div class="highlight"><pre><span></span><code># create list to store the results of the tile coordinates
 cases &lt;- list()
 
 # create coordinates of all tiles
@@ -1008,17 +1043,17 @@ for (i2 in 1:(floor(x_ra/x_r))) {
 # unbind tile coordinate list
 cases2 &lt;- do.call(rbind, cases)
 # asign meaningful colnames
-colnames(cases2) &lt;- c("xmin", "xmax", "ymin", "ymax")
+colnames(cases2) &lt;- c(&quot;xmin&quot;, &quot;xmax&quot;, &quot;ymin&quot;, &quot;ymax&quot;)
 # check final coordinate list
 head(cases2)
-</code></pre>
+</code></pre></div>
 <p>I will not get into details here about what this code is doing exactly, but feel free to explore the code a bit more. In short, this code will return a list of coordinate-sets defining the 500 m grid-cells for which we will calculate our landscape metrics. The last r command in the code <strong>head(cases2)</strong> will result in:</p>
 <p><img alt="" src="../assets/r_4.png" /></p>
 <p>So you can see that each row in the "<strong>cases2</strong>"-variable has the same structure as the "<strong>e</strong>" variable from above and basically describes the outer margin of a single grid-cell.</p>
 <p>OK! Now let's calculate the metrics for the grid. In the following, we will run the code in a parallelized script. This will enable a notably faster processing time, if the computer has more than one cpu/core available. To do this, we only have to change some parts of the code in comparison to a normal for-loop. Again, I will not go into details here, but in case you are interested in how this works exactly, you can get some first information here:</p>
 <p><a href="https://cran.r-project.org/web/packages/doParallel/vignettes/gettingstartedParallel.pdf" title="Parallel processing">https://cran.r-project.org/web/packages/doParallel/vignettes/gettingstartedParallel.pdf</a></p>
 <p>Now, let us have a look at the code. First, we start the process by initalizing the parallel processing:</p>
-<pre><code>#setup parallel backend to use more than one processors
+<div class="highlight"><pre><span></span><code>#setup parallel backend to use more than one processors
 
 # define number of cores (you can switch the value to a higher numer of your computer has more cores)
 # for checking how many cores your computer has you can run: detectCores()
@@ -1028,9 +1063,9 @@ registerDoParallel(cl)
 
 # get timestamp to see how long the process takes
 print(timestamp())
-</code></pre>
+</code></pre></div>
 <p>At this point the pure processing part begins. The processing is devided into four steps. First, the extent of the i-th grid cell is defined by taking the i-th row from the variable <strong>cases2</strong> created above. Second, the raster image is clipped with the extent. Third, landscape metrics are caclulated for the clipped raster-subset. Fourth, all metrics are merged into a single variable <strong>cstat2</strong> and center coordinates of the current grid cell are added to this variable (to allow for copying the information back to a raster later on). This variable is then returned and the next iteration is started:</p>
-<pre><code>rs &lt;- foreach(i=1:length(cases2[,1]), .packages=c("raster", "SDMTools")) %dopar% {
+<div class="highlight"><pre><span></span><code>rs &lt;- foreach(i=1:length(cases2[,1]), .packages=c(&quot;raster&quot;, &quot;SDMTools&quot;)) %dopar% {
 
   # create an extent file using the coordinates from the coordinate list
   e2 &lt;- extent(cases2[i,1], cases2[i,2], cases2[i,3], cases2[i,4])
@@ -1065,20 +1100,20 @@ stopCluster(cl)
 
 #get another timestamp to see how long it tood
 print(timestamp())
-</code></pre>
+</code></pre></div>
 <p>After landscape metrics have been calculated for all grid cells, the raw output data has to be further processed to transfer them back into raster files. The result of the for-loop described above are stored in a variable called "<strong>rs</strong>" which is in the list-format of R. As first step, we transfer this list into a dataframe by applying the rbind-function to all entries in the list:</p>
-<pre><code># check first results
+<div class="highlight"><pre><span></span><code># check first results
 head(rs)
 # bind all results to have one large dataframe
 rs_fin &lt;- do.call(rbind, rs)
 
 #check final results
 head(rs_fin)
-</code></pre>
+</code></pre></div>
 <p>This results in:</p>
 <p><img alt="" src="../assets/r_5.png" /></p>
 <p>Next, we extract one of the landscape metrics for one of the five examined land-cover classes and save it as a raster file. In theory all calculated metrics could be saved using the same procedure with some small adaptations to the code. In the code below we select the landcover class 1 which is forest. Details are provided in the comments to the code.</p>
-<pre><code>##################################################
+<div class="highlight"><pre><span></span><code>##################################################
 ## start postprocessing results
 ##################################################
 
@@ -1115,8 +1150,8 @@ crs(dfr) &lt;- crs(ls_luc)
 plot(dfr, main=colnames(rs_fin_cl)[metric])
 
 # save result to tiff-file that can be opened in QGIS
-writeRaster(dfr, "prop_forest_area.tif", format="GTiff", overwrite=T)
-</code></pre>
+writeRaster(dfr, &quot;prop_forest_area.tif&quot;, format=&quot;GTiff&quot;, overwrite=T)
+</code></pre></div>
 <p>We have now calculated a first landscape metric-map in R. We can check our results by loading the just created prop_forest_area.tif file into our QGIS project from the start of the tutorial. If we now compare the land-cover map with the percentage cover raster we calculated (depicted below after adapting the visualization settings), we can see that the results seem plausible. Grid cells covered only by forest have a 100% cover (value of 1) while areas with only smaller fractions of forest, show the corresponding values:</p>
 <p><img alt="" src="../assets/qgis_3.png" />
 <img alt="" src="../assets/qgis_4.png" /></p>
@@ -1128,11 +1163,11 @@ writeRaster(dfr, "prop_forest_area.tif", format="GTiff", overwrite=T)
   <small>
     
       Letztes Update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-02-25T10:50:19+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-02-25</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-02-25T12:17:14+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-02-25</span>
       
         <br>
         Erstellt:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-02-25T10:50:19+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-02-25</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-02-25T12:17:14+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-02-25</span>
       
     
   </small>
@@ -1201,7 +1236,7 @@ writeRaster(dfr, "prop_forest_area.tif", format="GTiff", overwrite=T)
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      CC-BY-SA-4.0 license - FU-Berlin Fernerkundung und Geoinformatik
+      Copyright &copy; CC-BY-SA-4.0 license - FU-Berlin Fernerkundung und Geoinformatik
     </div>
   
   
@@ -1216,7 +1251,7 @@ writeRaster(dfr, "prop_forest_area.tif", format="GTiff", overwrite=T)
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["search.highlight", "content.action.edit", "content.code.copy", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.expand", "navigation.path", "navigation.top", "navigation.footer"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version": "Version ausw\u00e4hlen"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["search.suggest", "search.highlight", "content.action.edit", "content.code.copy", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.expand", "navigation.path", "navigation.top", "navigation.footer"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version": "Version ausw\u00e4hlen"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
