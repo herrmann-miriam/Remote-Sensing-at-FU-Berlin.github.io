@@ -128,7 +128,7 @@
 <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
-<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" data-md-level="0">
 <label class="md-nav__title" for="__drawer">
 <a aria-label="Fernerkundung und Geoinformatik" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="Fernerkundung und Geoinformatik">
 <img alt="logo" src="../../assets/logo.png"/>
@@ -408,108 +408,6 @@
 </li>
 </ul>
 </nav>
-</li>
-</ul>
-</nav>
-</li>
-</ul>
-</nav>
-</div>
-</div>
-</div>
-<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
-<div class="md-sidebar__scrollwrap">
-<div class="md-sidebar__inner">
-<nav aria-label="Inhaltsverzeichnis" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Inhaltsverzeichnis
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#overview">
-    Overview
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#learning-objectives">
-    Learning Objectives
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#dataset-used-in-the-tutorial">
-    Dataset used in the tutorial
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#overview-of-the-lidr-package-and-acknowledgements">
-    Overview of the lidR package and acknowledgements
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#getting-started">
-    Getting started
-  </a>
-<nav aria-label="Getting started" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1-loading-point-cloud-data-to-r">
-    1. Loading point cloud data to R
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#2-visualizing-lidar-data-with-lidr">
-    2. Visualizing LiDAR data with lidR
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#ground-classification">
-    Ground classification
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#calculate-a-digital-terrain-model">
-    Calculate a digital terrain model
-  </a>
-<nav aria-label="Calculate a digital terrain model" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#triangular-irregular-network">
-    Triangular irregular network
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#invert-distance-weighting">
-    Invert distance weighting
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#kriging">
-    Kriging
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#normalize-the-lidar-point-cloud">
-    Normalize the LiDAR point cloud
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#calculate-digital-surface-models-and-canopy-height-models">
-    Calculate digital surface models and canopy height models
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#individual-tree-detection">
-    Individual tree detection
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#calculate-point-cloud-metrics">
-    Calculate point cloud metrics
-  </a>
 </li>
 </ul>
 </nav>
@@ -945,7 +843,7 @@ plot(sf::st_geometry(ttops), add = TRUE, pch = 3)
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": "../..", "features": ["search.suggest", "search.highlight", "content.action.edit", "content.code.copy", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.expand", "navigation.path", "navigation.top", "navigation.footer"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version": "Version ausw\u00e4hlen"}}</script>
+<script id="__config" type="application/json">{"base": "../..", "features": ["toc.integrate", "search.suggest", "search.highlight", "content.action.edit", "content.code.copy", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.expand", "navigation.path", "navigation.top", "navigation.footer"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version": "Version ausw\u00e4hlen"}}</script>
 <script src="../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
 <script src="../../javascripts/mathjax.js"></script>
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
