@@ -33,7 +33,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#preparing-annual-time-series-data-stacks-with-google-earth-engine-and-conducting-time-series-analysis-in-r">
+<a class="md-skip" href="#preparing-annual-time-series-data-stacks-and-conducting-time-series-analysis">
           Zum Inhalt
         </a>
 </div>
@@ -364,7 +364,7 @@
 <a class="md-content__button md-icon" href="https://github.com/Remote-Sensing-at-FU-Berlin/Remote-Sensing-at-FU-Berlin.github.io/tree/main/docs/MSRS_1_GEE_basics2/MSRS_1_GEE_basics2.md" title="Seite editieren">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
-<h1 id="preparing-annual-time-series-data-stacks-with-google-earth-engine-and-conducting-time-series-analysis-in-r">Preparing annual time series data stacks with Google Earth Engine and conducting time series analysis in R<a class="headerlink" href="#preparing-annual-time-series-data-stacks-with-google-earth-engine-and-conducting-time-series-analysis-in-r" title="Link zu dieser Sektion">¶</a></h1>
+<h1 id="preparing-annual-time-series-data-stacks-and-conducting-time-series-analysis">Preparing annual time series data stacks and conducting time series analysis<a class="headerlink" href="#preparing-annual-time-series-data-stacks-and-conducting-time-series-analysis" title="Link zu dieser Sektion">¶</a></h1>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Link zu dieser Sektion">¶</a></h2>
 <p>After getting to know the Google Earth Engine (GEE) in the last practical session of the course, you will today learn to use the GEE to manipulate the satellite image collections directly in the GEE cloud to derive an annual time series of Landsat NDVI values acquired only for certain months of a year. In comparison to what we learned last week, this requires some additional coding in the GEE environment. Exporting annual satellite image mosaics instead of simply exporting all available data (as we did last week), brings some advantages such as (a) the possibility to exclude seasonality from the signal, (b) to account for local data gaps by temporal interpolation and © to notably reduce the size of the exported data.</p>
 <p>When preparing the material for this Tutorial, I came across a technical report of Pironkova et al. 2018 (you can find the document on ILIAS) which matches very well the contents I wanted to communicate in this tutorial. Hence, most of the code you will find below is based on the code provided by this technical report. I only added some lines of code, which I will describe further below. Please have a look at this technical report along with this Tutorial as you might find valuable additional information there.</p>
