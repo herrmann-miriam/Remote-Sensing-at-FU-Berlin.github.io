@@ -364,11 +364,11 @@
 <a class="md-content__button md-icon" href="https://github.com/Remote-Sensing-at-FU-Berlin/Remote-Sensing-at-FU-Berlin.github.io/tree/main/docs/qgis/02-vector-data.md" title="Seite editieren">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
-<h1 id="loading-and-visualizing-shapefiles-vector-data">Loading and visualizing Shapefiles / Vector data<a class="headerlink" href="#loading-and-visualizing-shapefiles-vector-data" title="Permanent link">¶</a></h1>
+<h1 id="loading-and-visualizing-shapefiles-vector-data">Loading and visualizing Shapefiles / Vector data<a class="headerlink" href="#loading-and-visualizing-shapefiles-vector-data" title="Link zu dieser Sektion">¶</a></h1>
 <p><strong>Abstract</strong> 
 After completing this tutorial, the participant knows how to load a Shapefile (vector file) and how to make use of the visualization options in QGIS to adapt the colours, symbols and format of the spatial features (points, lines, polygons) contained in the shapefile. You will additionally learn how to save a QGIS project.</p>
 <p>Developed with QGIS version - Bialowieza 3.22.5</p>
-<h2 id="download-data-for-the-tutorial">Download data for the tutorial<a class="headerlink" href="#download-data-for-the-tutorial" title="Permanent link">¶</a></h2>
+<h2 id="download-data-for-the-tutorial">Download data for the tutorial<a class="headerlink" href="#download-data-for-the-tutorial" title="Link zu dieser Sektion">¶</a></h2>
 <p>For this and the subsequent tutorials you will need to work with some geodata. Please download the data required for this tutorial here:</p>
 <p><a href="https://drive.google.com/file/d/11dSbeH8sMdgBS8nPqvtt3sae62bco02P/view?usp=sharing">Download</a></p>
 <p>This zip-file contains two ESRI Shapefiles (vector-data) - the first one named <strong>gis.osm_landuse_a_free_1.shp</strong> contains a land-use dataset of Southern Italy and the second dataset is a global dataset named <strong>newsweek_data.shp</strong> which contains some demographic information for each country of the Earth.</p>
@@ -378,7 +378,7 @@ After completing this tutorial, the participant knows how to load a Shapefile (v
 <figcaption>Figure 1: Files contained in the zipped file for Tutorial 2</figcaption>
 </figure>
 <p>Both shapefiles consist of several data files as shown in Figure 1. You will learn why a single shapefile consists of multiple datafiles later on in the course.</p>
-<h2 id="loading-a-shapefile-vector-file-in-qgis">Loading a Shapefile (vector file) in QGIS<a class="headerlink" href="#loading-a-shapefile-vector-file-in-qgis" title="Permanent link">¶</a></h2>
+<h2 id="loading-a-shapefile-vector-file-in-qgis">Loading a Shapefile (vector file) in QGIS<a class="headerlink" href="#loading-a-shapefile-vector-file-in-qgis" title="Link zu dieser Sektion">¶</a></h2>
 <p>After opening QGIS and selecting a new project, the graphical user interface of QGIS will look as demonstrated in Figure 2. In Figure 2, we can use the browser window to navigate to the folder which contains the files we have just downloaded.
 Then we can open the file <strong>gis.osm_landuse_a_free_1.shp</strong> by <strong>simply dragging and dropping the file in the layer window</strong> (marked with 2 in Figure 2).</p>
 <figure>
@@ -392,7 +392,7 @@ Then we can open the file <strong>gis.osm_landuse_a_free_1.shp</strong> by <stro
 </p>
 <figcaption>Figure 3: After opening the shapefile in QGIS</figcaption>
 </figure>
-<h2 id="basic-visualization-of-shapefiles-in-qgis">Basic visualization of Shapefiles in QGIS<a class="headerlink" href="#basic-visualization-of-shapefiles-in-qgis" title="Permanent link">¶</a></h2>
+<h2 id="basic-visualization-of-shapefiles-in-qgis">Basic visualization of Shapefiles in QGIS<a class="headerlink" href="#basic-visualization-of-shapefiles-in-qgis" title="Link zu dieser Sektion">¶</a></h2>
 <p>As next step we will change the colour of the complete loaded Polygon-shapefile by using the properties dialogue that is available for each dataset loaded into QGIS. In order to do this either double click the entry of the shapefile-layer in the layer window of QGIS as shown in Figure 4 or alternatively perform a right-click on the same layer and from the appearing text menu select <strong>properties</strong>.</p>
 <figure>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/02-vector-data-04.png"><img alt="Figure 4: Double-click the Shapefile layer" src="../assets/02-vector-data-04.png"/></a>
@@ -422,7 +422,7 @@ Then we can open the file <strong>gis.osm_landuse_a_free_1.shp</strong> by <stro
 <p>Please try out a few different settings and have a look how they affect the visualization in the main windows after you pressed the <strong>apply</strong> button and closed the <strong>properties</strong> dialogue by clicking <strong>OK</strong>.</p>
 <p>You should now be able to adapt the visualization of a shapefile as a whole, that is all spatial objects in the Shapefile are displayed with the same visualization parameters. However, in many cases a shapefile does not only contain a single class of interest but several ones. For example our currently loaded shapefile contains information about the land cover classes of the depicted areas. So we know where in the area covered by the shapefile we can find
 industrial areas, cemeteries, parks or residential areas. We might be interested in visualizing this also in the map. We could for example give a green colour to parks while we could assign a grey or red colour to areas covered with residential areas or industry. In the next Section, we will learn how this can be accomplished with QGIS.</p>
-<h2 id="using-information-from-the-attribute-table-of-the-shapefile-to-colour-code-classes-within-a-single-shapefile">Using information from the attribute table of the shapefile to colour-code classes within a single shapefile<a class="headerlink" href="#using-information-from-the-attribute-table-of-the-shapefile-to-colour-code-classes-within-a-single-shapefile" title="Permanent link">¶</a></h2>
+<h2 id="using-information-from-the-attribute-table-of-the-shapefile-to-colour-code-classes-within-a-single-shapefile">Using information from the attribute table of the shapefile to colour-code classes within a single shapefile<a class="headerlink" href="#using-information-from-the-attribute-table-of-the-shapefile-to-colour-code-classes-within-a-single-shapefile" title="Link zu dieser Sektion">¶</a></h2>
 <p>To make sound use of the information stored in the attribute table, we need to first understand what information is contained in the attribute table. So let us have a look at the table by</p>
 <p>right-clicking on the shapefile-layer and selecting <strong>Open Attribute Table</strong> as demonstrated in Figure 8</p>
 <figure>
@@ -458,7 +458,7 @@ column from the attribute table which we want to use to colour-code our spatial 
 </figure>
 <p>You should now be able to load and visualize a Shapefile by either changing the style for the whole Shapefile or classify and colour-code the spatial objects of the Shapefile to some discrete classes using information given in
 the attribute table. In the exercise of this Tutorial, you will find out how it is possible to colour-code the spatial objects of a Shapefile using attribute table information from an attribute with continuous values.</p>
-<h2 id="saving-a-qgis-project">Saving a QGIS project<a class="headerlink" href="#saving-a-qgis-project" title="Permanent link">¶</a></h2>
+<h2 id="saving-a-qgis-project">Saving a QGIS project<a class="headerlink" href="#saving-a-qgis-project" title="Link zu dieser Sektion">¶</a></h2>
 <p>After learning how to adapt the visualization of a Shapele, you might want to know how you can save these settings for the next time you open QGIS. The easiest way to save the visualization settings but also all other things you have accomplished while working with your data in QGIS is to store the current situation as a QGIS-project. You can do this by </p>
 <p>selecting <strong>Project</strong> -&gt; <strong>Save as...</strong> from the main file menu of QGIS as shown in Figure 13. This will open a new dialoge where you can define an output folder and then enter a name for the QGIS-project and click <strong>save</strong> to save the file. QGIS-project files of the latest version of QGIS have the file format ending <strong>.qgz</strong> while older versions used <strong>.qgs</strong> as standard setting.</p>
 <figure>
@@ -469,7 +469,7 @@ the attribute table. In the exercise of this Tutorial, you will find out how it 
 <p>After storing the project file it is possible to re-load the status of your QGIS project in the future by selecting <strong>Project</strong> -&gt; <strong>open</strong> from the main file menu and then navigating to the <strong>.qgz</strong> file that you have stored earlier.
 Alternatively, you can also double-click this file in the Windows Explorer (or similar data explorer apps in Linux or MacOS environments). This will automatically load QGIS and the project. It is important to understand, that the QGIS project-files themselves do not contain any geodata. Project files only store links to the data which are
 stored on the hard disk of your computer. That means if you delete or move your files to another folder while QGIS is closed and then want to re-open the QGIS-project you had been working on, QGIS will tell you that some of the files of the project cannot be found anymore and they will not displayed in the project. So again: project files only remember the visualization options, the layer order, and which windows and toolboxes were opened when you stored the project file. It does not include the geodata itself! That is also why project files are typically rather small in size. But this also means that if you will send this project file to a colleague, she/he will not be able to see what you saw unless you are also sending all the geodata to her/him.</p>
-<h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">¶</a></h2>
+<h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Link zu dieser Sektion">¶</a></h2>
 <p>Amongst the files you downloaded you will find a shape file called <strong>newsweek data.shp</strong>.</p>
 <p>Try do conduct the following exercises:</p>
 <ol>

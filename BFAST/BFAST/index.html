@@ -384,21 +384,21 @@
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
 <h1>Analysing time series with BFAST and NPPHEN</h1>
-<h2 id="analysing-time-series-with-bfast-and-npphen">Analysing time series with BFAST and NPPHEN<a class="headerlink" href="#analysing-time-series-with-bfast-and-npphen" title="Permanent link">¶</a></h2>
-<h3 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">¶</a></h3>
+<h2 id="analysing-time-series-with-bfast-and-npphen">Analysing time series with BFAST and NPPHEN<a class="headerlink" href="#analysing-time-series-with-bfast-and-npphen" title="Link zu dieser Sektion">¶</a></h2>
+<h3 id="overview">Overview<a class="headerlink" href="#overview" title="Link zu dieser Sektion">¶</a></h3>
 <p>In our last practical session for the topic of remote sensing-based time-series analysis, we will have a  look at two quite complex algorithms to analyse time series with a comparably high temporal resolution (typically monthly or less). The algorithms are BFAST and NPPHEN - both have already been introduced briefly during the theoretical lectures of the time-series chapter of the course.</p>
 <p>You will see that the algorithms are quite time-intensive and we will hence focus on comparably small datasets to keep the processing time manageable. On ILIAS, I will provide some papers that describe the algorithms with more details. In this tutorial I will mostly focus on how to get the algorithms running.</p>
-<h3 id="learning-objectives">Learning objectives<a class="headerlink" href="#learning-objectives" title="Permanent link">¶</a></h3>
+<h3 id="learning-objectives">Learning objectives<a class="headerlink" href="#learning-objectives" title="Link zu dieser Sektion">¶</a></h3>
 <p>The learning objectives of this Tutorial include:</p>
 <ul>
 <li>preparing a remote-sensing based time series for use with BFAST and NPPHEN</li>
 <li>applying BFAST and NPPHEN</li>
 <li>understanding the most important outputs of both algorithms</li>
 </ul>
-<h3 id="datasets-used-in-this-tutorial">Datasets used in this Tutorial<a class="headerlink" href="#datasets-used-in-this-tutorial" title="Permanent link">¶</a></h3>
+<h3 id="datasets-used-in-this-tutorial">Datasets used in this Tutorial<a class="headerlink" href="#datasets-used-in-this-tutorial" title="Link zu dieser Sektion">¶</a></h3>
 <p>We will use the MODIS time series of Xining, we prepared during the first practical session of the time-series chapter of the course. In case you do not have the dataset available anymore, you can download the files here:</p>
 <p><a href="https://drive.google.com/drive/folders/1eGbvYMEQXicggUmC9I7vMiPbI6DE9HdP?usp=sharing">https://drive.google.com/drive/folders/1eGbvYMEQXicggUmC9I7vMiPbI6DE9HdP?usp=sharing</a></p>
-<h3 id="step-1-preparing-remote-sensing-time-series-for-analysis-with-bfast">Step 1: Preparing remote sensing time series for analysis with BFAST<a class="headerlink" href="#step-1-preparing-remote-sensing-time-series-for-analysis-with-bfast" title="Permanent link">¶</a></h3>
+<h3 id="step-1-preparing-remote-sensing-time-series-for-analysis-with-bfast">Step 1: Preparing remote sensing time series for analysis with BFAST<a class="headerlink" href="#step-1-preparing-remote-sensing-time-series-for-analysis-with-bfast" title="Link zu dieser Sektion">¶</a></h3>
 <p>One of the most challenging steps for analysing data with the BFAST algorithm is that the time series have to be pre-processed into regular time series. In the case of remote sensing data, most of the time, the observations are not regular. Even though the satellite typically passes over a certain area at a fixed time interval, cloud cover prevents that the satellite collects a valid observation during every overflight. Hence, remote sensing time series often have data gaps and hence an irregular structure. In the case of Landsat data, we furthermore have data from several sensors, so that the time structure is at least for some periods even less regular.</p>
 <p>In this first step of the tutorial, we will learn how to transform an irregular time series to a regular time series. We will first load the irregular time series from our MODIS dataset, then we will transform this time series to a daily time-series and finally aggregate it again to a weekly time series. To do this, we require several packages and an additional function which was suggested by my colleague Philipp GÃ¤rtner. You can find some related information here:</p>
 <p><a href="https://philippgaertner.github.io/2018/04/bfast-preparation/#">https://philippgaertner.github.io/2018/04/bfast-preparation/#</a></p>
@@ -489,7 +489,7 @@ plot(mod_ts_ip)
 <div class="highlight"><pre><span></span><code>mod_ts_ip2 &lt;- aggregate.daily.to.weekly(mod_ts_ip)
 </code></pre></div>
 <p>If you are interested, you can also plot this new time series, but you will not see any real differences to the daily time series.</p>
-<h3 id="step-2-running-bfast-for-an-individual-pixel">Step 2: Running BFAST for an individual pixel<a class="headerlink" href="#step-2-running-bfast-for-an-individual-pixel" title="Permanent link">¶</a></h3>
+<h3 id="step-2-running-bfast-for-an-individual-pixel">Step 2: Running BFAST for an individual pixel<a class="headerlink" href="#step-2-running-bfast-for-an-individual-pixel" title="Link zu dieser Sektion">¶</a></h3>
 <p>We are now ready, to run BFAST. In the BFAST algorithm several parameters have to be defined. We can have a look at the help of the bfast function to find a bit more about the settings:</p>
 <div class="highlight"><pre><span></span><code>?bfast
 </code></pre></div>
@@ -518,7 +518,7 @@ bfm2$Time
 </code></pre></div>
 <p>Which will result in:</p>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/bfast_06.png"><img alt="" src="../assets/bfast_06.png"/></a></p>
-<h3 id="step-3-running-bfast-over-a-complete-raster">Step 3: Running BFAST over a complete raster<a class="headerlink" href="#step-3-running-bfast-over-a-complete-raster" title="Permanent link">¶</a></h3>
+<h3 id="step-3-running-bfast-over-a-complete-raster">Step 3: Running BFAST over a complete raster<a class="headerlink" href="#step-3-running-bfast-over-a-complete-raster" title="Link zu dieser Sektion">¶</a></h3>
 <p>So far, we applied BFAST to a single pixel of a raster-time-series. In this step, we will use the "calc()" function to apply it to a smaller raster dataset. As we have seen before, BFAST is quite time-intensive, so we will apply it to a really small raster which we first have to create by spatially aggregating our already comparably small MODIS dataset by the factor of 10:</p>
 <div class="highlight"><pre><span></span><code># plot the 5th time point of the MODIS time series (earlier time points were mostly data gaps)
 plot(mod_ndvi[[5]])
@@ -575,7 +575,7 @@ plot(bfras)
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/bfast_09.png"><img alt="" src="../assets/bfast_09.png"/></a></p>
 <p>In these graphs, we can see that only for a few pixels (all pixels with Magnitudes &gt; 0), breakpoints were detected and we can also see whether they were more towards the beginning or the end of the time series. In theory, it is of course possible to also extract more detailed information from the bfast-object but in this tutorial, we will not further explore these options. I am again also referring to the two publications of Verbesselt et al (2010+2010a) in which BFAST is explained with more details and which are provided on ILIAS.</p>
 <p>If you are interested, you can also try to apply BFAST to another study area and with higher resolution data, you just have to consider the notably increased processing time. Even though, the bfast()-function also supports multi-core processing (check the help-function ?bfast) which may be beneficial for such use-cases if a computer with more the than one cores is available.</p>
-<h3 id="step-4-exploring-the-npphen-algorithm">Step 4: Exploring the NPPHEN algorithm<a class="headerlink" href="#step-4-exploring-the-npphen-algorithm" title="Permanent link">¶</a></h3>
+<h3 id="step-4-exploring-the-npphen-algorithm">Step 4: Exploring the NPPHEN algorithm<a class="headerlink" href="#step-4-exploring-the-npphen-algorithm" title="Link zu dieser Sektion">¶</a></h3>
 <p>After BFAST we will now explore one more algorithm that accounts for the seasonal signal but in a slightly different approach. Instead of fitting a seasonal signal to the full time series, NPPHEN takes observations of the whole or a part of the time series (that is, from several years) and summarizes them into one general annual phenological cycle. This summary is accomplished by calculating a kernel-density-map in which for each date within a year, the probability of a given time-series value is defined.</p>
 <p>This sounds quite abstract, but if you go back to the theoretical lectures and check the corresponding graphs, the idea becomes quite clear. You can also find more information about NPPHEN in the manuscript of Estay &amp; Chavez provided on ILIAS and here:</p>
 <p><a href="http://www.pucv.cl/uuaa/site/edic/base/port/uuaa/labgrs/proyectos/introduction-to-npphen-in-r/2018-06-27/114109.html">http://www.pucv.cl/uuaa/site/edic/base/port/uuaa/labgrs/proyectos/introduction-to-npphen-in-r/2018-06-27/114109.html</a></p>
@@ -698,7 +698,7 @@ plot(ano_GS16_1pix)
 <p>This will result in:</p>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/bfast_15.png"><img alt="" src="../assets/bfast_15.png"/></a></p>
 <p>In this plot, the anomalies for the examined time-periods can be checked - however, the fact that there is a rather regular up- and down pattern makes me worry, that these results might not be fully correct. </p>
-<h3 id="additional-time-series-functionalities">Additional time series functionalities<a class="headerlink" href="#additional-time-series-functionalities" title="Permanent link">¶</a></h3>
+<h3 id="additional-time-series-functionalities">Additional time series functionalities<a class="headerlink" href="#additional-time-series-functionalities" title="Link zu dieser Sektion">¶</a></h3>
 <p>While putting together the material for this Tutorial, I came across another r-package named "greenbrown" that could be interesting for those who became more interested in time-series analysis during the last weeks. It offers several functions that are similar to the ones, we got to know over the last weeks but may be even more suitable for some remote sensing applications. One option for the final assignment could be to provide a Tutorial (similar as the ones you have been working now throughout the course) about the functionalities offered in this packages and using an own illustrative dataset.</p>
 <p><a href="http://greenbrown.r-forge.r-project.org/trends.php">http://greenbrown.r-forge.r-project.org/trends.php</a></p>
 </article>

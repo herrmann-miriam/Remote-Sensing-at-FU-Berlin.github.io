@@ -374,10 +374,10 @@
 <a class="md-content__button md-icon" href="https://github.com/Remote-Sensing-at-FU-Berlin/Remote-Sensing-at-FU-Berlin.github.io/tree/main/docs/qgis/08-map-making.md" title="Seite editieren">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
-<h1 id="making-a-map-in-qgis">Making a map in QGIS<a class="headerlink" href="#making-a-map-in-qgis" title="Permanent link">¶</a></h1>
+<h1 id="making-a-map-in-qgis">Making a map in QGIS<a class="headerlink" href="#making-a-map-in-qgis" title="Link zu dieser Sektion">¶</a></h1>
 <p><strong>Abstract</strong></p>
 <p>After completing this tutorial you will know how to create basic maps in QGIS with an appropriate legend, a north arrow, a coordinate grid and a scale. Developed with QGIS version - Bialowieza 3.22.5</p>
-<h2 id="preparing-the-data-for-the-map-reprojecting-and-cutting-a-shapefile-to-a-desired-extent">Preparing the data for the map: Reprojecting and cutting a Shapefile to a desired extent<a class="headerlink" href="#preparing-the-data-for-the-map-reprojecting-and-cutting-a-shapefile-to-a-desired-extent" title="Permanent link">¶</a></h2>
+<h2 id="preparing-the-data-for-the-map-reprojecting-and-cutting-a-shapefile-to-a-desired-extent">Preparing the data for the map: Reprojecting and cutting a Shapefile to a desired extent<a class="headerlink" href="#preparing-the-data-for-the-map-reprojecting-and-cutting-a-shapefile-to-a-desired-extent" title="Link zu dieser Sektion">¶</a></h2>
 <p>In this tutorial we will learn how to create basic maps in QGIS. As a first step</p>
 <p><strong>we again first load the raster dataset “S2_Neapel_sm2.tif” and adapt the visualization settings to have a balanced view of all classes by using the channels R=3, G=2, B=1 and loading new max / min values using the “Symbology”- tab in the properties window. Then we additionally load the “gis.osm_landuse_a_free_1” layer provided in one of the earlier tutorials.</strong></p>
 <p>This will lead to the situation shown in Figure 1.</p>
@@ -405,7 +405,7 @@
 <figcaption>Figure 4: The clipped Shapefile on top of the satellite image.</figcaption>
 </figure>
 <p>Be aware that the land-cover layer at the moment is still in the geographic coordinate system (EPSG code: 4326). While this is not absolutely problematic in this tutorial since QGIS is able to reproject the file "on-the-fly" you can still reproject the vector layer to UTM if you prefer to have all data in the same coordinate reference system. You should already be familiar with this process from the last tutorial.</p>
-<h2 id="preparing-the-data-for-the-map-adapting-the-visualization-settings-of-the-shapefile">Preparing the data for the map: Adapting the visualization settings of the Shapefile<a class="headerlink" href="#preparing-the-data-for-the-map-adapting-the-visualization-settings-of-the-shapefile" title="Permanent link">¶</a></h2>
+<h2 id="preparing-the-data-for-the-map-adapting-the-visualization-settings-of-the-shapefile">Preparing the data for the map: Adapting the visualization settings of the Shapefile<a class="headerlink" href="#preparing-the-data-for-the-map-adapting-the-visualization-settings-of-the-shapefile" title="Link zu dieser Sektion">¶</a></h2>
 <p>As a next step, we have to prepare all the contents and visualization settings that we would like to integrate into our final map. In our case, we will display only the clipped and re–projected Shapefile as main information source to create a land–cover map and use the satellite image in the background. As next steps, we will therefore adapt the visualization settings of the Shapefile by selecting a categorized visualization setting in the “Symbology” tab of the “Properties dialogue”. We then manually adapt the colour of all land–use classes so that they reasonably well match their meaning. For example, it might be a good idea to assign a green colour to vegetation classes. The basic process to accomplish this should already be known from Tutorial 2.</p>
 <p>So, as a next step, try to adapt the visualization settings of the Shapefile in a way that the main visualization window of QGIS looks similar as seen in Figure 5.</p>
 <figure>
@@ -413,7 +413,7 @@
 </p>
 <figcaption>Figure 5: Situation after adaping the visualization options of the Shapefile containing the land–use–classes.</figcaption>
 </figure>
-<h2 id="starting-the-print-composer-dialogue">Starting the print composer dialogue<a class="headerlink" href="#starting-the-print-composer-dialogue" title="Permanent link">¶</a></h2>
+<h2 id="starting-the-print-composer-dialogue">Starting the print composer dialogue<a class="headerlink" href="#starting-the-print-composer-dialogue" title="Link zu dieser Sektion">¶</a></h2>
 <figure>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/08-map-making-9.png"><img alt="Figure 6: Opening the print composer dialogue." src="../assets/08-map-making-9.png"/></a>
 </p>
@@ -437,7 +437,7 @@
 <p>The tools marked with <strong>“3”</strong> allow to navigate and adapt the extent of the displayed map contents.</p>
 <p>The tools marked with <strong>“4”</strong> allow to add items to the map including for example a North arrow, the current geodata displayed in the main visualization window of QGIS, a legend, etc.</p>
 <p>The section marked with <strong>“5”</strong> provides additional information for all items that are currently included in the map composer project. To access the options of a item, the item has to selected in the main visualization area of the print composer tool (white area marked with <strong>“6”</strong>).</p>
-<h2 id="adding-items-to-the-map">Adding items to the map<a class="headerlink" href="#adding-items-to-the-map" title="Permanent link">¶</a></h2>
+<h2 id="adding-items-to-the-map">Adding items to the map<a class="headerlink" href="#adding-items-to-the-map" title="Link zu dieser Sektion">¶</a></h2>
 <p>We will now start composing our map by first of all adding the current visualization of the QGIS project to the map. We will do this by</p>
 <p><strong>selecting the “add map” button marked with “1” in Figure 9 and then drawing a rectangle in the main visualization area of the map composer tool as shown in Figure 12.</strong></p>
 <figure>
@@ -485,7 +485,7 @@
 <figcaption>Figure 15: Adding a North arrow and a scale bar.</figcaption>
 </figure>
 <p>Please be aware, that the North arrow in QGIS is not connected to the geoinformation contained in the data. It basically is just a grapical arrow that you draw in any direction. So please make sure that you use it appropriately.</p>
-<h2 id="adding-a-legend-to-the-map">Adding a Legend to the map<a class="headerlink" href="#adding-a-legend-to-the-map" title="Permanent link">¶</a></h2>
+<h2 id="adding-a-legend-to-the-map">Adding a Legend to the map<a class="headerlink" href="#adding-a-legend-to-the-map" title="Link zu dieser Sektion">¶</a></h2>
 <p>We will now have a closer look on how to add and adapt a legend to our map. For adding the legend</p>
 <p><strong>we select the “add legend” button marked with “1” in Figure 16 and then draw a rectangle at the position where we want to locate the Legend as shown in Figure 16.</strong></p>
 <figure>
@@ -514,7 +514,7 @@
 </p>
 <figcaption>Figure 19: Dropping and adding items from the Legend.</figcaption>
 </figure>
-<h2 id="finalizing-the-map">Finalizing the map<a class="headerlink" href="#finalizing-the-map" title="Permanent link">¶</a></h2>
+<h2 id="finalizing-the-map">Finalizing the map<a class="headerlink" href="#finalizing-the-map" title="Link zu dieser Sektion">¶</a></h2>
 <p>We now have a map with the most important properties present. We will now finalize the map by adding some information on the data source, a title, and the applied coordinate reference system. To add a title we will</p>
 <p><strong>use the “Add new label” button marked with “3” in Figure 20. Then we can change the displayed text in the field marked with “1” and increase the font size by clicking the button marked with “2”. After re–arranging the text a bit in the main visualization window, we can reach a situation similar as shown in Figure 20.</strong></p>
 <figure>
@@ -528,11 +528,11 @@
 </p>
 <figcaption>Figure 21: The final map.</figcaption>
 </figure>
-<h2 id="exporting-the-map">Exporting the map<a class="headerlink" href="#exporting-the-map" title="Permanent link">¶</a></h2>
+<h2 id="exporting-the-map">Exporting the map<a class="headerlink" href="#exporting-the-map" title="Link zu dieser Sektion">¶</a></h2>
 <p>If we are happy with the layout of our map we can now export the map by</p>
 <p><strong>either selecting “Layout” -&gt; “Export as Image” / “Export as PDF” / “Export as SVG” or by clicking the three buttons on the far right of the section marked with “1” in Figure 11.</strong></p>
 <p>Exporting as image allows you to easily embed the map into a text-document (e.g., Word) while PDF is a good solution if you want to send the map without any further information to somebody. The “SVG” format is a pure vector format which has big advantages if your map only consists of vector files as you can then zoom in the exported map without any quality loss.</p>
-<h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">¶</a></h2>
+<h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Link zu dieser Sektion">¶</a></h2>
 <p>This Tutorial only covers the most basic functionalities for creating a map in QGIS. As you have already seen from the many options available in the “Item properties” sections of each item that can be added in the print–composer, there are many more ways to adapt your data to create an informative and eye–pleasing map. It is highly encouraged to try out some of the options on your own to get acquainted with all the possibilities the map composer has to offer.</p>
 <p>Please play around a bit more with the different map options and try to design a map which you find visually pleasing and then export the map as pdf and upload the map to Blackboard to proof that you have finished the Tutorial.</p>
 </article>

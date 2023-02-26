@@ -358,11 +358,11 @@
 <a class="md-content__button md-icon" href="https://github.com/Remote-Sensing-at-FU-Berlin/Remote-Sensing-at-FU-Berlin.github.io/tree/main/docs/planetary-sciences/01-download-ls-and-s2.md" title="Seite editieren">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
-<h1 id="download-of-landsat-and-sentinel-satellite-images">Download of Landsat and Sentinel satellite images<a class="headerlink" href="#download-of-landsat-and-sentinel-satellite-images" title="Permanent link">¶</a></h1>
+<h1 id="download-of-landsat-and-sentinel-satellite-images">Download of Landsat and Sentinel satellite images<a class="headerlink" href="#download-of-landsat-and-sentinel-satellite-images" title="Link zu dieser Sektion">¶</a></h1>
 <p><strong>Abstract</strong> 
 In this Tutorial we will learn how to download multispectral satellite images of Landsat and Sentinel-2 sensors. We will also learn how to pre-process the satellite images in order to load them in QGIS or Python. For pre-processing Sentinel-2 images we will use the European Space Agency's BEAM software which you can download here:</p>
 <p><a href="https://step.esa.int/main/download/snap-download/">Download SNAP software</a></p>
-<h2 id="download-landsat-data-from-the-earthexplorer-portal-of-the-usgs">Download Landsat data from the EarthExplorer portal of the USGS<a class="headerlink" href="#download-landsat-data-from-the-earthexplorer-portal-of-the-usgs" title="Permanent link">¶</a></h2>
+<h2 id="download-landsat-data-from-the-earthexplorer-portal-of-the-usgs">Download Landsat data from the EarthExplorer portal of the USGS<a class="headerlink" href="#download-landsat-data-from-the-earthexplorer-portal-of-the-usgs" title="Link zu dieser Sektion">¶</a></h2>
 <p>For downloading Landsat images, several web-portals exist. However, from my experience, the by far most comfortable option is the earthexplorer webpage of <a href="https://earthexplorer.usgs.gov/">USGS</a>. A very good video-tutorial on how to download Landsat satellite imagery is provided here:</p>
 <p><a href="https://www.youtube.com/watch?v=Wn_G4fvitV8">Download Landsat images from the USGS earth explorer website</a></p>
 <p>Please have a look at the video and download a Landsat 8 or Landsat 9 image from the year 2022 from any location of the world, that you are interested in. Make sure that you download an image of <strong>Collection 2 Level 2</strong>.  One small tip: It will be easier to find a suitable (cloud-free) image if you focus on a region of the Earth that is not permanently clouded (tropical areas are often tricky).</p>
@@ -421,14 +421,14 @@ In this Tutorial we will learn how to download multispectral satellite images of
 </tr>
 </tbody>
 </table>
-<h2 id="download-sentinel-2-data-from-esas-open-science-hub">Download Sentinel-2 data from ESA's open science hub<a class="headerlink" href="#download-sentinel-2-data-from-esas-open-science-hub" title="Permanent link">¶</a></h2>
+<h2 id="download-sentinel-2-data-from-esas-open-science-hub">Download Sentinel-2 data from ESA's open science hub<a class="headerlink" href="#download-sentinel-2-data-from-esas-open-science-hub" title="Link zu dieser Sektion">¶</a></h2>
 <p>Similarly as in the case of Landsat, there is also a comparably comfortable (even though slightly less comfortable than the earthexplorer page - at least in my opinion) webpage to download Sentinel-2, as well as Sentinel-1 and 3 images. You can find the webpage <a href="https://scihub.copernicus.eu/">here</a>.</p>
 <p>Once again, there is a very good video available with instructions on how to download Sentinel-2 images from the webpage:
 <a href="https://www.youtube.com/watch?v=AkA0ya3A9lU">Download Sentinel-2 images from the ESA science hub website</a> </p>
 <p>Please have a look at the video and download a Sentinel-2 image from the approximately same time period and location as you chose for the Landsat image. Be aware that Sentinel-2 images are only available starting from mid-2015. </p>
 <p>Make sure that you save the Landsat and Sentinel-2 files at a location on your computer that you are able to find again afterwards.</p>
 <p>Once we have downloaded the images, we will continue with some simple pre-processing steps to save both images as multi-layer geotiff-files which we can then use in Python or QGIS (as already learned in the GIS-practicals of the course). We will apply different pre-processing work-flows for Landsat and Sentinel-2 and while there are also options available to perform the pre-processing steps directly in Python, we will here first learn the basic option using SNAP for the Sentinel-2 image and QGIS for the Landsat image.</p>
-<h2 id="pre-process-the-landsat-image-into-a-multi-layer-geotiff-file-using-qgis">Pre-process the Landsat image into a multi-layer geotiff file using QGIS<a class="headerlink" href="#pre-process-the-landsat-image-into-a-multi-layer-geotiff-file-using-qgis" title="Permanent link">¶</a></h2>
+<h2 id="pre-process-the-landsat-image-into-a-multi-layer-geotiff-file-using-qgis">Pre-process the Landsat image into a multi-layer geotiff file using QGIS<a class="headerlink" href="#pre-process-the-landsat-image-into-a-multi-layer-geotiff-file-using-qgis" title="Link zu dieser Sektion">¶</a></h2>
 <p>After downloading the Landsat 8 or 9 image from the earthexplorer webpage and extracting the archive file on your hard-disc you should have a file folder similar to the one shown in Figure 1. Extracting an archive file typically works by performing a right-click on the downloaded file and then select some option related to "extract files" - in case you cannot open the downloaded files, you might have to install a (de-)compression software tool first - you can for example use "7zip" (=&gt; simply google, download and install it). </p>
 <figure>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/01-download-ls-and-s2-01.png"><img alt="Figure 1: Files of a Landsat-image after extraction" src="../assets/01-download-ls-and-s2-01.png"/></a>
@@ -483,7 +483,7 @@ In this Tutorial we will learn how to download multispectral satellite images of
 <figcaption>Figure 7: The resulting merged multi-band image in RGB view</figcaption>
 </figure>
 <p>You should now be able to pre-process and visualize Landsat images in QGIS. This is a really interesting skill, considering that Landsat images are available since 1972 and for the complete globe. The number of bands to merge and the visualization settings will differ depending on the Landsat sensor with which the data was collected, but you will always be able to understand which bands you have to add to your image stack if you refer to the Landsat product guides which you can find under the links above.</p>
-<h2 id="pre-process-the-sentinel-2-image-into-a-multi-layer-geotiff-file-using-snap">Pre-process the Sentinel-2 image into a multi-layer geotiff file using SNAP<a class="headerlink" href="#pre-process-the-sentinel-2-image-into-a-multi-layer-geotiff-file-using-snap" title="Permanent link">¶</a></h2>
+<h2 id="pre-process-the-sentinel-2-image-into-a-multi-layer-geotiff-file-using-snap">Pre-process the Sentinel-2 image into a multi-layer geotiff file using SNAP<a class="headerlink" href="#pre-process-the-sentinel-2-image-into-a-multi-layer-geotiff-file-using-snap" title="Link zu dieser Sektion">¶</a></h2>
 <p>After downloading the Sentinel-2 image and extracting the archive file on your hard-disc you should have a file folder similar to the one shown in Figure 8. </p>
 <figure>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/01-download-ls-and-s2-08.png"><img alt="Figure 8: Files of a Sentinel-2 image after extraction" src="../assets/01-download-ls-and-s2-08.png"/></a>
@@ -593,7 +593,7 @@ In this Tutorial we will learn how to download multispectral satellite images of
 <figcaption>Figure 21: Export the Sentinel-2 image to a geotif file</figcaption>
 </figure>
 <p>If you want to make sure that everything has worked fine, you can load the exported Geotif-file in QGIS and visualize it as a RGB image as you have learned in during earlier lectures of the course. </p>
-<h2 id="exercises">Exercises<a class="headerlink" href="#exercises" title="Permanent link">¶</a></h2>
+<h2 id="exercises">Exercises<a class="headerlink" href="#exercises" title="Link zu dieser Sektion">¶</a></h2>
 <ol>
 <li>
 <p>Identify the physical unit and scaling of the Landsat and Sentinel-2 image you have downloaded.  That is, you have to report </p>

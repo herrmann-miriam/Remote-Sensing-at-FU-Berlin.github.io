@@ -359,10 +359,10 @@
 <a class="md-content__button md-icon" href="https://github.com/Remote-Sensing-at-FU-Berlin/Remote-Sensing-at-FU-Berlin.github.io/tree/main/docs/qgis/05-digitizing.md" title="Seite editieren">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
-<h1 id="basic-vector-processing-in-qgis">Basic vector processing in QGIS<a class="headerlink" href="#basic-vector-processing-in-qgis" title="Permanent link">¶</a></h1>
+<h1 id="basic-vector-processing-in-qgis">Basic vector processing in QGIS<a class="headerlink" href="#basic-vector-processing-in-qgis" title="Link zu dieser Sektion">¶</a></h1>
 <p><strong>Abstract</strong></p>
 <p>After completing this tutorial you will know how to create a new shapefile and digitize new spatial objects into the shapefile. Furthermore, you will be able to conduct a buffer analysis, and add geometric information to the newly created spatial objects. Developed with QGIS version - Bialowieza 3.22.5</p>
-<h2 id="creating-a-new-shapefile-vector-file">Creating a new Shapefile vector file<a class="headerlink" href="#creating-a-new-shapefile-vector-file" title="Permanent link">¶</a></h2>
+<h2 id="creating-a-new-shapefile-vector-file">Creating a new Shapefile vector file<a class="headerlink" href="#creating-a-new-shapefile-vector-file" title="Link zu dieser Sektion">¶</a></h2>
 <p>In this tutorial we will get to know the most important basics for creating and processing vector Shapefiles. We will first load the already familiar satellite image as base information from which we can digitize information into a Shapefile. After creating the shapefile, we will conduct some more analysis steps with it.</p>
 <p>To start,</p>
 <p><strong>we load the raster dataset “S2_Neapel_sm2.tif” as already learned in previous tutorials. Next, adapt the visualization settings to have a balanced view of all classes by using the channels R=3, G=2, B=1 and loading new max / min values using the “Symbology”-tab in the properties window.</strong></p>
@@ -405,7 +405,7 @@ In our case, we can find out the coordinate reference system of the satellite im
 </p>
 <figcaption>Figure 6: Situation after creating a shapefile.</figcaption>
 </figure>
-<h2 id="digitalization-of-new-spatial-objects-into-a-shapefile-layer">Digitalization of new spatial objects into a Shapefile layer<a class="headerlink" href="#digitalization-of-new-spatial-objects-into-a-shapefile-layer" title="Permanent link">¶</a></h2>
+<h2 id="digitalization-of-new-spatial-objects-into-a-shapefile-layer">Digitalization of new spatial objects into a Shapefile layer<a class="headerlink" href="#digitalization-of-new-spatial-objects-into-a-shapefile-layer" title="Link zu dieser Sektion">¶</a></h2>
 <p>In this section we will mostly work with the “Digitizing toolbar” which can be seen in Figure 7. In your case the buttons of the editing toolbar will most likely be still greyed out and only the button marked with “2” might be a active depending on which layer is currently selected in the layer window section of QGIS. So to activate the other buttons, we have to initialize the digitalization process. To do this, we</p>
 <p><strong>we first select the newly created “Polygon_tut5” layer in the layer window. Then we initialize the digitalization process of this Shapefile by clicking the button marked with “2” in Figure 7. The Shapefile is now in the “Editing mode” and new spatial features can be added and old spatial features can be changed or deleted.</strong></p>
 <figure>
@@ -454,7 +454,7 @@ In our case, we can find out the coordinate reference system of the satellite im
 </p>
 <figcaption>Figure 13: Situation after copy and pasting the original polygon two times and shifting the pasted Polygons to new locations.</figcaption>
 </figure>
-<h2 id="buffer-analysis">Buffer analysis<a class="headerlink" href="#buffer-analysis" title="Permanent link">¶</a></h2>
+<h2 id="buffer-analysis">Buffer analysis<a class="headerlink" href="#buffer-analysis" title="Link zu dieser Sektion">¶</a></h2>
 <p>In this section, we will for the first time use a tool of QGIS that is not included in the standard processing tools and can only be found using the processing toolbox. Normally, the processing toolbox is already opened when opening QGIS (see box marked on the right part of Figure 14). In case it is not visible, it can be opened by selecting “Processing” and then “Toolbox” from the main menu of QGIS as also shown in Figure 14.</p>
 <figure>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/05-digitizing-14.png"><img alt="Figure 14: The processing toolbox." src="../assets/05-digitizing-14.png"/></a>
@@ -482,7 +482,7 @@ In our case, we can find out the coordinate reference system of the satellite im
 </p>
 <figcaption>Figure 17: The processing toolbox.</figcaption>
 </figure>
-<h2 id="calculating-the-area-of-polygons-using-the-field-calculator-tool">Calculating the area of Polygons using the Field Calculator tool<a class="headerlink" href="#calculating-the-area-of-polygons-using-the-field-calculator-tool" title="Permanent link">¶</a></h2>
+<h2 id="calculating-the-area-of-polygons-using-the-field-calculator-tool">Calculating the area of Polygons using the Field Calculator tool<a class="headerlink" href="#calculating-the-area-of-polygons-using-the-field-calculator-tool" title="Link zu dieser Sektion">¶</a></h2>
 <p>In this section, we will learn how to calculate the area of spatial polygon objects stored in a Shapefile. The same procedure can also be used to calculate lengths of Polylines and the x,y-coordinates of Points stored in Shapefiles. In our case we will calculate the area of the crater Polygon we have created earlier. To do this,
 <strong>we perform a right–click on the “Polygon_tut5” layer in the layer window of QGIS and select the “Open Attribute Table” option (see Figure 18).</strong></p>
 <figure>
@@ -546,7 +546,7 @@ In our case, we can find out the coordinate reference system of the satellite im
 </p>
 <figcaption>Figure 24: Another column has been added to the attribute table.</figcaption>
 </figure>
-<h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">¶</a></h2>
+<h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Link zu dieser Sektion">¶</a></h2>
 <p>In Figure 23 you can see two red circles. The first circle in the West marks the area where a river connects with the sea. The second circle in the East marks the area where the river start to become hard to identify in the satellite image.</p>
 <figure>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/05-digitizing-25.png"><img alt="Figure 25: Start and end point for the Polyline to be created in the exercise." src="../assets/05-digitizing-25.png"/></a>

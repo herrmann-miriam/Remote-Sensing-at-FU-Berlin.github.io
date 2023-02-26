@@ -354,10 +354,10 @@
 <a class="md-content__button md-icon" href="https://github.com/Remote-Sensing-at-FU-Berlin/Remote-Sensing-at-FU-Berlin.github.io/tree/main/docs/qgis/09-spatial-interpolation.md" title="Seite editieren">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
-<h1 id="spatial-interpolation-in-qgis">Spatial interpolation in QGIS<a class="headerlink" href="#spatial-interpolation-in-qgis" title="Permanent link">¶</a></h1>
+<h1 id="spatial-interpolation-in-qgis">Spatial interpolation in QGIS<a class="headerlink" href="#spatial-interpolation-in-qgis" title="Link zu dieser Sektion">¶</a></h1>
 <p><strong>Abstract</strong></p>
 <p>After completing this tutorial you will know how to to derive a continuous surface of estimates from discrete points with measured values. This process is called interpolation. </p>
-<h2 id="loading-datasets-and-reprojecting">Loading Datasets and Reprojecting<a class="headerlink" href="#loading-datasets-and-reprojecting" title="Permanent link">¶</a></h2>
+<h2 id="loading-datasets-and-reprojecting">Loading Datasets and Reprojecting<a class="headerlink" href="#loading-datasets-and-reprojecting" title="Link zu dieser Sektion">¶</a></h2>
 <p>In this tutorial we will learn how to interpolate punctual precipitation and elevation measurements. We will make use of a precipitation dataset provided by the "Centro Funzionale Multirischi della Protezione Civile Regione Campania§. This dataset contains measurements of annual precipitation from the year 2021 in mm/year. We will also use global elevation data provided by United States Geological Survey (USGS) and a dataset representing the NUTS (Nomenclature of territorial units for statistics) and Statistical regions provided by Eurostat.</p>
 <p>You can access the precipitation dataset and a shapefile of the outline of the land-masses of the study area here:</p>
 <p>https://drive.google.com/file/d/1xEZ7rflbptivMOpsOzOYHFQcQ4sePr_P/view?usp=share_link</p>
@@ -403,7 +403,7 @@
 </p>
 <figcaption>Figure 6: Reproject layer.</figcaption>
 </figure>
-<h2 id="idw-interpolation">IDW Interpolation<a class="headerlink" href="#idw-interpolation" title="Permanent link">¶</a></h2>
+<h2 id="idw-interpolation">IDW Interpolation<a class="headerlink" href="#idw-interpolation" title="Link zu dieser Sektion">¶</a></h2>
 <p>Wer are now ready to interpolate the precipitation values provided in the csv-file. We will use the extent of the satellite image as area for the interpolation. Interpolation results can vary significantly based on the method and parameters you choose. QGIS in its standard installation provides two interpolation methods: Triangulated Irregular Network (TIN) and Inverse Distance Weighting (IDW). For the first part of the tutorial we are using the IDW method.</p>
 <p>First from the Processing Toolbox search and locate the "Interpolation" -&gt; "IDW interpolation" tool as shown in Figure 7. (Remember in the main menu click "Processing" -&gt; "Toolbox" in case the toolbox is now shown). Double-click to launch it. </p>
 <figure>
@@ -467,7 +467,7 @@
 </p>
 <figcaption>Figure 15: Result of the IDW interpolation.</figcaption>
 </figure>
-<h2 id="tin-interpolation">TIN Interpolation<a class="headerlink" href="#tin-interpolation" title="Permanent link">¶</a></h2>
+<h2 id="tin-interpolation">TIN Interpolation<a class="headerlink" href="#tin-interpolation" title="Link zu dieser Sektion">¶</a></h2>
 <p>Next, we will also try the second interpolation method which is available in the base-installation of QGIS, that is the Triangulated Irregular Network (TIN) method. This time we will not interpolate the precipitation data but the elevation point data which is also stored in the csv-file.</p>
 <p>First from the Processing Toolbox search and locate the "Interpolation" -&gt; "TIN interpolation" tool as shown in Figure 16.</p>
 <figure>
@@ -500,7 +500,7 @@
 </p>
 <figcaption>Figure 20: Result of the TIN interpolation.</figcaption>
 </figure>
-<h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">¶</a></h2>
+<h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Link zu dieser Sektion">¶</a></h2>
 <p>Run each interpolation method for the input layers for which you did not yet run it and play around a bit more with the settings. Have a look at the outputs and discuss which method with which settings you believe provides "most realistic looking" results. Prepare a simple map (using the skills you acquired in the last tutorial) containing the view of what you would consider best interpolation result you obtained during your trial runs.</p>
 <p>If you want to compare your results to a more sophisticated climate interpolation dataset, you can search for the so called "WorldClim" dataset and download the corresponding file for "annual precipitation", load it to QGIS and compare it with your own result.</p>
 </article>

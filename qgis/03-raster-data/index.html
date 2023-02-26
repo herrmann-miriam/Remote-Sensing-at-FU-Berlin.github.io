@@ -359,14 +359,14 @@
 <a class="md-content__button md-icon" href="https://github.com/Remote-Sensing-at-FU-Berlin/Remote-Sensing-at-FU-Berlin.github.io/tree/main/docs/qgis/03-raster-data.md" title="Seite editieren">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
-<h1 id="loading-and-visualizing-raster-data">Loading and visualizing raster data<a class="headerlink" href="#loading-and-visualizing-raster-data" title="Permanent link">¶</a></h1>
+<h1 id="loading-and-visualizing-raster-data">Loading and visualizing raster data<a class="headerlink" href="#loading-and-visualizing-raster-data" title="Link zu dieser Sektion">¶</a></h1>
 <p><strong>Abstract</strong> 
 In this Tutorial we will learn how to load and visualize raster files in  QGIS. The concept of histograms and which role they play for adapting the visualization of raster datasets in QGIS will be explained. As example dataset we will make use of a satellite image of the satellite sensor Sentinel-2.</p>
 <p>Developed with QGIS version - Bialowieza 3.22.5</p>
-<h2 id="download-data-for-the-tutorial">Download data for the tutorial<a class="headerlink" href="#download-data-for-the-tutorial" title="Permanent link">¶</a></h2>
+<h2 id="download-data-for-the-tutorial">Download data for the tutorial<a class="headerlink" href="#download-data-for-the-tutorial" title="Link zu dieser Sektion">¶</a></h2>
 <p>For this and the subsequent tutorials you will need to work with a Sentinel-2 satellite image. Please download the data required for this tutorial here:</p>
 <p><a href="https://drive.google.com/file/d/1ElqgGZQDfB2M7rADM3_hMbPE-H6MYjP7/view?usp=sharing">Download</a></p>
-<h2 id="loading-a-raster-file-in-qgis">Loading a raster file in QGIS<a class="headerlink" href="#loading-a-raster-file-in-qgis" title="Permanent link">¶</a></h2>
+<h2 id="loading-a-raster-file-in-qgis">Loading a raster file in QGIS<a class="headerlink" href="#loading-a-raster-file-in-qgis" title="Link zu dieser Sektion">¶</a></h2>
 <p>Similarly as learned in the last tutorial, we can open a raster file by <strong>simply dragging and dropping the file from the browser-window to the layer window</strong> (see Figure 1). </p>
 <figure>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/03-raster-data-01.png"><img alt="Figure 1: Opening a raster file via drag and drop in QGIS" src="../assets/03-raster-data-01.png"/></a>
@@ -392,7 +392,7 @@ In this Tutorial we will learn how to load and visualize raster files in  QGIS. 
 <figcaption>Figure 4: View after loading the raster file</figcaption>
 </figure>
 <p>The opened raster dataset is a satellite scene from EU's Sentinel-2 satellite. QGIS will automatically select a visualization setting of the raster dataset based on the statistics of a few randomly selected pixels. However, in most cases these settings will not be optimal. So do not worry if the displayed raster seems to be very dark or with strange colors when using other datasets. In some cases it might even look completely black but still contain relevant data which will only show up after the visualization has been optimized. In our case the first impression should already be quite good, eventhough, it is not yet a realistic true-colour visualization (which describes a visual impression similar to what we see with our eyes). In the next section we will learn how the achieve this.</p>
-<h2 id="rgb-visualization-of-raster-files">RGB-Visualization of raster files<a class="headerlink" href="#rgb-visualization-of-raster-files" title="Permanent link">¶</a></h2>
+<h2 id="rgb-visualization-of-raster-files">RGB-Visualization of raster files<a class="headerlink" href="#rgb-visualization-of-raster-files" title="Link zu dieser Sektion">¶</a></h2>
 <p>To better understand how the optimization of the visualization of raster files works, it is important to have a good understanding how raster files are structured. Raster files can be pictured as a grid of pixels where each pixel contains a value. The range of these values depends on the data source for the raster data. They could for example originate from a model simulation that predicted air temperature. Then each pixel might have a value between approximately -30 and +50 showing the air temperature above the Earth surface in Degree Celsius. The values might also contain information about the altitude above (and below) sea level and might then range from -413 m (deepest point below sea level on a land surface, an area close to the Dead sea) to 8848 m (top of the Mount Everest). 
 In our case, the raster dataset stems from a satellite sensor which measures the amount of electromagnetic radiation reflected in certain wavelengths of the electromagnetic spectrum. In simpler words, one could say that the satellite sensor measures the amount of different colours (careful - this is a very simple way of putting it and physically not really correct) at certain locations (pixels) on the Earth surface and then stores this information into individual raster layers (see Figure 5). In our case, the satellite raster dataset consists of 10 raster layers that store information on how much blue, green and red light (and some additional colours that humans cannot see with their eyes) have been reflected in the different areas of the Earth surface that were observed by the satellite. Each raster layer contains information on one colour. Hence, our raster dataset can be pictured as a stack of individual raster layers or images which will be called <strong>bands</strong> or <strong>channels</strong> in the following (Figure 6 )<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>.</p>
 <figure>
@@ -472,7 +472,7 @@ that water has very low reflectance values across all wavelengths (<strong>colou
 </p>
 <figcaption>Figure 15: View of the full image after the adaptation of the visualization options to improve the level of details displayed in sea areas</figcaption>
 </figure>
-<h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">¶</a></h2>
+<h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Link zu dieser Sektion">¶</a></h2>
 <p>To practice a bit more raster visualization options, try do conduct the following exercises:</p>
 <ol>
 <li>
@@ -490,7 +490,7 @@ that water has very low reflectance values across all wavelengths (<strong>colou
 <ol>
 <li>Try to switch the render type from <strong>multi-band color</strong> to <strong>single-band gray</strong> and compare the gray values of band 3 and band 6 of the raster dataset. What do you see? Are there any differences in the patterns you observe? Give some short descriptions of you observe - you can export images with the same procedure as explained in step 2. This should with your explanations. This will be the second proof that you completed the Tutorial.</li>
 </ol>
-<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">¶</a></h2>
+<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Link zu dieser Sektion">¶</a></h2>
 <div class="footnote">
 <hr/>
 <ol>
