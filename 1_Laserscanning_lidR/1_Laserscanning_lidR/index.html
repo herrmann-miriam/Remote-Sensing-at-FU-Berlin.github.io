@@ -275,6 +275,46 @@
     Getting started
   </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ground-classification">
+    Ground classification
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#calculate-a-digital-terrain-model">
+    Calculate a digital terrain model
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#invert-distance-weighting">
+    Invert distance weighting
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#kriging">
+    Kriging
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#normalize-the-lidar-point-cloud">
+    Normalize the LiDAR point cloud
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#calculate-digital-surface-models-and-canopy-height-models">
+    Calculate digital surface models and canopy height models
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#individual-tree-detection">
+    Individual tree detection
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#calculate-point-cloud-metrics">
+    Calculate point cloud metrics
+  </a>
+</li>
 </ul>
 </nav>
 </li>
@@ -511,7 +551,7 @@ plot_crossection &lt;- function(las,
   return(p)
 }
 </code></pre></div>
-<h3 id="ground-classification">Ground classification<a class="headerlink" href="#ground-classification" title="Link zu dieser Sektion">¶</a></h3>
+<h2 id="ground-classification">Ground classification<a class="headerlink" href="#ground-classification" title="Link zu dieser Sektion">¶</a></h2>
 <p>Classification of ground points is an important step in processing point cloud data. Distinguishing between ground and non-ground points allows creation of a continuous model of terrain elevation often referred to as "digital terrain model" (DTM). DTMs are useful for many applications such as calculating the run-off in hydrological models, determining suitable positions for wind turbines or deriving aspect and slope information. Many algorithms to classify ground points have been reported in the literature and lidR currently provides two of them: Progressive Morphological Filter (PMF) and Cloth Simulation Function (CSF) usable with the function classify_ground(). The lidRplugins package provides an additional algorithm called Multiscale Curvature Classification (MCC).</p>
 <p>The implementation of PMF algorithm in lidR is based on the method described in Zhang et al. (2003) with some technical modifications. The original method is raster-based, while lidR performs point-based morphological operations because lidR is a point cloud oriented software. The main step of the methods are summarised in the  following figure (taken from the lidR book).</p>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/Fig06.png"><img alt="" src="../assets/Fig06.png"/></a></p>
@@ -546,11 +586,11 @@ plot(gnd, size = 3, bg = "white")
 <p>This will result in the following plot:</p>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/Fig09.png"><img alt="" src="../assets/Fig09.png"/></a></p>
 <p>In this tutorial we only get to know one of the methods that is available in lidR to classify ground control points. If you at some point work with an own dataset and face problems in obtaining a high-quality ground classification, it might be worthwhile to examine the alternative methods of the package which are described with more details in the lidR book (see link at the beginning of this tutorial). </p>
-<h3 id="calculate-a-digital-terrain-model">Calculate a digital terrain model<a class="headerlink" href="#calculate-a-digital-terrain-model" title="Link zu dieser Sektion">¶</a></h3>
+<h2 id="calculate-a-digital-terrain-model">Calculate a digital terrain model<a class="headerlink" href="#calculate-a-digital-terrain-model" title="Link zu dieser Sektion">¶</a></h2>
 <p>Generating a Digital Terrain Model (DTM) is usually the next step in processing that follows classification of ground points. Put simply, a DTM can be described as an “image” of the ground. Methods to generate DTMs have been intensively studied and several algorithms have been proposed for various terrain situations. DTMs are used for a variety of purposes in practice, such as determination of the catchment basins of water retention and stream flow, or the identification of drivable roads to access resources. It also enables users to normalize point clouds i.e. subtract the local terrain from the elevation of points to allow a manipulation of point clouds as if they were acquired on a flat surface.</p>
 <p>The construction of a DTM starts with known or sampled ground points and uses various spatial interpolation techniques to infer ground points at unsampled locations. The accuracy of the DTM is very important because errors will propagate to future processing stages like tree height estimation. A wide range of methods exist for spatial interpolation of points.</p>
 <p>Below you will find the codes to run three interpolation methods and some information about each of the method.</p>
-<h4 id="triangular-irregular-network">Triangular irregular network<a class="headerlink" href="#triangular-irregular-network" title="Link zu dieser Sektion">¶</a></h4>
+<h3 id="triangular-irregular-network">Triangular irregular network<a class="headerlink" href="#triangular-irregular-network" title="Link zu dieser Sektion">¶</a></h3>
 <p>This method is based on triangular irregular network (TIN) of ground point data to derive a bivariate function for each triangle, which is then used to estimate the values at unsampled locations (between known ground points).</p>
 <p>Planar facets of each generated triangle are used to interpolate. Used with a Delaunay triangulation, this is the most simple solution because it involves no parameters. The Delaunay triangulation is unique and the linear interpolation is parameter-free. The drawbacks of the method are that it creates a non-smooth DTM and that it cannot extrapolate the terrain outside the convex hull delimited by the ground points since there are no triangle facets outside the convex hull. Moreover, the interpolation is weak at the edges because large irrelevant triangles are often created. It’s therefore important to compute the triangulation with a buffer to be able to crop the DTM and clear the edge artifacts.</p>
 <p>To run the interpolation with TIN execute the following code:</p>
@@ -564,7 +604,7 @@ plot_dtm3d(dtm_tin, bg = "white")
 <p>This will result in the following plot:</p>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/Fig10.png"><img alt="" src="../assets/Fig10.png"/></a></p>
 <p>As you can see there are not many details visible. This is actually a good sign as we would normally assume that a digital terrain model in a forest is rather "smooth" surface since all LiDAR points related to object on the ground are "eliminated" during the ground-classification procedure. The only thing we can see in the figure is that a road is separating the study area into more or less two equally sized parts. The road becomes clearly visible since it is a flat area which interrupts the slightly inclined terrain. Let's have a look at the two other methods to interpolate the ground points.</p>
-<h4 id="invert-distance-weighting">Invert distance weighting<a class="headerlink" href="#invert-distance-weighting" title="Link zu dieser Sektion">¶</a></h4>
+<h2 id="invert-distance-weighting">Invert distance weighting<a class="headerlink" href="#invert-distance-weighting" title="Link zu dieser Sektion">¶</a></h2>
 <p>Invert distance weighting (IDW) is one of the simplest and most readily available methods that can be applied to create DTMs. It is based on an assumption that the value at an unsampled point can be approximated as a weighted average of values at points within a certain cut-off distance d, or from a given number k of closest neighbours. Weights are usually inversely proportional to a power p of the distance between the location and the neighbour, which leads to the computing of an estimator.</p>
 <p>Compared to tin() this method is more robust to edge artifacts because it uses a more relevant neighbourhood but generates terrains that are “bumpy” and probably not as realistic as those generated using TINs. There are always trade-offs to different methods!</p>
 <p>To create a digital terrain model using the invert distance weighting method run:</p>
@@ -574,7 +614,7 @@ plot_dtm3d(dtm_idw, bg = "white")
 </code></pre></div>
 <p>This will result in the following plot:</p>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/Fig11.png"><img alt="" src="../assets/Fig11.png"/></a></p>
-<h4 id="kriging">Kriging<a class="headerlink" href="#kriging" title="Link zu dieser Sektion">¶</a></h4>
+<h2 id="kriging">Kriging<a class="headerlink" href="#kriging" title="Link zu dieser Sektion">¶</a></h2>
 <p>Kriging is the most advanced approach and utilizes advanced geostatistical interpolation methods that take into account the relationships between the returns and their respective distances from each other. lidR uses the package gstat to perform the kriging. This method is very advanced, difficult to manipulate, and extremely slow to compute, but probably provides the best results with minimal edge artifacts.</p>
 <p>To create a digital terrain model using the kriging method run:</p>
 <div class="highlight"><pre><span></span><code># kriging
@@ -592,7 +632,7 @@ plot(dtm_hillshade, col =gray(0:30/30), legend = FALSE)
 <p>This will lead to the following plot:</p>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/Fig13.png"><img alt="" src="../assets/Fig13.png"/></a></p>
 <p>In our example dataset this is not very spectacular since we do not have a pronounced terrain situation and the area is comparably small. If data from a larger area for example covering a mountain chain is used, this option may become more interesting (at least for producing nice visualizations).</p>
-<h3 id="normalize-the-lidar-point-cloud">Normalize the LiDAR point cloud<a class="headerlink" href="#normalize-the-lidar-point-cloud" title="Link zu dieser Sektion">¶</a></h3>
+<h2 id="normalize-the-lidar-point-cloud">Normalize the LiDAR point cloud<a class="headerlink" href="#normalize-the-lidar-point-cloud" title="Link zu dieser Sektion">¶</a></h2>
 <p>In many application fields, we might be interested in extracting the height of objects from a LiDAR point cloud. And with height I am referring to the height of objects above the ground and not above sea level. For example, we might want to know how high certain buildings or trees are. With LiDAR data this information can be easily obtained for large areas and with a very good precision of a few centimeters. To convert a standard LiDAR point cloud to a normalized point cloud in which the Z value of each LiDAR point indicates the height of the point above ground, we can simply subtract the digital terrain model from the LiDAR point cloud.</p>
 <p>To accomplish this in lidR - there are two different approaches. One approach requires a DTM. For example we can use the DTM calculated with the kriging approach:</p>
 <div class="highlight"><pre><span></span><code># create a normalized height point cloud
@@ -637,7 +677,7 @@ hist(filter_ground(nlas)$Z, breaks = seq(-0.6, 0.6, 0.01), main = "", xlab = "El
 </code></pre></div>
 <p>And the corresponding plot confirms that now all ground plots have indeed a Z-value of 0.</p>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/Fig16.png"><img alt="" src="../assets/Fig16.png"/></a> </p>
-<h3 id="calculate-digital-surface-models-and-canopy-height-models">Calculate digital surface models and canopy height models<a class="headerlink" href="#calculate-digital-surface-models-and-canopy-height-models" title="Link zu dieser Sektion">¶</a></h3>
+<h2 id="calculate-digital-surface-models-and-canopy-height-models">Calculate digital surface models and canopy height models<a class="headerlink" href="#calculate-digital-surface-models-and-canopy-height-models" title="Link zu dieser Sektion">¶</a></h2>
 <p>Digital Surface Models (DSM) and Canopy Height Models (CHM) are raster layers that represent - more or less - the highest elevation of ALS returns. In the case of a normalized point cloud, the derived surface represents the canopy height (for vegetated areas) and is referred to as CHM. When the original (non-normalized) point cloud with absolute elevations is used, the derived layer represents the elevation of the top of the canopy above sea level, and is referred to as DSM. Both surface models are derived using the same algorithms, with the only difference being the elevation values of the point cloud.</p>
 <p>Different methods exist to create DSMs and CHMs. In the most simple case, a grid can be created with a user-defined pixel size and the elevations of the highest point can be assigned to each grid cell. This is called point-to-raster. </p>
 <p>Point-to-raster algorithms are conceptually simple, consisting of establishing a grid at a user defined resolution and attributing the elevation of the highest point to each pixel. Algorithmic implementations are computationally simple and extremely fast. In the first example we will set the pixel size to 1 and the corresponding algorithm = p2r():</p>
@@ -667,7 +707,7 @@ plot(chm, col = col)
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/Fig19.png"><img alt="" src="../assets/Fig19.png"/></a> </p>
 <p>In our dataset, the differences are quite little. </p>
 <p>We are now coming towards the end of this tutorial and so far you have learned the most important basic processing steps for LiDAR / laserscanning data. To finish the tutorial we will have a brief look at two additional steps that are the starting points of most LiDAR-analyses conducted in vegetation and forest analyses. </p>
-<h3 id="individual-tree-detection">Individual tree detection<a class="headerlink" href="#individual-tree-detection" title="Link zu dieser Sektion">¶</a></h3>
+<h2 id="individual-tree-detection">Individual tree detection<a class="headerlink" href="#individual-tree-detection" title="Link zu dieser Sektion">¶</a></h2>
 <p>Typically LiDAR analyses in forests either work on an individual tree level or in the so called area-based approach. In the latter, the basic unit of the analysis is a cell of a user-defined fixed size (e.g., 20 x 20 m). In the individual tree-based approach, the basic unit of the analysis is a single tree. Automatically delineating trees from a LiDAR point cloud is an own field of research and we will not go into details in this tutorial. However, the lidR package offers one standard algorithm to identify tree tops from a LiDAR point cloud which will be briefly explained below.</p>
 <p>Tree tops can be detected by applying a Local Maximum Filter (LMF) on the loaded data set. The LMF in lidR is point cloud-based, meaning that it finds the tree tops from the point cloud without using any raster. The processing, however is actually very similar. For a given point, the algorithm analyzes neighbourhood points, checking if the processed point is the highest. This algorithm can be applied with the 
 Local Maximum Filter - lmf() function.</p>
@@ -703,7 +743,7 @@ plot(sf::st_geometry(ttops), add = TRUE, pch = 3)
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/Fig22.png"><img alt="" src="../assets/Fig22.png"/></a> </p>
 <p>Identifying the optimal parameter is not an easy task and may require some sort of reference data which can for example be obtained by visually interpreting a CHM or by identifying tree stem positions in the field. Even though the latter is often also prone to errors since identifying the exact position of a tree in the field is not a trivial task and on top of this, the stem position on the ground may not directly related to the top of the crown since many trees do not grow exactly vertically.</p>
 <p>The detection of tree tops is normally only the first step for the individual tree delineation/segmentation since it does not yet allow us to identify the tree crown area. lidR provides function for this task as well, but we will not demonstrate this here with our example dataset. Amongst others because our dataset is missing a coordinate reference system (which first would have to be assigned) and the functions will not immediately work. However, feel free to also try out these functions by using the example datasets delivered with lidR. The corresponding data and instruction can be found in the lidR-book (see link at the beginning of the tutorial).</p>
-<h3 id="calculate-point-cloud-metrics">Calculate point cloud metrics<a class="headerlink" href="#calculate-point-cloud-metrics" title="Link zu dieser Sektion">¶</a></h3>
+<h2 id="calculate-point-cloud-metrics">Calculate point cloud metrics<a class="headerlink" href="#calculate-point-cloud-metrics" title="Link zu dieser Sektion">¶</a></h2>
 <p>As very last step, we will get to know two important functions of the lidR package to calculate point cloud metrics. Point cloud metrics are an essential element of the area-based approach briefly mentioned above. The idea is that a regular grid of quadratic or hexagon-shaped polygons is overlayed with the point cloud. Then, in each grid-cell/polygon some metrics are calculated for the points located within the grid-cell/polygon. </p>
 <p>The standard deviation of point heights within a single tree crown is an example of a metric calculated at the tree level. The average distance between a point and its k-nearest neighbours is a metrics calculated at the point level. More complex metrics can even be imagined like the average distance between first and last returns within a pixel or within a tree. In the end, regardless of the scale at which metrics are calculated, they serve as proxies of forest inventory attributes or can be used as independent variables in predictive models.</p>
 <p>The standard metrics of the lidR package already include quite a lot of common and often used variables and can be obtained using the following code for either quadratic grid-cells:</p>
