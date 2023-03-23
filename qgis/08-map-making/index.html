@@ -117,12 +117,17 @@
 </li>
 <li class="md-tabs__item">
 <a class="md-tabs__link md-tabs__link--active" href="../01-GUI/">
-        Fabian
+        Prof. Dr. Fassnacht
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../gis/introduction/">
+        GIS
       </a>
 </li>
 <li class="md-tabs__item">
 <a class="md-tabs__link" href="../../schuelerpraktikum/handout/">
-        Schülerpraktikum
+        Praktikum
       </a>
 </li>
 </ul>
@@ -159,13 +164,13 @@
 <li class="md-nav__item md-nav__item--active md-nav__item--nested">
 <input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
 <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
-          Fabian
+          Prof. Dr. Fassnacht
           <span class="md-nav__icon md-icon"></span>
 </label>
 <nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_2">
 <span class="md-nav__icon md-icon"></span>
-          Fabian
+          Prof. Dr. Fassnacht
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--active md-nav__item--nested">
@@ -372,13 +377,73 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
 <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
-          Schülerpraktikum
+          GIS
           <span class="md-nav__icon md-icon"></span>
 </label>
 <nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_3">
 <span class="md-nav__icon md-icon"></span>
-          Schülerpraktikum
+          GIS
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+          R
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_1_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_1">
+<span class="md-nav__icon md-icon"></span>
+          R
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../gis/introduction/">
+        Introduction
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../gis/visualization-and-map/">
+        Visualization and Map
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../gis/attributes-filters-and-metadata/">
+        Attributes, Filters and Metadata
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../gis/digitalization/">
+        Digitalization
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../gis/geoprocesing-and-reference-and-coordinate-systems/">
+        Geoprocesing and reference and coordinate systems
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../gis/interpolation-and-elevation-models/">
+        Interpolation and elevation models
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          Praktikum
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+          Praktikum
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
@@ -407,25 +472,25 @@
 <p><strong>we again first load the raster dataset “S2_Neapel_sm2.tif” and adapt the visualization settings to have a balanced view of all classes by using the channels R=3, G=2, B=1 and loading new max / min values using the “Symbology”- tab in the properties window. Then we additionally load the “gis.osm_landuse_a_free_1” layer provided in one of the earlier tutorials.</strong></p>
 <p>This will lead to the situation shown in Figure 1.</p>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/08-map-making-1.png"><img alt="Figure 1: The two loaded datasets." src="../assets/08-map-making-1.png"/></a>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/08-map-making-1.png"><img alt="Figure 1: The two loaded datasets." src="../assets/08-map-making-1.png"/></a>
 </p>
 <figcaption>Figure 1: The two loaded datasets.</figcaption>
 </figure>
 <p>For creating the map, we would like the applied datasets to cover the same extent. So as next step, we will clip the Shapefile so that its extent matches the extent of the satellite image. To accomplish this, we will </p>
 <p><strong>select “Processing” -&gt; “Toolbox” from the main menu in QGIS to open the Processing Toolbox window (in case it is not already open). Then we will type “clip vector” into the search field of the Processing Toolbox window (marked with “1” in Figure 2) and select the tool “clip vectors by extent” as marked with “2“ in Figure 2. In the new dialogue, we select “gis.osm_landuse_a_free_1” layer as input layer and then press the “...” button marked with “1” in Figure 3. This will open a another menu from which we select the first option “Calculate from Layer”. In the newly opened window, we then select the satellite image “S2_Neapel_sm2 [EPSG:32633]”. We define an output file and click "Run".</strong></p>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/08-map-making-2.png"><img alt="Figure 2: Loading the clip vector tool from the Processing toolbox." src="../assets/08-map-making-2.png"/></a>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/08-map-making-2.png"><img alt="Figure 2: Loading the clip vector tool from the Processing toolbox." src="../assets/08-map-making-2.png"/></a>
 </p>
 <figcaption>Figure 2: Loading the clip vector tool from the Processing toolbox.</figcaption>
 </figure>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/08-map-making-3.png"><img alt="Figure 3: Calculating the clip extent from a layer." src="../assets/08-map-making-3.png"/></a>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/08-map-making-3.png"><img alt="Figure 3: Calculating the clip extent from a layer." src="../assets/08-map-making-3.png"/></a>
 </p>
 <figcaption>Figure 3: Calculating the clip extent from a layer.</figcaption>
 </figure>
 <p>After re–arranging the layers to put the clipped Shapefile on top of the other layers, the main visualization window of QGIS should look as shown in Figure 4. The colours are of course likely to differ. In Figure 7 we can now see that the Shapefile was clipped to the extent of the satellite image.</p>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/08-map-making-7.png"><img alt="Figure 4: The clipped Shapefile on top of the satellite image." src="../assets/08-map-making-7.png"/></a>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/08-map-making-7.png"><img alt="Figure 4: The clipped Shapefile on top of the satellite image." src="../assets/08-map-making-7.png"/></a>
 </p>
 <figcaption>Figure 4: The clipped Shapefile on top of the satellite image.</figcaption>
 </figure>
@@ -434,25 +499,25 @@
 <p>As a next step, we have to prepare all the contents and visualization settings that we would like to integrate into our final map. In our case, we will display only the clipped and re–projected Shapefile as main information source to create a land–cover map and use the satellite image in the background. As next steps, we will therefore adapt the visualization settings of the Shapefile by selecting a categorized visualization setting in the “Symbology” tab of the “Properties dialogue”. We then manually adapt the colour of all land–use classes so that they reasonably well match their meaning. For example, it might be a good idea to assign a green colour to vegetation classes. The basic process to accomplish this should already be known from Tutorial 2.</p>
 <p>So, as a next step, try to adapt the visualization settings of the Shapefile in a way that the main visualization window of QGIS looks similar as seen in Figure 5.</p>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/08-map-making-8.png"><img alt="Figure 5: Situation after adaping the visualization options of the Shapefile containing the land–use–classes." src="../assets/08-map-making-8.png"/></a>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/08-map-making-8.png"><img alt="Figure 5: Situation after adaping the visualization options of the Shapefile containing the land–use–classes." src="../assets/08-map-making-8.png"/></a>
 </p>
 <figcaption>Figure 5: Situation after adaping the visualization options of the Shapefile containing the land–use–classes.</figcaption>
 </figure>
 <h2 id="starting-the-print-composer-dialogue">Starting the print composer dialogue<a class="headerlink" href="#starting-the-print-composer-dialogue" title="Link zu dieser Sektion">¶</a></h2>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/08-map-making-9.png"><img alt="Figure 6: Opening the print composer dialogue." src="../assets/08-map-making-9.png"/></a>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/08-map-making-9.png"><img alt="Figure 6: Opening the print composer dialogue." src="../assets/08-map-making-9.png"/></a>
 </p>
 <figcaption>Figure 6: Opening the print composer dialogue.</figcaption>
 </figure>
 <p>We are now ready to initiate the preparation of a map. In QGIS all functions to create a map are hidden in the “print Layout”-Tool which can be accessed from the main menu of QGIS. We will now try this by</p>
 <p><strong>selecting “Project” -&gt; “New Print Layout...” from the main menu of QGIS as illustrated in Figure 9. This will first open a pop–up window (Figure 7) which will ask you for the name of your new map. We will enter “map1” here and confirm by clicking “OK”. This will open a new window depicting a completely new graphical user interface as shown in Figure 8.</strong></p>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/08-map-making-10.png"><img alt="Figure 7: Entering a name for the new print layout project/map." src="../assets/08-map-making-10.png"/></a>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/08-map-making-10.png"><img alt="Figure 7: Entering a name for the new print layout project/map." src="../assets/08-map-making-10.png"/></a>
 </p>
 <figcaption>Figure 7: Entering a name for the new print layout project/map.</figcaption>
 </figure>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/08-map-making-11.png"><img alt="Figure 8: Overview over the print composer user interface." src="../assets/08-map-making-11.png"/></a>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/08-map-making-11.png"><img alt="Figure 8: Overview over the print composer user interface." src="../assets/08-map-making-11.png"/></a>
 </p>
 <figcaption>Figure 8: Overview over the print composer user interface.</figcaption>
 </figure>
@@ -466,46 +531,46 @@
 <p>We will now start composing our map by first of all adding the current visualization of the QGIS project to the map. We will do this by</p>
 <p><strong>selecting the “add map” button marked with “1” in Figure 9 and then drawing a rectangle in the main visualization area of the map composer tool as shown in Figure 12.</strong></p>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/08-map-making-12.png"><img alt="Figure 9: Adding a map to the print composer view." src="../assets/08-map-making-12.png"/></a>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/08-map-making-12.png"><img alt="Figure 9: Adding a map to the print composer view." src="../assets/08-map-making-12.png"/></a>
 </p>
 <figcaption>Figure 9: Adding a map to the print composer view.</figcaption>
 </figure>
 <p>This will add the current QGIS project visualization to the map as shown in Figure 10. This map item can now be seen as a “placeholder” that will always show the current visualization of the QGIS project if the view is updated. It will not update itself automatically. In Figure 13 you can see that the actual map content is not fully filling out the frame of the map–item we have just created. We can address this problem by on the one hand side moving the map contents within the map–item frame by using the tool marked with “1” in Figure 10 and on the other hand by adapting the current scale of the map. This can be achieved by first selecting the map–item in the main visualization window and then selecting the “item properties” tab as marked with “2” in Figure 10. Then we can change the scale by changing the number given in the field marked with “4”. The smaller we make this number, the more we will zoom into the map. We can try this by</p>
 <p><strong>changing the current value of around 137.000 to 50.000. After changing the value we have to press the “Update preview” button marked with “3” in Figure 13 to refresh the current view of the map.</strong></p>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/08-map-making-13.png"><img alt="Figure 10: Adapting the displayed extent of the geodata in the print composer view" src="../assets/08-map-making-13.png"/></a>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/08-map-making-13.png"><img alt="Figure 10: Adapting the displayed extent of the geodata in the print composer view" src="../assets/08-map-making-13.png"/></a>
 </p>
 <figcaption>Figure 10: Adapting the displayed extent of the geodata in the print composer view</figcaption>
 </figure>
 <p>The <strong>“Update preview”</strong> button has is a quite important tool. You will have to use it always if you change something in the map contents. That is, if you decide to activate or deactivate some of your geodata in the main visualization window of QGIS and you want to see this also in the print–composer view, you will always have to use the “Update preview” button.</p>
 <p>The situation after changing the scale to 50.000 is shown in Figure 11. You can see that, as expected, the displayed extent has shrinked notably, but at the same time, the level of detail has increased.</p>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/08-map-making-14.png"><img alt="Figure 11: Situation after adapting the scale of the map." src="../assets/08-map-making-14.png"/></a>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/08-map-making-14.png"><img alt="Figure 11: Situation after adapting the scale of the map." src="../assets/08-map-making-14.png"/></a>
 </p>
 <figcaption>Figure 11: Situation after adapting the scale of the map</figcaption>
 </figure>
 <p>As next step, we will add a grid displaying the coordinates of the map. To do this,</p>
 <p><strong>we again first select the map–item in the main visualization window of the map composer, then select the item properties tab as before to change the scale of the map–item. Here, we will scroll down a bit until we reach the section “Grids” marked with the red frame in Figure 12. We open the section and first of all press the green + button (marked with “1” in Figure 12) to add a grid. We can then adapt the properties of the grid by clicking the "Modify Grid" button (marked with "2" in Figure 12). In the situation shown in Figure 13 we selected “Frame and annotations only“ as “Grid type”. This is a rather discreet solution as the grid is only depicted outside of the map. You can play around some more with the differing grid types and see which one you prefer. Furthermore, it is important to select the interval at which grid cells or annotations are set. In the given example the x and y intervals were set to 1000 map units, with map units being meter (area marked with “3” in Figure 13). Please be aware that the map units are only meters if the CRS of the project is set to EPSG 32633 (the crs of the Sentinel-2 image). If the project CRS is currently set to EPSG 4326, you might not see a grid at all since then 1000 as interval would mean 1000° and hence there would no coordinate marked at all since the geographic coordinates only range from 0 to 180 degrees. If this would be the case for you, you can adapt the CRS in the map view by clicking the button marked with "5" in Figure 13. The frame style can be adapted using the area marked with “4”.</strong></p>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/08-map-making-15a.png"><img alt="Figure 12: Adding a grid and drawing coordinates around the map." src="../assets/08-map-making-15a.png"/></a>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/08-map-making-15a.png"><img alt="Figure 12: Adding a grid and drawing coordinates around the map." src="../assets/08-map-making-15a.png"/></a>
 </p>
 <figcaption>Figure 12: Adding a grid and drawing coordinates around the map.</figcaption>
 </figure>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/08-map-making-15b.png"><img alt="Figure 13: Adding a grid and drawing coordinates around the map." src="../assets/08-map-making-15b.png"/></a>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/08-map-making-15b.png"><img alt="Figure 13: Adding a grid and drawing coordinates around the map." src="../assets/08-map-making-15b.png"/></a>
 </p>
 <figcaption>Figure 13: Adding a grid and drawing coordinates around the map.</figcaption>
 </figure>
 <p>To get a feeling for the multitude of available settings, it is best to play around with the different grid types and frame styles and just have a look how the displayed map changes. What is still missing in your map, are the coordinate themselves. To add these, you have to scroll down a bit further in the “Item properties” tab. Then you will find the option to activate the “Draw coordinates” check–box as marked with “1” in Figure 16. In the same section you will find options to activate and de–activate the coordinates for certain sides of the map (area marked with “2” in Figure 16). Generally, it is sufficient to draw the coordinates for one x and one y axis. Further down, it is possible to define the precision of the coordinate. While it makes sense to give precision with decimals for example when using a geographic coordinate system with latitude and longitude values, it in most cases does not make sense in metric coordinate systems such as UTM as most maps will typically not be resolved in sub-meter resolutions. In the example, the value was therefore set to 0.</p>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/08-map-making-16.png"><img alt="Figure 14: Parameterizing the displayed coordinates." src="../assets/08-map-making-16.png"/></a>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/08-map-making-16.png"><img alt="Figure 14: Parameterizing the displayed coordinates." src="../assets/08-map-making-16.png"/></a>
 </p>
 <figcaption>Figure 14: Parameterizing the displayed coordinates</figcaption>
 </figure>
 <p>Next, we will add a North arrow and a scale bar to our map. We can do this by</p>
 <p><strong>selecting the buttons marked with “1” and “2” in Figure 15. Simply click on of the button and then click within the main visualization section of the print composer. You can later adapt the properties of the North arrow and the scale bar by selecting them and adapting the settings displayed in the “Item Properties” section as done before for the map–item.</strong></p>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/08-map-making-17.png"><img alt="Figure 15: Adding a North arrow and a scale bar." src="../assets/08-map-making-17.png"/></a>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/08-map-making-17.png"><img alt="Figure 15: Adding a North arrow and a scale bar." src="../assets/08-map-making-17.png"/></a>
 </p>
 <figcaption>Figure 15: Adding a North arrow and a scale bar.</figcaption>
 </figure>
@@ -514,20 +579,20 @@
 <p>We will now have a closer look on how to add and adapt a legend to our map. For adding the legend</p>
 <p><strong>we select the “add legend” button marked with “1” in Figure 16 and then draw a rectangle at the position where we want to locate the Legend as shown in Figure 16.</strong></p>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/08-map-making-18.png"><img alt="Figure 16: Adding a legend." src="../assets/08-map-making-18.png"/></a>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/08-map-making-18.png"><img alt="Figure 16: Adding a legend." src="../assets/08-map-making-18.png"/></a>
 </p>
 <figcaption>Figure 16: Adding a legend.</figcaption>
 </figure>
 <p>This will lead to the situation shown in Figure 17. As you can see, the basic version of the Legend already looks quite suitable. Nevertheless, we might want to adapt a few points related to the displayed contents and the design. For example, we can see that at the bottom of the legend, there is an extra entry for the satellite image stating “S2_neapel_sm2”. This is not really very informative for a potential user of the map. Furthermore, the sub-title of the Legend currently reads “Clipped (extent)” which also should be changed to a more meaningful information.</p>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/08-map-making-17.png"><img alt="Figure 17: After adding the legend." src="../assets/08-map-making-17.png"/></a>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/08-map-making-17.png"><img alt="Figure 17: After adding the legend." src="../assets/08-map-making-17.png"/></a>
 </p>
 <figcaption>Figure 17: After adding the legend.</figcaption>
 </figure>
 <p>We will now address these two points by</p>
 <p><strong>first selecting the legend in the main visualization window and then opening the “Item properties” tab. Then we scroll down to the entry “Legend items” marked with “1” in Figure 18. Here we will first of all change the name of the section showing the land–use–classes which is currently named “Clipped extent” (it might differ in your case). We do this by double–clicking the field marked with “2” in Figure 18, this will open die pop–up window marked with “3”. Here, we will now change the title to “Land–use–classes” and confirm with “OK”.</strong></p>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/08-map-making-20.png"><img alt="Figure 18: Adapting sub–headings in the legend." src="../assets/08-map-making-20.png"/></a>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/08-map-making-20.png"><img alt="Figure 18: Adapting sub–headings in the legend." src="../assets/08-map-making-20.png"/></a>
 </p>
 <figcaption>Figure 19: Adapting sub–headings in the legend.</figcaption>
 </figure>
@@ -535,7 +600,7 @@
 <p><strong>first uncheck the option “Auto update” as marked with “2” in Figure 19. If the “Auto update” function is activated, the legend will always display the legend entries for all layers currently activated in the QGIS project. For manually adapting the legend, it has to be de–activated. Next, we select the entry “S2_Neapel_sm2” (marked with “3”) and then we press the red minus button marked with “4” to drop the corresponding entry from the legend.</strong></p>
 <p>In the same way, you could also manually add an entry to the legend by clicking the plus button marked with “5” which will then open a pop–up window with all all available layers that are currently not included in the Legend. If you scroll a bit further down in the “Item properties” window you will see that there are many further options to adapt the layout of the Legend. You can change the font type, the font size and in how many Columns the legend entries are arranged. Feel free to play around with these options and have a look how they affect the layout of your Legend.</p>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/08-map-making-21.png"><img alt="Figure 19: Dropping and adding items from the Legend." src="../assets/08-map-making-21.png"/></a>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/08-map-making-21.png"><img alt="Figure 19: Dropping and adding items from the Legend." src="../assets/08-map-making-21.png"/></a>
 </p>
 <figcaption>Figure 19: Dropping and adding items from the Legend.</figcaption>
 </figure>
@@ -543,13 +608,13 @@
 <p>We now have a map with the most important properties present. We will now finalize the map by adding some information on the data source, a title, and the applied coordinate reference system. To add a title we will</p>
 <p><strong>use the “Add new label” button marked with “3” in Figure 20. Then we can change the displayed text in the field marked with “1” and increase the font size by clicking the button marked with “2”. After re–arranging the text a bit in the main visualization window, we can reach a situation similar as shown in Figure 20.</strong></p>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/08-map-making-22.png"><img alt="Figure 20: Adding a title to the map." src="../assets/08-map-making-22.png"/></a>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/08-map-making-22.png"><img alt="Figure 20: Adding a title to the map." src="../assets/08-map-making-22.png"/></a>
 </p>
 <figcaption>Figure 20: Adding a title to the map</figcaption>
 </figure>
 <p>We can now add in the same way the data source and the applied coordinate reference system. There is currently no option in QGIS to do this automatically. You can try to accomplish this on your own to create a map that looks similar as shown in Figure 23.</p>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/08-map-making-23.png"><img alt="Figure 21: The final map." src="../assets/08-map-making-23.png"/></a>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/08-map-making-23.png"><img alt="Figure 21: The final map." src="../assets/08-map-making-23.png"/></a>
 </p>
 <figcaption>Figure 21: The final map.</figcaption>
 </figure>

@@ -117,12 +117,17 @@
 </li>
 <li class="md-tabs__item">
 <a class="md-tabs__link md-tabs__link--active" href="../../qgis/01-GUI/">
-        Fabian
+        Prof. Dr. Fassnacht
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../gis/introduction/">
+        GIS
       </a>
 </li>
 <li class="md-tabs__item">
 <a class="md-tabs__link" href="../../schuelerpraktikum/handout/">
-        Schülerpraktikum
+        Praktikum
       </a>
 </li>
 </ul>
@@ -159,13 +164,13 @@
 <li class="md-nav__item md-nav__item--active md-nav__item--nested">
 <input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
 <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
-          Fabian
+          Prof. Dr. Fassnacht
           <span class="md-nav__icon md-icon"></span>
 </label>
 <nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_2">
 <span class="md-nav__icon md-icon"></span>
-          Fabian
+          Prof. Dr. Fassnacht
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--nested">
@@ -362,13 +367,73 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
 <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
-          Schülerpraktikum
+          GIS
           <span class="md-nav__icon md-icon"></span>
 </label>
 <nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_3">
 <span class="md-nav__icon md-icon"></span>
-          Schülerpraktikum
+          GIS
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+          R
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_1_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_1">
+<span class="md-nav__icon md-icon"></span>
+          R
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../gis/introduction/">
+        Introduction
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../gis/visualization-and-map/">
+        Visualization and Map
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../gis/attributes-filters-and-metadata/">
+        Attributes, Filters and Metadata
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../gis/digitalization/">
+        Digitalization
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../gis/geoprocesing-and-reference-and-coordinate-systems/">
+        Geoprocesing and reference and coordinate systems
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../gis/interpolation-and-elevation-models/">
+        Interpolation and elevation models
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          Praktikum
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+          Praktikum
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
@@ -413,9 +478,9 @@
 <p>We will now first have a look at the data that we are working with. So please download the dataset given at the link above unzip the files and then open the QGIS project by double-clicking the file</p>
 <p><strong>overview_results_4_skalen.qgz</strong></p>
 <p>Now QGIS should open and show the following:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/qgis_1.png"><img alt="" src="../assets/qgis_1.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/qgis_1.png"><img alt="" src="../assets/qgis_1.png"/></a></p>
 <p>The QGIS project shows the four land-cover classification maps we will be using in the Tutorial. You can browse through the other three maps by activating the layers in the "Layer" window on the lower left in QGIS. Currently, the data with the highest spatial resolution ("grain") is depicted. If you activate the <strong>mod500_classification</strong> layer, the view in QGIS will look seen below and you can easily see the difference in spatial resolution ("grain") between the two land-cover maps. Despite the grain differences, you can still see that the two maps show roughly the same patterns in terms of land-cover patterns with the big forest area at the center left, larger water areas in the western part of the map and a mosaic of all land-cover classes in the eastern part of the map- </p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/qgis_2.png"><img alt="" src="../assets/qgis_2.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/qgis_2.png"><img alt="" src="../assets/qgis_2.png"/></a></p>
 <p>Please have a look also at the two other provided maps which have spatial resolutions between the two depicted datasets. Next, we will load the data into R and start calculating the landscape metrics for the complete image.</p>
 <h2 id="step-2-load-the-land-cover-maps-to-r-and-plot-them">Step 2: Load the land cover maps to R and plot them<a class="headerlink" href="#step-2-load-the-land-cover-maps-to-r-and-plot-them" title="Link zu dieser Sektion">¶</a></h2>
 <p>First, we will load all required packages. R will give you a warning message in case a package is not installed yet. If this is the case, please install the packages either through the main
@@ -458,7 +523,7 @@ plot(mod250_luc)
 plot(mod500_luc)
 </code></pre></div>
 <p>This will result in the following plot:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/r_0.png"><img alt="" src="../assets/r_0.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/r_0.png"><img alt="" src="../assets/r_0.png"/></a></p>
 <p>If we prefer to invest a bit more time into the plot to allow for an easier interpretation of the landcover classes, we can make it look a bit more like in the QGIS visualization that we saw before by running the following code:</p>
 <div class="highlight"><pre><span></span><code>## alternative, nicer-looking plot
 
@@ -483,7 +548,7 @@ plot(mod500_luc, col = "white", axes=F, ann=F, xaxt="n", yaxt="n", box=F, legend
 legend("bottomleft", legend=c("Forest","Water","Urban","Grassland", "Bare soil"),fill=c("darkgreen", "blue", "brown1", "chartreuse2", "darkgoldenrod1"))
 </code></pre></div>
 <p>This will look like this:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/r_0_51.png"><img alt="" src="../assets/r_0_51.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/r_0_51.png"><img alt="" src="../assets/r_0_51.png"/></a></p>
 <h2 id="step-3-calculate-landscape-metrics-for-the-entire-image">Step 3: Calculate landscape metrics for the entire image<a class="headerlink" href="#step-3-calculate-landscape-metrics-for-the-entire-image" title="Link zu dieser Sektion">¶</a></h2>
 <p>After successfully loading and plotting the images, we will now calculate the landscape metrics for each image. We will accomplish this using the SDMTools packages and the "ClassStat" and the "PatchStat" functions. The two functions only require the input raster (expected is a categorical raster file) and a user-defined cellsize, which in our case will be the spatial resolution of the corresponding satellite sensors. We can calculate the landscape metrics by running the following lines:</p>
 <div class="highlight"><pre><span></span><code># calculate class-stats for each image
@@ -511,7 +576,7 @@ colnames(patch_s2)
 <div class="highlight"><pre><span></span><code>metr_s2
 </code></pre></div>
 <p>will result in:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/r_1.png"><img alt="" src="../assets/r_1.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/r_1.png"><img alt="" src="../assets/r_1.png"/></a></p>
 <p>Here, it becomes clear that for each class and landscape metric, a single value is given. Some of the metrics are quite easy to interprete such as "<strong>prop.landscape</strong>" which simply  indicates the fractional cover of the land-cover class in the complete image. Hence, in this case, the values of all five classes should add-up to 1.
 For understanding also the other metrics, it is recommended to have a closer look at the details provided in the descriptions of the r-package and the citations given there.</p>
 <p>We will now try to make some comparisons of values between the four input land-cover datasets with varying spatial resolution. To do this, we will create some bar plots. To get the plots, we first have to select which landscape metric we want to have a look at and then the land-cover class for which we want to compare the values:</p>
@@ -537,7 +602,7 @@ barplot(c(metr_ls[luc_class,metric], metr_mod250[luc_class,metric]), xlab="Lands
 barplot(c(metr_ls[luc_class,metric], metr_mod500[luc_class,metric]), xlab="Landsat vs. MODIS 500 m", main=paste0(colnames(metr_ls)[metric]), cex.axis=1.5, cex.lab = 1.5)
 </code></pre></div>
 <p>This will result in:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/r_2.png"><img alt="" src="../assets/r_2.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/r_2.png"><img alt="" src="../assets/r_2.png"/></a></p>
 <p>We can see that even though we calculated the same metric, for the same class and the same landscape with the same extent, the differences in spatial resolution of the input datasets, leads to quite strong differences in mean patch area. The differences are stronger, the stronger the resolution differences are. However, this of course also depends on the applied metric and land-cover class. You can now try to make some more comparisons, by changing the variables <strong>metric</strong> and <strong>luc_class</strong> in the code and then re-run the plot command.</p>
 <h2 id="step-4-calculate-landscape-metrics-for-a-grid">Step 4: Calculate landscape metrics for a grid<a class="headerlink" href="#step-4-calculate-landscape-metrics-for-a-grid" title="Link zu dieser Sektion">¶</a></h2>
 <p>So far, we calculated a single landscape metric for the whole land-cover map. In our case, the landscape is still comparably small in size so calculating a single metric for the whole landscape, may make sense for some applications. However, in many other cases, we might either have a larger landscape at hand or we might be interested to also see how our landscape varies in terms of its metrics at a finer spatial grain as compared to the complete landscape. In the following, we will adjust the code used above to calculate landscape metrics for smaller sub-parts of the land-cover maps.</p>
@@ -557,7 +622,7 @@ e &lt;- extent(inp)
 e
 </code></pre></div>
 <p>This will result in the following:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/r_3.png"><img alt="" src="../assets/r_3.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/r_3.png"><img alt="" src="../assets/r_3.png"/></a></p>
 <p>We can see that the variable e contains the outer margins of our input image with minimum and maximum x and y coordinates, respectively. From this, we will now derive the total width and height of the area the image is covering by running (the results will be in meter as we are in the metric coordinate system):</p>
 <div class="highlight"><pre><span></span><code># get x and y ranges
 x_ra &lt;- (e[2]-e[1]) 
@@ -595,7 +660,7 @@ colnames(cases2) &lt;- c("xmin", "xmax", "ymin", "ymax")
 head(cases2)
 </code></pre></div>
 <p>I will not get into details here about what this code is doing exactly, but feel free to explore the code a bit more. In short, this code will return a list of coordinate-sets defining the 500 m grid-cells for which we will calculate our landscape metrics. The last r command in the code <strong>head(cases2)</strong> will result in:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/r_4.png"><img alt="" src="../assets/r_4.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/r_4.png"><img alt="" src="../assets/r_4.png"/></a></p>
 <p>So you can see that each row in the "<strong>cases2</strong>"-variable has the same structure as the "<strong>e</strong>" variable from above and basically describes the outer margin of a single grid-cell.</p>
 <p>OK! Now let's calculate the metrics for the grid. In the following, we will run the code in a parallelized script. This will enable a notably faster processing time, if the computer has more than one cpu/core available. To do this, we only have to change some parts of the code in comparison to a normal for-loop. Again, I will not go into details here, but in case you are interested in how this works exactly, you can get some first information here:</p>
 <p><a href="https://cran.r-project.org/web/packages/doParallel/vignettes/gettingstartedParallel.pdf" title="Parallel processing">https://cran.r-project.org/web/packages/doParallel/vignettes/gettingstartedParallel.pdf</a></p>
@@ -658,7 +723,7 @@ rs_fin &lt;- do.call(rbind, rs)
 head(rs_fin)
 </code></pre></div>
 <p>This results in:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/r_5.png"><img alt="" src="../assets/r_5.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/r_5.png"><img alt="" src="../assets/r_5.png"/></a></p>
 <p>Next, we extract one of the landscape metrics for one of the five examined land-cover classes and save it as a raster file. In theory all calculated metrics could be saved using the same procedure with some small adaptations to the code. In the code below we select the landcover class 1 which is forest. Details are provided in the comments to the code.</p>
 <div class="highlight"><pre><span></span><code>##################################################
 ## start postprocessing results
@@ -700,8 +765,8 @@ plot(dfr, main=colnames(rs_fin_cl)[metric])
 writeRaster(dfr, "prop_forest_area.tif", format="GTiff", overwrite=T)
 </code></pre></div>
 <p>We have now calculated a first landscape metric-map in R. We can check our results by loading the just created prop_forest_area.tif file into our QGIS project from the start of the tutorial. If we now compare the land-cover map with the percentage cover raster we calculated (depicted below after adapting the visualization settings), we can see that the results seem plausible. Grid cells covered only by forest have a 100% cover (value of 1) while areas with only smaller fractions of forest, show the corresponding values:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/qgis_3.png"><img alt="" src="../assets/qgis_3.png"/></a>
-<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/qgis_4.png"><img alt="" src="../assets/qgis_4.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/qgis_3.png"><img alt="" src="../assets/qgis_3.png"/></a>
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/qgis_4.png"><img alt="" src="../assets/qgis_4.png"/></a></p>
 <p>You can see in the QGIS project that the current processing flow is not yet perfect, as we are losing a small part of the image edges (the created raster does not have exactly the same size as the input image). This is not fully solvable as long as the x- and y-ranges of the input image are not evenly dividable by the selected grid cell size. Related problems have been discussed in the theoretical part of today's course session. </p>
 <p>So you have now learned all the processing steps required to calculate landscape metrics from a land-cover map in R. For training and better understanding the code, I would recommend to adjust the code above a bit to calculate some more landscape metrics and also compare metrics amongst the different input-datasets with varying spatial resolution. In next week's practical exercise you will have to use the work-flow learned here, to solve a small ecological question.</p>
 </article>

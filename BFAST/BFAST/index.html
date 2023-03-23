@@ -117,12 +117,17 @@
 </li>
 <li class="md-tabs__item">
 <a class="md-tabs__link md-tabs__link--active" href="../../qgis/01-GUI/">
-        Fabian
+        Prof. Dr. Fassnacht
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../gis/introduction/">
+        GIS
       </a>
 </li>
 <li class="md-tabs__item">
 <a class="md-tabs__link" href="../../schuelerpraktikum/handout/">
-        Schülerpraktikum
+        Praktikum
       </a>
 </li>
 </ul>
@@ -159,13 +164,13 @@
 <li class="md-nav__item md-nav__item--active md-nav__item--nested">
 <input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
 <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
-          Fabian
+          Prof. Dr. Fassnacht
           <span class="md-nav__icon md-icon"></span>
 </label>
 <nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_2">
 <span class="md-nav__icon md-icon"></span>
-          Fabian
+          Prof. Dr. Fassnacht
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--nested">
@@ -372,13 +377,73 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
 <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
-          Schülerpraktikum
+          GIS
           <span class="md-nav__icon md-icon"></span>
 </label>
 <nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_3">
 <span class="md-nav__icon md-icon"></span>
-          Schülerpraktikum
+          GIS
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+          R
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_1_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_1">
+<span class="md-nav__icon md-icon"></span>
+          R
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../gis/introduction/">
+        Introduction
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../gis/visualization-and-map/">
+        Visualization and Map
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../gis/attributes-filters-and-metadata/">
+        Attributes, Filters and Metadata
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../gis/digitalization/">
+        Digitalization
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../gis/geoprocesing-and-reference-and-coordinate-systems/">
+        Geoprocesing and reference and coordinate systems
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../gis/interpolation-and-elevation-models/">
+        Interpolation and elevation models
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          Praktikum
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+          Praktikum
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
@@ -452,7 +517,7 @@ library(bfastSpatial)
 }
 </code></pre></div>
 <p>After running the function, it will be available in our workspace and also be listed in the environment shown in RStudio:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/bfast_01.png"><img alt="Fig. 1 - The loaded function" src="../assets/bfast_01.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/bfast_01.png"><img alt="Fig. 1 - The loaded function" src="../assets/bfast_01.png"/></a></p>
 <p>Now we will load the MODIS raster dataset and the corresponding dates as we already did in the first time-series analysis Tutorial:</p>
 <div class="highlight"><pre><span></span><code>###
 # load raster-stacks exported from the Google Earth Engine
@@ -490,7 +555,7 @@ mod_ts &lt;- bfastts(as.vector(m_ts), m_dat_for, type = c("irregular"))
 mod_ts
 </code></pre></div>
 <p>This will lead to the following object:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/bfast_02.png"><img alt="" src="../assets/bfast_02.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/bfast_02.png"><img alt="" src="../assets/bfast_02.png"/></a></p>
 <p>Now, we interpolate the time series and have a look at it:</p>
 <div class="highlight"><pre><span></span><code># interpolate time series
 mod_ts_ip &lt;- round(na.approx(mod_ts),0)
@@ -499,7 +564,7 @@ mod_ts_ip &lt;- round(na.approx(mod_ts),0)
 plot(mod_ts_ip)
 </code></pre></div>
 <p>This results in the following plot:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/bfast_03.png"><img alt="" src="../assets/bfast_03.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/bfast_03.png"><img alt="" src="../assets/bfast_03.png"/></a></p>
 <p>Now we are already almost ready to run bfast. The last step, before we run it is to aggregate the time series from daily to weekly time series using:</p>
 <div class="highlight"><pre><span></span><code>mod_ts_ip2 &lt;- aggregate.daily.to.weekly(mod_ts_ip)
 </code></pre></div>
@@ -518,7 +583,7 @@ plot(mod_ts_ip)
 <div class="highlight"><pre><span></span><code>plot(bfm2)
 </code></pre></div>
 <p>This will results in the following plot:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/bfast_04.png"><img alt="" src="../assets/bfast_04.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/bfast_04.png"><img alt="" src="../assets/bfast_04.png"/></a></p>
 <p>We can see, that for the current pixel, BFAST detected two break points which are rather close together in time. Whether these are real breakpoints can be discussed. They might also be related to an artefact in the time series. At least at first glance, the overall impression is not that of a clear drop.</p>
 <p>Nevertheless, it is worthwhile to have a closer look at the graph as it describes quite well how BFAST works. On the top panel, we can see the original time series. In the second panel from the top, we can see the seasonal model that was fitted by BFAST. In the third panel, we can see the linear trend components which are fitted separately for each continuous segment between breakpoints. The last, bottom panel shows the residuals which are not explained by the seasonal and the trend component together.</p>
 <p>You can now re-run the bfast function and have a look how for example changing the number of breaks or the h parameter influences the results and maybe also rerun the algorithm for some other pixels. This is good for getting a feeling how variable the results can be which is important if BFAST is used for an analysis over a larger area and the final, often summarized, results have to be interpreted.</p>
@@ -527,12 +592,12 @@ plot(mod_ts_ip)
 bfm2$Time
 </code></pre></div>
 <p>Which will result in:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/bfast_05.png"><img alt="" src="../assets/bfast_05.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/bfast_05.png"><img alt="" src="../assets/bfast_05.png"/></a></p>
 <p>This can be interpreted that we had a drop in NDVI of 1709 (0.1709) as compared to the expected value at the 605<sup>th</sup> value of our time series. We can get the exact date by running:</p>
 <div class="highlight"><pre><span></span><code>as.yearmon(time(mod_ts_ip2)[bfm2$Time])
 </code></pre></div>
 <p>Which will result in:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/bfast_06.png"><img alt="" src="../assets/bfast_06.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/bfast_06.png"><img alt="" src="../assets/bfast_06.png"/></a></p>
 <h2 id="step-3-running-bfast-over-a-complete-raster">Step 3: Running BFAST over a complete raster<a class="headerlink" href="#step-3-running-bfast-over-a-complete-raster" title="Link zu dieser Sektion">¶</a></h2>
 <p>So far, we applied BFAST to a single pixel of a raster-time-series. In this step, we will use the "calc()" function to apply it to a smaller raster dataset. As we have seen before, BFAST is quite time-intensive, so we will apply it to a really small raster which we first have to create by spatially aggregating our already comparably small MODIS dataset by the factor of 10:</p>
 <div class="highlight"><pre><span></span><code># plot the 5th time point of the MODIS time series (earlier time points were mostly data gaps)
@@ -543,8 +608,8 @@ mod_ndvi2 &lt;- aggregate(mod_ndvi,10)
 plot(mod_ndvi2[[5]])
 </code></pre></div>
 <p>This will show the following two plots:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/bfast_07.png"><img alt="" src="../assets/bfast_07.png"/></a>
-<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/bfast_08.png"><img alt="" src="../assets/bfast_08.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/bfast_07.png"><img alt="" src="../assets/bfast_07.png"/></a>
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/bfast_08.png"><img alt="" src="../assets/bfast_08.png"/></a></p>
 <p>As you can see, by using the aggregate function we reduced the spatial resolution of the raster stack to reduce the number of pixels. An alternate way of reducing the size of the raster would have been to crop the raster to a smaller extents. Anyway, now we only have 4 by 10 pixels left, which will result in a comparably low computational time for the BFAST calculations.</p>
 <p>To later see the progress of our calculations we activate the progressbar setting of the raster package using:</p>
 <div class="highlight"><pre><span></span><code>rasterOptions(progress = 'text')
@@ -587,7 +652,7 @@ names(bfras) &lt;- c("Magnitude", "Timepoints")
 plot(bfras)
 </code></pre></div>
 <p>This should result in the following plot:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/bfast_09.png"><img alt="" src="../assets/bfast_09.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/bfast_09.png"><img alt="" src="../assets/bfast_09.png"/></a></p>
 <p>In these graphs, we can see that only for a few pixels (all pixels with Magnitudes &gt; 0), breakpoints were detected and we can also see whether they were more towards the beginning or the end of the time series. In theory, it is of course possible to also extract more detailed information from the bfast-object but in this tutorial, we will not further explore these options. I am again also referring to the two publications of Verbesselt et al (2010+2010a) in which BFAST is explained with more details and which are provided on ILIAS.</p>
 <p>If you are interested, you can also try to apply BFAST to another study area and with higher resolution data, you just have to consider the notably increased processing time. Even though, the bfast()-function also supports multi-core processing (check the help-function ?bfast) which may be beneficial for such use-cases if a computer with more the than one cores is available.</p>
 <h2 id="step-4-exploring-the-npphen-algorithm">Step 4: Exploring the NPPHEN algorithm<a class="headerlink" href="#step-4-exploring-the-npphen-algorithm" title="Link zu dieser Sektion">¶</a></h2>
@@ -673,7 +738,7 @@ ndvi.num &lt;- as.vector(mod_ts_ip2[,1])
 ndvi.num
 </code></pre></div>
 <p>As we can see, this is now really only a vector and not a time series object anymore:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/bfast_10.png"><img alt="" src="../assets/bfast_10.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/bfast_10.png"><img alt="" src="../assets/bfast_10.png"/></a></p>
 <p>Next, we have to extract the corresponding dates. The dates have to be a date-vector. I played around a bit with some transformations, and the one that worked for me was this option:</p>
 <div class="highlight"><pre><span></span><code># extract the dates from the time-series object and covert it to numeric values
 mts &lt;- as.numeric(time(mod_ts_ip2))
@@ -682,7 +747,7 @@ tms &lt;- date_decimal(mts)
 tms
 </code></pre></div>
 <p>This will look like this:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/bfast_11.png"><img alt="" src="../assets/bfast_11.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/bfast_11.png"><img alt="" src="../assets/bfast_11.png"/></a></p>
 <p>There might be smarter ways for extracting the dates, but this solution worked for me.</p>
 <p>After this step, we are ready to run the key-functions of the NPPHEN package. The first function will calculate the phenological signal of the complete time series. The main inputs are the ndvi-values we extracted from the MODIS pixels and the dates. Furthermore, we have to define on which hemisphere the study site is located - in our case Northern hemisphere and we hence set h=1. If we would be on the Southerm hemisphere, we would have to set h=2 as the seasons would be turned around. rge defines the value range of the provided time-series values which in our case are NDVI values scaled between 0 and 10000. Finally, we have to define the number of observations for the growing season. This basically tells the algorithm how many observation exist per year. The strange thing about this setting is, however, that only certain values will work. I did not yet find out what is the reason for this, but it seems to be an error in the function to me. The correct value for the standard MODIS 16-days product is 23, if we select this value here, the code runs even though our time series is weekly and we have 52 observations per year. We can also change the number to 46 and it will also run, and in this case the results will slightly vary. So far I have no explanations for this. The resulting plots are not fully plausible, but we will ignore this for the moment (see the tutorial linked on ILIAS where you can see how a typical result should look like). I will try to contact the developers of NPPHEN and ask them how they explain this. To produce the first plot, run the following code:</p>
 <div class="highlight"><pre><span></span><code># conduct the phenological reconstruction
@@ -691,27 +756,27 @@ phen_1pix &lt;- Phen(ndvi.num, tms, h=1, rge=c(0,10000), nGS = 46)
 plot(phen_1pix)
 </code></pre></div>
 <p>This will result in this graph:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/bfast_12.png"><img alt="" src="../assets/bfast_12.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/bfast_12.png"><img alt="" src="../assets/bfast_12.png"/></a></p>
 <p>We can see that the beginning of the phenological curve seems plausible, but the end of the curve seems incomplete. Given the fact that there should be 52 instead of 46 observation, this somehow makes sense.</p>
 <p>The current plot is only showing the mean NDVI values for the different time periods of the year. Next we will calculate and examine the kernel density plot where we can see the probabilities of certain NDVI values over the phenological year:</p>
 <div class="highlight"><pre><span></span><code># kernel density of the reconstructed phenology (for a numerical vector)
 PhenKplot(ndvi.num, tms,h=1,nGS=23, xlab="Day of the growing season",ylab="EVI", rge=c(0,10000))
 </code></pre></div>
 <p>This will result in the following plot:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/bfast_13.png"><img alt="" src="../assets/bfast_13.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/bfast_13.png"><img alt="" src="../assets/bfast_13.png"/></a></p>
 <p>We can also see in this plot that the shape of the curve is not fully plausible, but again, I will have to further examine this and I cannot deliver a good explanation at this point.</p>
 <p>Finally, we can use NPPHEN to calculate anomalies for a given time-period in comparison to a reference time period. For this we use the "PehnAnoma()" function. We again have to define the input time-series values, the dates and the hemisphere. Then, we can define a certain time period as reference time-period and a second period as the one in which anomalies will be identified. Here, I selected the time period from the start of the time-series until the end of the year 2015 as reference period and the last part of the time series will be checked for anomalies. This is all not very comfortable at the moment, as the user has to define the time-points himself by checking which id of the vector corresponds to which date. In my case, you can see for example that tms[824] is the last observation of 2015 and tms[826] is the first observation of 2016.</p>
 <div class="highlight"><pre><span></span><code>tms[824]
 tmx[825]
 </code></pre></div>
 <p>This will result in:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/bfast_14.png"><img alt="" src="../assets/bfast_14.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/bfast_14.png"><img alt="" src="../assets/bfast_14.png"/></a></p>
 <p>Ok, so lets run the code:</p>
 <div class="highlight"><pre><span></span><code>ano_GS16_1pix &lt;- PhenAnoma(ndvi.num, tms,h=1,refp=c(1:824), anop=c(825:1048), rge=c(0,10000)) 
 plot(ano_GS16_1pix)
 </code></pre></div>
 <p>This will result in:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/bfast_15.png"><img alt="" src="../assets/bfast_15.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/bfast_15.png"><img alt="" src="../assets/bfast_15.png"/></a></p>
 <p>In this plot, the anomalies for the examined time-periods can be checked - however, the fact that there is a rather regular up- and down pattern makes me worry, that these results might not be fully correct. </p>
 <h2 id="additional-time-series-functionalities">Additional time series functionalities<a class="headerlink" href="#additional-time-series-functionalities" title="Link zu dieser Sektion">¶</a></h2>
 <p>While putting together the material for this Tutorial, I came across another r-package named "greenbrown" that could be interesting for those who became more interested in time-series analysis during the last weeks. It offers several functions that are similar to the ones, we got to know over the last weeks but may be even more suitable for some remote sensing applications. One option for the final assignment could be to provide a Tutorial (similar as the ones you have been working now throughout the course) about the functionalities offered in this packages and using an own illustrative dataset.</p>

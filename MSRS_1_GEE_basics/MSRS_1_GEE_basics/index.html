@@ -117,12 +117,17 @@
 </li>
 <li class="md-tabs__item">
 <a class="md-tabs__link md-tabs__link--active" href="../../qgis/01-GUI/">
-        Fabian
+        Prof. Dr. Fassnacht
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../gis/introduction/">
+        GIS
       </a>
 </li>
 <li class="md-tabs__item">
 <a class="md-tabs__link" href="../../schuelerpraktikum/handout/">
-        Schülerpraktikum
+        Praktikum
       </a>
 </li>
 </ul>
@@ -159,13 +164,13 @@
 <li class="md-nav__item md-nav__item--active md-nav__item--nested">
 <input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
 <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
-          Fabian
+          Prof. Dr. Fassnacht
           <span class="md-nav__icon md-icon"></span>
 </label>
 <nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_2">
 <span class="md-nav__icon md-icon"></span>
-          Fabian
+          Prof. Dr. Fassnacht
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--nested">
@@ -392,13 +397,73 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
 <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
-          Schülerpraktikum
+          GIS
           <span class="md-nav__icon md-icon"></span>
 </label>
 <nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_3">
 <span class="md-nav__icon md-icon"></span>
-          Schülerpraktikum
+          GIS
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+          R
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_1_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_1">
+<span class="md-nav__icon md-icon"></span>
+          R
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../gis/introduction/">
+        Introduction
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../gis/visualization-and-map/">
+        Visualization and Map
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../gis/attributes-filters-and-metadata/">
+        Attributes, Filters and Metadata
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../gis/digitalization/">
+        Digitalization
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../gis/geoprocesing-and-reference-and-coordinate-systems/">
+        Geoprocesing and reference and coordinate systems
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../gis/interpolation-and-elevation-models/">
+        Interpolation and elevation models
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          Praktikum
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+          Praktikum
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
@@ -444,7 +509,7 @@
 <p>An overview over the geo-datasets that are directly available in the GEE can be found here:</p>
 <p><a href="https://developers.google.com/earth-engine/datasets">https://developers.google.com/earth-engine/datasets</a></p>
 <p>This should lead you to a webpage hat looks like this:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/gee_1.png"><img alt="" src="../assets/gee_1.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/gee_1.png"><img alt="" src="../assets/gee_1.png"/></a></p>
 <p>Take some time to browse the data catalogue! It is quite impressive how many of the typical remote sensing datasets are directly available in the GEE. Amongst others, the GEE hosts the complete Landsat archive of Landsat 4, 5, 7 and 8 as well as the Sentinel-2 archive and most parts of the Sentinel-1 data. You can also find MODIS data. Most of the data are not only available as raw data but also as higher-level data. That is, the images have already been pre-processed with the standard processing chains of the original data providers. This can save a lot of time, as most of the tiring, repetitive tasks have already been completed and the user can directly focus on analyzing the data.</p>
 <p>For accessing the individual datasets (called "collections") in the GEE code editor (will be explained below), it is necessary to know the exact name and access-link of each image collection. You can find the corresponding values when you select one of the datasets under the link provided above. For example if we want to access the Landsat 8 surface reflectance data (that is, an atmospheric correction has already been applied to the raw satellite data), we would find the correponding name/link here:</p>
 <p><a href="https://developers.google.com/earth-engine/datasets/catalog/LANDSAT_LC08_C01_T1_SR">https://developers.google.com/earth-engine/datasets/catalog/LANDSAT_LC08_C01_T1_SR</a></p>
@@ -455,7 +520,7 @@
 <p>If you don't have a Google Earth Engine account yet, you can sign-up here:</p>
 <p><a href="https://developers.google.com/earth-engine">https://developers.google.com/earth-engine</a></p>
 <p>Simply press on the marked link and follow the instructions:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/gee_2.png"><img alt="" src="../assets/gee_2.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/gee_2.png"><img alt="" src="../assets/gee_2.png"/></a></p>
 <h2 id="step-2-the-google-earth-documentation">Step 2: The Google Earth Documentation<a class="headerlink" href="#step-2-the-google-earth-documentation" title="Link zu dieser Sektion">¶</a></h2>
 <p>The official GEE documentation provides a rich amount of tutorials explaining the functionalities of the GEE from scratch. It is highly recommended to read some of the materials provided here to gather a first understanding how the GEE works and to develop a basic understanding of the java-script language being used in the GEE code editor. However, please be aware that many things can also be accomplished without understanding the java-script syntax completely but rather by modifying code-snippets as mentioned already above. The GEE documentation can be accessed here:</p>
 <p><a href="https://developers.google.com/earth-engine/tutorials">https://developers.google.com/earth-engine/tutorials</a></p>
@@ -471,19 +536,19 @@
 <p>After registering for the GEE you can access code editor (the main interface we will be using for working in the GEE) here:</p>
 <p><a href="https://code.earthengine.google.com/">https://code.earthengine.google.com/</a></p>
 <p>This will lead to an interactive web-page which looks like this:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/gee_3.png"><img alt="" src="../assets/gee_3.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/gee_3.png"><img alt="" src="../assets/gee_3.png"/></a></p>
 <p>The code editor window is separated into four major sections. In section 1 you can find all the Scripts, documentations and Assets (basically, data that the user uploads) connected to your user account. In section 2 the code you are currently working on will be displayed and in section 3 you wil be informed about the processing progress of your code (Console) and you can for example start the export of files (Tasks). Finally, in section 4, a world map is displayed and you will later on also learn how to display the data you have processed in the GEE on this map.</p>
 <h2 id="step-4-exporting-a-complete-time-series-of-modis-ndvi-data">Step 4: Exporting a complete time series of MODIS NDVI data<a class="headerlink" href="#step-4-exporting-a-complete-time-series-of-modis-ndvi-data" title="Link zu dieser Sektion">¶</a></h2>
 <p>In this first hands-on part of the tutorial, we will export a complete time series of MODIS NDVI products for a small area located at the border of the Qinghai Tibetan Plateau. The area covers parts of the city Xining in China. At this point, I am assuming that you have already played around with the Google Earth Engine by exploring some of the tutorials mentioned in Step 2.</p>
 <p>As first step to perpare our work-flow we will upload the Shapefile provided in the "Datasets used in this Tutorial section". For this, we will select the tab Assets in section 1 of the code editor:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/gee_4.png"><img alt="" src="../assets/gee_4.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/gee_4.png"><img alt="" src="../assets/gee_4.png"/></a></p>
 <p>Then we will click the red NEW button and select "Shape files":</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/gee_5.png"><img alt="" src="../assets/gee_5.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/gee_5.png"><img alt="" src="../assets/gee_5.png"/></a></p>
 <p>In the appearing window, we have to first select all the supported Shapefile sub-files (marked with 1) and then assign a name to the uploaded files, for example "Xining" (marked with 2). Then we can upload the files by pressing "UPLOAD" in the bottom right part of the window.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/gee_6.png"><img alt="" src="../assets/gee_6.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/gee_6.png"><img alt="" src="../assets/gee_6.png"/></a></p>
 <p>The files will then be uploaded to the Google Earth engine and saved in your list of asstes. You might have to press the "refresh" button next to the red "NEW" button to make the new asset named "Xining" appear in your list. We can now use the uploaded Shapefile for working with the GEE.</p>
 <p>In order to this, we have to import the asset into the script we are currently working on. We can do this by selecting the "arrow" button marked with 1 in the screenshot below.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/gee_7.png"><img alt="" src="../assets/gee_7.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/gee_7.png"><img alt="" src="../assets/gee_7.png"/></a></p>
 <p>After clicking the "arrow" button, the asset/Shapefile will be imported to t he current script and a new line will appear on the top of the script. We can define a name for the imported Shapefile by changing the default name "table" to some other term. In the given example, I changed the name to "AOI" - area of interest.</p>
 <p>In the following I will now provide the complete code for exporting MODIS NDVI data from the GEE - you can simply copy &amp; paste this code to the code editor window and you should be ready to run it. More detailed explanations can be found directly in the code and further below:</p>
 <div class="highlight"><pre><span></span><code>// Filter a MODIS image collection by date and region 
@@ -577,20 +642,20 @@ Export.image.toDrive({
 <p><a href="https://code.earthengine.google.com/9468bf79e67904e6cb0a639aa3b7019b">https://code.earthengine.google.com/9468bf79e67904e6cb0a639aa3b7019b</a></p>
 <p>Be aware that you have to still define the Shapefile using your assets-list if you access the code via the link. After accessing and saving the script, you should be able to run the code by clicking Run.</p>
 <p>Once you pressed Run, new information will appear in the Console in section 3. </p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/gee_8.png"><img alt="" src="../assets/gee_8.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/gee_8.png"><img alt="" src="../assets/gee_8.png"/></a></p>
 <p>In the console, we can mostly find some information that was printed to the Console by the code-lines that start with the "print()" command. In this example, the two upper entries of the console simply allow us to see how many images have been processed/selected based on our definition: 465 images were available for the selected product and time-window. The last entry, is in our case the most important one, as this entry contains all the dates at which the satellite images were acquired. In this tutorial we will simply copy and paste the dates to a text-file by opening the list (click on the text marked with 1) and then mark all the entries and copy them</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/gee_9.png"><img alt="" src="../assets/gee_9.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/gee_9.png"><img alt="" src="../assets/gee_9.png"/></a></p>
 <p>Then open the Windows Editor program:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/gee_10.png"><img alt="" src="../assets/gee_10.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/gee_10.png"><img alt="" src="../assets/gee_10.png"/></a></p>
 <p>And paste the entries to the text file:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/gee_11.png"><img alt="" src="../assets/gee_11.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/gee_11.png"><img alt="" src="../assets/gee_11.png"/></a></p>
 <p>And finally save this text-file to a folder in which we can find it again. Let's name it for example "dates_mod.txt". This is not a very elegant wy of exporting the acquisition dates but while preparing this Tutorial, I had troubles finding a straightforward solution directly in the GEE and as this workflow works, we will stick with it for now and I hope that by next year, I will have found a smoother option to accomplish this.</p>
 <p>With this step, we have saved the acquisition dates, but we did not yet export the corresponding images. We will now do this by selecting the "Tasks" tab in section 3 of the code editor (marked with 2):</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/gee_8.png"><img alt="" src="../assets/gee_8.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/gee_8.png"><img alt="" src="../assets/gee_8.png"/></a></p>
 <p>We will then see a list of tasks that wait for being executed. In my case, there are several tasks from earlier scripts in the list, in your case there might only be on task which is named as the one in the top of my list - MODIS_all_00_20_sm:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/gee_12.png"><img alt="" src="../assets/gee_12.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/gee_12.png"><img alt="" src="../assets/gee_12.png"/></a></p>
 <p>We can now start the export of the raster stack to our Google Drive by clicking the "RUN" button (marked with 1). This will open a new window in which we can define the spatial resolutiojn with which we want to export the images and a folder in our google drive in which the data shall be stored. We can also not define a folder, then the image will simply be exported to the parent folder of the Google Drive. Once you are happy with your settings click "RUN" and then you will have to wait a few minutes or up to a few hours (if the data is large) until the data appears in your Google Drive. In this example a file named "MODIS_all_00_20_sm.tif" will occur in your google drive. If you are not sure how to access your Google drive, please google it. Should be very easy to find. Then download the data from your google drive in a folder on your hard-disc which you will be able to find again (we will need the data in Step 6).</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/gee_13.png"><img alt="" src="../assets/gee_13.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/gee_13.png"><img alt="" src="../assets/gee_13.png"/></a></p>
 <h2 id="step-5-exporting-a-complete-time-series-of-landsat-5-7-and-8-data">Step 5: Exporting a complete time series of Landsat 5, 7 and 8 data<a class="headerlink" href="#step-5-exporting-a-complete-time-series-of-landsat-5-7-and-8-data" title="Link zu dieser Sektion">¶</a></h2>
 <p>After we managed to export all available NDVI MODIS images of the MODIS product MOD13Q1 for our area of interest, we will now try to accomplish the same but for the complete Landsat archive of the satellites Landsat 5, 7 and 8. The basic processing steps are the same, but the code itself is a bit more complex as we have to merge data from several image collections and also have to first calculate the NDVI from the original images.</p>
 <p>We will again have to load the Shapefile available in our "Assets" list as we have just learned for the MODIS example and will also again have to apply the work-around described in Step 4 to export the image acquisition dates manually by copy and pasting the dates to a text-file. I will not go into details about these steps again but simply provide the code for exporting the Landsat raster stack below. There are more detailed comments provided in the code itself. In case there are more questions related to the code, please formulate them in the Forum and I will try to reply as soon as possible. Be aware, that the data exported in this step are a bit larger as in the MODIS example (550 MB vs. 2 MB) - hence the export from the GEE might take notably longer in the Landsat case.</p>
@@ -801,12 +866,12 @@ m_dat_fin2 &lt;- as.character(m_dat_fin)
 m_dat_for &lt;- as.Date(m_dat_fin2, format = c("%Y%m%d"))
 </code></pre></div>
 <p>Be aware that R has an own data-type for dates. To transform the entries of the text-files into a vector containing only dates, we have to follow several processing steps as indicated in the code above. First we load the text-file into a variable. In this stage, the imported file looks like this:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/gee_14.png"><img alt="" src="../assets/gee_14.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/gee_14.png"><img alt="" src="../assets/gee_14.png"/></a></p>
 <p>That is, we  have the ID in one row and the actual acquisition dates in the format: YYYYMMDD in every second row. Hence, we are only interested in every second row of our variable. That is we we run the code:</p>
 <div class="highlight"><pre><span></span><code>ls_dat_fin &lt;- ls_dat[seq(2, nrow(ls_dat),2),]
 </code></pre></div>
 <p>which will then lead to the following output:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/gee_15.png"><img alt="" src="../assets/gee_15.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/gee_15.png"><img alt="" src="../assets/gee_15.png"/></a></p>
 <p>We now only have the acquisition dates in the variable, but as we can see the current vector is still in the wrong format. The information on "Levels" indicates that the data type of the vector is currently "factor". We hence first transform the vector to "character" and then to a "date" vector using the lines:  </p>
 <div class="highlight"><pre><span></span><code># transform remaining rows from factor to character
 ls_dat_fin2 &lt;- as.character(ls_dat_fin)
@@ -865,8 +930,8 @@ plot(ls.NDVI.ts)
 plot(mod.NDVI.ts)
 </code></pre></div>
 <p>This will lead to the following graphs:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/gee_16.png"><img alt="" src="../assets/gee_16.png"/></a>
-<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/gee_17.png"><img alt="" src="../assets/gee_17.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/gee_16.png"><img alt="" src="../assets/gee_16.png"/></a>
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/gee_17.png"><img alt="" src="../assets/gee_17.png"/></a></p>
 <p>As we can see, both time series show a quite clear seasonal signal. The MODIS time series is notably shorter than the Landsat time series. Be aware that the two time series do not represent the exact same location and should hence not be directly compared. They are just meant to be a random example. Even though, you could adapt the code and extract a time series for pixels that are actually overlapping. The signal is most likely not directly comparable anyway as the MODIS pixels are a lot bigger than the Landsat pixels (250 m x 250 m vs. 30 m x 30 m). To get a better understanding of how the time series actually looks like, we can interpolate the gaps in the time series using some standard processing options offered by the xtc package:</p>
 <div class="highlight"><pre><span></span><code>###
 # work with time-series object
@@ -881,8 +946,8 @@ mod.NDVI.ts.ip &lt;- na.approx(mod.NDVI.ts)
 plot(mod.NDVI.ts.ip)
 </code></pre></div>
 <p>Running this code will lead to the two following graphs:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/gee_18.png"><img alt="" src="../assets/gee_18.png"/></a>
-<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/gee_19.png"><img alt="" src="../assets/gee_19.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/gee_18.png"><img alt="" src="../assets/gee_18.png"/></a>
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/gee_19.png"><img alt="" src="../assets/gee_19.png"/></a></p>
 <p>The interpolated time series look a lot smoother and it seems even possible to observe some trends in these new graphs. In the NDVI time series there seems to be one outlier in 2016 which does not seem to be very realistic and is most likely some sort of artefact in the raw data which was not detected by the automated pre-processing routines. In both time series, there seems to be an overall trend to increasing NDVI values. We can try to depict this trend a bit clearer by converting the high-frequency time series of approximately one observation every 16 days to an annual time-series. We can do this with the following code:</p>
 <div class="highlight"><pre><span></span><code># convert time series to yearly values
 ls.NDVI.ts.y &lt;- to.yearly(ls.NDVI.ts)
@@ -897,10 +962,10 @@ plot(mod.NDVI.ts.y)
 plot(mod.NDVI.ts.y$mod.NDVI.ts.High)
 </code></pre></div>
 <p>This will in total lead to four plots:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/gee_20.png"><img alt="" src="../assets/gee_20.png"/></a>
-<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/gee_21.png"><img alt="" src="../assets/gee_21.png"/></a>
-<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/gee_22.png"><img alt="" src="../assets/gee_22.png"/></a>
-<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/gee_23.png"><img alt="" src="../assets/gee_23.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/gee_20.png"><img alt="" src="../assets/gee_20.png"/></a>
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/gee_21.png"><img alt="" src="../assets/gee_21.png"/></a>
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/gee_22.png"><img alt="" src="../assets/gee_22.png"/></a>
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/gee_23.png"><img alt="" src="../assets/gee_23.png"/></a></p>
 <p>In the first and the third plot here, four trend lines are shown representing the first and the last NDVI value of the corresponding year (black and blue - could not find out yet which one is which) as well as the highest (red line) and lowest NDVI value (green line). In the second and forth plot, only the highest NDVI value of each year are depicted in a trend line. Here, the general increase in NDVI maxima is well depicted for the Landsat pixel, while a similar but weaker trend can be observed for the MODIS pixel.</p>
 <h2 id="step-7-ilias-exercise-find-a-pixel-with-decreasing-vegetation-trend-or-a-pixel-where-vegetation-disappeared-completely">Step 7: ILIAS Exercise  - find a pixel with decreasing vegetation trend or a pixel where vegetation disappeared completely<a class="headerlink" href="#step-7-ilias-exercise-find-a-pixel-with-decreasing-vegetation-trend-or-a-pixel-where-vegetation-disappeared-completely" title="Link zu dieser Sektion">¶</a></h2>
 <p>You know now, how to extract a NDVI time-series for an individual pixel and we have learned above how to also interpolate and plot the corresponding time series. As we have so far only seen the time series signal for two pixels (one Landsat and one MODIS), we will play around with this a bit more in this exercise. The objective of the exercise is to identify a Landsat or a MODIS pixel in which a either a declining NDVI trend can be observed or the trend suggests that a vegetation area (showing the typical seasonal NDVI signal) has been transformed to another land-cover type (for example a comparable stable urban or bare soil signal which should show constantly low NDVI values). Please try to find such a pixel by changing the code above. Once you identified a pixel, make a screenshot of the time series and upload it to ILLIAS </p>

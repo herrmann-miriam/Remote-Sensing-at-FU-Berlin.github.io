@@ -5,10 +5,11 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="../../gis/interpolation-and-elevation-models/" rel="prev"/>
+<link href="../digitalization/" rel="prev"/>
+<link href="../interpolation-and-elevation-models/" rel="next"/>
 <link href="../../assets/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-9.1.3" name="generator"/>
-<title>Handout - REMOTE SENSING AND GEOINFORMATICS</title>
+<title>Geoprocesing and reference and coordinate systems - REMOTE SENSING AND GEOINFORMATICS</title>
 <link href="../../assets/stylesheets/main.c4a75a56.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -32,7 +33,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#zeitplan">
+<a class="md-skip" href="#vorbereitung">
           Skip to content
         </a>
 </div>
@@ -56,7 +57,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Handout
+              Geoprocesing and reference and coordinate systems
             
           </span>
 </div>
@@ -120,12 +121,12 @@
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../gis/introduction/">
+<a class="md-tabs__link md-tabs__link--active" href="../introduction/">
         GIS
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link md-tabs__link--active" href="./">
+<a class="md-tabs__link" href="../../schuelerpraktikum/handout/">
         Praktikum
       </a>
 </li>
@@ -320,57 +321,85 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
 <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
           GIS
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<nav aria-expanded="true" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_3">
 <span class="md-nav__icon md-icon"></span>
           GIS
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_3_1" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_3_1" type="checkbox"/>
 <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
           R
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_3_1_label" class="md-nav" data-md-level="2">
+<nav aria-expanded="true" aria-labelledby="__nav_3_1_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_3_1">
 <span class="md-nav__icon md-icon"></span>
           R
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../gis/introduction/">
+<a class="md-nav__link" href="../introduction/">
         Introduction
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../gis/visualization-and-map/">
+<a class="md-nav__link" href="../visualization-and-map/">
         Visualization and Map
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../gis/attributes-filters-and-metadata/">
+<a class="md-nav__link" href="../attributes-filters-and-metadata/">
         Attributes, Filters and Metadata
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../gis/digitalization/">
+<a class="md-nav__link" href="../digitalization/">
         Digitalization
       </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../gis/geoprocesing-and-reference-and-coordinate-systems/">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          Geoprocesing and reference and coordinate systems
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
         Geoprocesing and reference and coordinate systems
       </a>
+<nav aria-label="Inhaltsverzeichnis" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Inhaltsverzeichnis
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#vorbereitung">
+    Vorbereitung
+  </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../gis/interpolation-and-elevation-models/">
+<a class="md-nav__link" href="#verarbeitung">
+    Verarbeitung
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#export">
+    Export
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../interpolation-and-elevation-models/">
         Interpolation and elevation models
       </a>
 </li>
@@ -380,50 +409,22 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
 <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
           Praktikum
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="true" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_4">
 <span class="md-nav__icon md-icon"></span>
           Praktikum
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-          Handout
-          <span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../schuelerpraktikum/handout/">
         Handout
       </a>
-<nav aria-label="Inhaltsverzeichnis" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Inhaltsverzeichnis
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#zeitplan">
-    Zeitplan
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#einfuhrung-in-google-earth">
-    Einführung in Google Earth
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#projektarbeit">
-    Projektarbeit
-  </a>
-</li>
-</ul>
-</nav>
 </li>
 </ul>
 </nav>
@@ -435,45 +436,92 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<a class="md-content__button md-icon" href="https://github.com/Remote-Sensing-at-FU-Berlin/Remote-Sensing-at-FU-Berlin.github.io/tree/main/docs/schuelerpraktikum/handout.md" title="Edit this page">
+<a class="md-content__button md-icon" href="https://github.com/Remote-Sensing-at-FU-Berlin/Remote-Sensing-at-FU-Berlin.github.io/tree/main/docs/gis/geoprocesing-and-reference-and-coordinate-systems.md" title="Edit this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
-<h1>Handout</h1>
-<h2 id="zeitplan">Zeitplan<a class="headerlink" href="#zeitplan" title="Link zu dieser Sektion">¶</a></h2>
-<p>9:00: Treff</p>
-<p>9:00 - 10:00: Gespräch</p>
-<p>10:00 - 10:30 : <a href="https://remote-sensing-at-fu-berlin.github.io/schuelerpraktikum/handout/#einfuhrung-in-google-earth">Einführung in Google Earth</a></p>
-<p>10:30 - 12:00: <a href="https://remote-sensing-at-fu-berlin.github.io/schuelerpraktikum/handout/#projektarbeit">Projektarbeit</a></p>
-<p>12:00 - 12:30: Mittagpause</p>
-<p>12:30 - 14:00: <a href="https://remote-sensing-at-fu-berlin.github.io/schuelerpraktikum/handout/#projektarbeit">Projektarbeit</a></p>
-<p>14:00 - 15:00: Druck und Praktikumsprotokoll</p>
-<h2 id="einfuhrung-in-google-earth">Einführung in Google Earth<a class="headerlink" href="#einfuhrung-in-google-earth" title="Link zu dieser Sektion">¶</a></h2>
-<p>Unser Praktikumsziel ist es eine Karte zu Landnutzungs und Landveränderungs eines Gebietes zu erstellen. Hierfür verwenden wir Google Earth Pro. Google Earth Pro ist eine Software, die einen virtuellen Globus darstellt. Sie kann Satellitenbilder mit Informationen überlagern und auf der Erde anzeigen. Es folgt eine kleine Einführung die die wichtigsten Werkzeuge dieses Programmes vorstellt. Wenn weitere Fragen enstehen, sind wir für Sie da.</p>
-<h3 id="zeitliche-und-raumliche-orientierung-in-google-earth">Zeitliche und räumliche Orientierung in Google Earth<a class="headerlink" href="#zeitliche-und-raumliche-orientierung-in-google-earth" title="Link zu dieser Sektion">¶</a></h3>
-<p>Mit der <strong>Suchfunktion</strong>, <em>oben links in der Seitenleiste</em>, können Sie ein Gebiet Ihrer Wahl fokusieren.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/1.png"><img alt="" src="../assets/1.png"/></a></p>
-<p>In der <strong>Statusleiste</strong>, <em>unten rechts im Fenster</em>, können sie verschiedene Informationen wie das <em>Aufnahmedatum</em> und die <em>Koordinaten</em> herausfinden.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/2.png"><img alt="" src="../assets/2.png"/></a></p>
-<h3 id="historische-bilder">Historische Bilder<a class="headerlink" href="#historische-bilder" title="Link zu dieser Sektion">¶</a></h3>
-<p>Mit dem <strong>Historische Bilder</strong> Werkzeug, <em>oben links im Fenster</em> , können sie ältere Aufnahmen aufrufen. Verwenden sie dafür den Regler und verschieben ihn auf der Zeitachse.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/4.png"><img alt="" src="../assets/4.png"/></a></p>
-<h3 id="digitalisieren">Digitalisieren<a class="headerlink" href="#digitalisieren" title="Link zu dieser Sektion">¶</a></h3>
-<p>Um ein Gebiet zu markieren, kann das <strong>Polygon</strong> Werkzeug verwendet werden.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/5.png"><img alt="" src="../assets/5.png"/></a></p>
-<p>Wenn sie das Werkzeug anklicken erscheint ein neues Fenster . Hier können sie den Namen ihrer Markierung festlegen. Vergeben sie Aussagekräftige Namen.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/6.png"><img alt="" src="../assets/6.png"/></a></p>
-<p>Ihr Mauszeiger wird zu einem <em>Fadenkreuz</em> mit dem sie nun eine Gebiet markieren können. Dafür spannen sie mit mehreren <strong>Klicks</strong> eine Markierung auf.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/7.png"><img alt="" src="../assets/7.png"/></a></p>
-<p>Um dieses Polygon zu speichern, rufen sie das zuvor geöfnete Fenster auf und bestätigen sie mit <strong>ok</strong>. Das können Sie für mehrere Gebiete und Zeiträume durchführen. Sodass Sie am Ende eine Sammlung von Markierungen haben. Dabei sollten die Markierung immer stets mit der Projektidee im Hinterkopf gemacht werden. Sie sollten also im Zusammenhang eine Aussage besitzen.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/8.png"><img alt="" src="../assets/8.png"/></a></p>
-<h2 id="projektarbeit">Projektarbeit<a class="headerlink" href="#projektarbeit" title="Link zu dieser Sektion">¶</a></h2>
-<p>Unser Praktikumsziel ist es eine Karte zu Landnutzungs und Landveränderungs eines Gebietes zu erstellen.  Einige Fragen die Sie sich vorher stellen sollten sind:</p>
-<ul>
-<li>Fällt Ihnen ein Gebiet ein, das Sie zu dem Thema näher untersuchen möchten? (Falls nicht, haben wir auch eine Idee)</li>
-<li>Welche bestandteile verändern sich in diesem Gebiet?</li>
-<li>Wie kann man diese veränderung am besten darstellen?</li>
-</ul>
-<p>Sind diese Fragen beantwortet, können Sie loslegen und den Anleitungsschritten im oberen Teil folgen.  </p>
+<h1>Geoprocesing and reference and coordinate systems</h1>
+<p>Dieses Tutorial zeigt Schritt für Schritt, wie man bestimmte Aufgaben wie das Lesen von Shapefiles, das Erstellen von Puffern, das Zusammenführen von geometrischen Objekten, das Schneiden von Objekten und das Exportieren von Ergebnissen durchführt.</p>
+<h2 id="vorbereitung">Vorbereitung<a class="headerlink" href="#vorbereitung" title="Link zu dieser Sektion">¶</a></h2>
+<p>Im ersten Teil des Tutorials wird gezeigt, wie man die benötigten R-Pakete installiert und lädt. Es wird auch gezeigt, wie man das Arbeitsverzeichnis einstellt und Shapefiles und ein Raster in R einliest.</p>
+<h3 id="installieren-der-benotigten-pakete">Installieren der benötigten Pakete<a class="headerlink" href="#installieren-der-benotigten-pakete" title="Link zu dieser Sektion">¶</a></h3>
+<p>Wenn sie noch nicht schon installiert sind, werden hier drei <code>R-Pakete</code> installiert: <code>sf</code>, <code>raster</code>, und <code>dplyr</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="nf">if </span><span class="p">(</span><span class="o">!</span><span class="nf">requireNamespace</span><span class="p">(</span><span class="s">"sf"</span><span class="p">,</span><span class="w"> </span><span class="n">quietly</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nf">install.packages</span><span class="p">(</span><span class="s">"sf"</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="nf">if </span><span class="p">(</span><span class="o">!</span><span class="nf">requireNamespace</span><span class="p">(</span><span class="s">"raster"</span><span class="p">,</span><span class="w"> </span><span class="n">quietly</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nf">install.packages</span><span class="p">(</span><span class="s">"raster"</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="nf">if </span><span class="p">(</span><span class="o">!</span><span class="nf">requireNamespace</span><span class="p">(</span><span class="s">"dplyr"</span><span class="p">,</span><span class="w"> </span><span class="n">quietly</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nf">install.packages</span><span class="p">(</span><span class="s">"dplyr"</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="laden-der-benotigten-pakete">Laden der benötigten Pakete<a class="headerlink" href="#laden-der-benotigten-pakete" title="Link zu dieser Sektion">¶</a></h3>
+<p>Nachdem die Pakete installiert wurden, müssen sie noch geladen werden.</p>
+<div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">sf</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">raster</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="das-arbeitsverzeichnis-setzen">Das Arbeitsverzeichnis setzen<a class="headerlink" href="#das-arbeitsverzeichnis-setzen" title="Link zu dieser Sektion">¶</a></h3>
+<p>Das Arbeitsverzeichnis wird auf den Pfad der Daten gesetzt. <code>PFAD-ZU-DATEN</code> muss angepasst werden.</p>
+<div class="highlight"><pre><span></span><code><span class="nf">setwd</span><span class="p">(</span><span class="s">"PFAD-ZU-DATEN"</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="einlesen-der-shapefiles-im-arbeitsverzeichnis">Einlesen der Shapefiles im Arbeitsverzeichnis<a class="headerlink" href="#einlesen-der-shapefiles-im-arbeitsverzeichnis" title="Link zu dieser Sektion">¶</a></h3>
+<p>Hier werden mehrere Shapefiles im Arbeitsverzeichnis eingelesen und als <code>R-Objekte</code> gespeichert.</p>
+<div class="highlight"><pre><span></span><code><span class="n">bezirke_ortsteile</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">st_read</span><span class="p">(</span><span class="s">"bezirke_ortsteile.shp"</span><span class="p">)</span>
+<span class="n">protected_areas_berlin</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">st_read</span><span class="p">(</span><span class="s">"protected_areas_Berlin.shp"</span><span class="p">)</span>
+<span class="n">straßen_berlin_haupt_utm</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">st_read</span><span class="p">(</span><span class="s">"straßen_berlin_haupt_utm.shp"</span><span class="p">)</span>
+<span class="n">wasserschutzgebiete_berlin</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">st_read</span><span class="p">(</span><span class="s">"Wasserschutzgebiete_Berlin.shp"</span><span class="p">)</span>
+<span class="n">zufallspunkte_berlin_1</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">st_read</span><span class="p">(</span><span class="s">"Zufallspunkte_Berlin_1.shp"</span><span class="p">)</span>
+<span class="n">zufallspunkte_berlin_2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">st_read</span><span class="p">(</span><span class="s">"Zufallspunkte_Berlin_2.shp"</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="einlesen-des-rasters-im-arbeitsverzeichnis">Einlesen des Rasters im Arbeitsverzeichnis<a class="headerlink" href="#einlesen-des-rasters-im-arbeitsverzeichnis" title="Link zu dieser Sektion">¶</a></h3>
+<p>Ein Raster im Arbeitsverzeichnis wird eingelesen und als <code>R-Objekt</code> gespeichert.</p>
+<div class="highlight"><pre><span></span><code><span class="n">temperatur</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">raster</span><span class="p">(</span><span class="s">"temperatur.tif"</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="verarbeitung">Verarbeitung<a class="headerlink" href="#verarbeitung" title="Link zu dieser Sektion">¶</a></h2>
+<p>Im zweiten Teil des Tutorials werden verschiedene Verarbeitungsschritte durchgeführt. Es werden beispielsweise Puffer erstellt, geometrische Objekte zusammengeführt, Objekte geschnitten und ein Raster maskiert.</p>
+<h3 id="buffer-von-straen_berlin_haupt_utm">Buffer von straßen_berlin_haupt_utm<a class="headerlink" href="#buffer-von-straen_berlin_haupt_utm" title="Link zu dieser Sektion">¶</a></h3>
+<p>Hier wird ein Buffer von der <code>straßen_berlin_haupt_utm</code> erstellt und als neues <code>R-Objekt</code> buffer gespeichert. Die Bufferbreite beträgt <code>100</code> Meter und wird in <code>dist</code> angegeben.</p>
+<div class="highlight"><pre><span></span><code><span class="n">buffer</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">st_buffer</span><span class="p">(</span><span class="n">straßen_berlin_haupt_utm</span><span class="p">,</span><span class="w"> </span><span class="n">dist</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">100</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="merge-von-zufallspunkte_berlin_1-zufallspunkte_berlin_2">Merge von Zufallspunkte_Berlin_1, Zufallspunkte_Berlin_2<a class="headerlink" href="#merge-von-zufallspunkte_berlin_1-zufallspunkte_berlin_2" title="Link zu dieser Sektion">¶</a></h3>
+<p>Die beiden Objekte <code>zufallspunkte_berlin_1</code> und <code>zufallspunkte_berlin_2</code> werden zu einem Objekt zusammengeführt und als neues <code>R-Objekt</code> merge gespeichert.</p>
+<div class="highlight"><pre><span></span><code><span class="n">merge</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">st_union</span><span class="p">(</span><span class="n">zufallspunkte_berlin_1</span><span class="p">,</span><span class="w"> </span><span class="n">zufallspunkte_berlin_2</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="dissolve-von-bezirke_ortsteile-mit-bezname">Dissolve von bezirke_ortsteile mit BEZNAME<a class="headerlink" href="#dissolve-von-bezirke_ortsteile-mit-bezname" title="Link zu dieser Sektion">¶</a></h3>
+<p>Die Polygone im Shapefile <code>bezirke_ortsteile</code> werden nach <code>BEZNAME</code> gruppiert, dann zu einem Polygon vereinigt, als neues <code>R-Objekt</code> dissolve gespeichert und in das Polygonformat konvertiert.</p>
+<div class="highlight"><pre><span></span><code><span class="n">dissolve</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">bezirke_ortsteile</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">  </span><span class="nf">group_by</span><span class="p">(</span><span class="n">BEZNAME</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">  </span><span class="nf">summarize</span><span class="p">(</span><span class="n">geometry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">st_union</span><span class="p">(</span><span class="n">geometry</span><span class="p">))</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">  </span><span class="nf">st_cast</span><span class="p">(</span><span class="s">"POLYGON"</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="union-von-wasserschutzgebiete_berlin-und-protected_areas_berlin">Union von Wasserschutzgebiete_Berlin und protected_areas_Berlin<a class="headerlink" href="#union-von-wasserschutzgebiete_berlin-und-protected_areas_berlin" title="Link zu dieser Sektion">¶</a></h3>
+<p>Die beiden Shapefiles <code>wasserschutzgebiete_berlin</code> und <code>protected_areas_berlin</code> werden zu einem Objekt zusammengeführt und als neues <code>R-Objekt</code> gespeichert.</p>
+<div class="highlight"><pre><span></span><code><span class="n">union</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">st_union</span><span class="p">(</span><span class="n">wasserschutzgebiete_berlin</span><span class="p">,</span><span class="w"> </span><span class="n">protected_areas_berlin</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="clip-von-protected_areas_berlin-des-objektes-steglitz-zehlendorf-aus-dissolve">Clip von protected_areas_berlin des Objektes "Steglitz-Zehlendorf" aus dissolve<a class="headerlink" href="#clip-von-protected_areas_berlin-des-objektes-steglitz-zehlendorf-aus-dissolve" title="Link zu dieser Sektion">¶</a></h3>
+<p>Das Polygonobjekt <code>dissolve</code> wird nach dem Bezirk <code>Steglitz-Zehlendorf</code> gefiltert, und das Shapefile <code>protected_areas_berlin</code> wird dann auf das Polygonobjekt zugeschnitten und als neues <code>R-Objekt</code> clip gespeichert.</p>
+<div class="highlight"><pre><span></span><code><span class="n">clip</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">st_intersection</span><span class="p">(</span><span class="n">protected_areas_berlin</span><span class="p">,</span><span class="w"> </span><span class="n">dissolve</span><span class="p">[</span><span class="n">dissolve</span><span class="o">$</span><span class="n">BEZNAME</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">"Steglitz-Zehlendorf"</span><span class="p">,</span><span class="w"> </span><span class="p">])</span>
+</code></pre></div>
+<h3 id="clip-des-temperatur-rasters-mit-dissolve">Clip des temperatur Rasters mit dissolve<a class="headerlink" href="#clip-des-temperatur-rasters-mit-dissolve" title="Link zu dieser Sektion">¶</a></h3>
+<p>Das Raster <code>temperatur</code> wird auf das Polygonobjekt <code>dissolve</code> zugeschnitten und als neues <code>R-Objekt</code> <code>clip_raster</code> gespeichert.</p>
+<div class="highlight"><pre><span></span><code><span class="n">clip_raster</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">mask</span><span class="p">(</span><span class="n">temperatur</span><span class="p">,</span><span class="w"> </span><span class="n">dissolve</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="export">Export<a class="headerlink" href="#export" title="Link zu dieser Sektion">¶</a></h2>
+<p>Im letzten Teil des Tutorials wird gezeigt, wie man die Ergebnisse in verschiedenen Formaten, wie Shapefiles oder Raster, exportieren kann.</p>
+<h3 id="export-der-shapefiles">Export der Shapefiles<a class="headerlink" href="#export-der-shapefiles" title="Link zu dieser Sektion">¶</a></h3>
+<p>Die erstellten Shapefiles werden im Arbeitsverzeichnis als neue Dateien gespeichert.</p>
+<div class="highlight"><pre><span></span><code><span class="nf">st_write</span><span class="p">(</span><span class="n">buffer</span><span class="p">,</span><span class="w"> </span><span class="s">"buffer.shp"</span><span class="p">,</span><span class="w"> </span><span class="n">overwrite</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">,</span><span class="w"> </span><span class="n">append</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
+<span class="nf">st_write</span><span class="p">(</span><span class="n">merge</span><span class="p">,</span><span class="w"> </span><span class="s">"merge.shp"</span><span class="p">,</span><span class="w"> </span><span class="n">overwrite</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">,</span><span class="w"> </span><span class="n">append</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
+<span class="nf">st_write</span><span class="p">(</span><span class="n">dissolve</span><span class="p">,</span><span class="w"> </span><span class="s">"dissolve.shp"</span><span class="p">,</span><span class="w"> </span><span class="n">overwrite</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">,</span><span class="w"> </span><span class="n">append</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
+<span class="nf">st_write</span><span class="p">(</span><span class="n">union</span><span class="p">,</span><span class="w"> </span><span class="s">"union.shp"</span><span class="p">,</span><span class="w"> </span><span class="n">overwrite</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">,</span><span class="w"> </span><span class="n">append</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
+<span class="nf">st_write</span><span class="p">(</span><span class="n">clip</span><span class="p">,</span><span class="w"> </span><span class="s">"clip.shp"</span><span class="p">,</span><span class="w"> </span><span class="n">overwrite</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">,</span><span class="w"> </span><span class="n">append</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="export-des-rasters-clip">Export des Rasters clip<a class="headerlink" href="#export-des-rasters-clip" title="Link zu dieser Sektion">¶</a></h3>
+<p>Das erstellte Raster <code>clip_raster</code> wird im Arbeitsverzeichnis als neue Datei gespeichert.</p>
+<div class="highlight"><pre><span></span><code><span class="nf">writeRaster</span><span class="p">(</span><span class="n">clip_raster</span><span class="p">,</span><span class="w"> </span><span class="s">"clip_raster.tif"</span><span class="p">,</span><span class="w"> </span><span class="n">format</span><span class="o">=</span><span class="s">"GTiff"</span><span class="p">,</span><span class="w"> </span><span class="n">overwrite</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
+</code></pre></div>
+<p>Hier werden die Ergebnisse der Verarbeitungsschritte als Shapefiles und Raster exportiert, die dann in anderen Anwendungen weiterverwendet werden können.</p>
 </article>
 </div>
 </div>
@@ -484,7 +532,7 @@
 </main>
 <footer class="md-footer">
 <nav aria-label="Footer" class="md-footer__inner md-grid">
-<a aria-label="Previous: Interpolation and elevation models" class="md-footer__link md-footer__link--prev" href="../../gis/interpolation-and-elevation-models/" rel="prev">
+<a aria-label="Previous: Digitalization" class="md-footer__link md-footer__link--prev" href="../digitalization/" rel="prev">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
 </div>
@@ -493,8 +541,21 @@
 <span class="md-footer__direction">
                   Previous
                 </span>
+                Digitalization
+              </div>
+</div>
+</a>
+<a aria-label="Next: Interpolation and elevation models" class="md-footer__link md-footer__link--next" href="../interpolation-and-elevation-models/" rel="next">
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                  Next
+                </span>
                 Interpolation and elevation models
               </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
 </div>
 </a>
 </nav>

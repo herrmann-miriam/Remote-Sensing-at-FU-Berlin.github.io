@@ -117,12 +117,17 @@
 </li>
 <li class="md-tabs__item">
 <a class="md-tabs__link md-tabs__link--active" href="../../qgis/01-GUI/">
-        Fabian
+        Prof. Dr. Fassnacht
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../gis/introduction/">
+        GIS
       </a>
 </li>
 <li class="md-tabs__item">
 <a class="md-tabs__link" href="../../schuelerpraktikum/handout/">
-        Schülerpraktikum
+        Praktikum
       </a>
 </li>
 </ul>
@@ -159,13 +164,13 @@
 <li class="md-nav__item md-nav__item--active md-nav__item--nested">
 <input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
 <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
-          Fabian
+          Prof. Dr. Fassnacht
           <span class="md-nav__icon md-icon"></span>
 </label>
 <nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_2">
 <span class="md-nav__icon md-icon"></span>
-          Fabian
+          Prof. Dr. Fassnacht
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--nested">
@@ -397,13 +402,73 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
 <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
-          Schülerpraktikum
+          GIS
           <span class="md-nav__icon md-icon"></span>
 </label>
 <nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_3">
 <span class="md-nav__icon md-icon"></span>
-          Schülerpraktikum
+          GIS
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+          R
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_1_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_1">
+<span class="md-nav__icon md-icon"></span>
+          R
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../gis/introduction/">
+        Introduction
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../gis/visualization-and-map/">
+        Visualization and Map
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../gis/attributes-filters-and-metadata/">
+        Attributes, Filters and Metadata
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../gis/digitalization/">
+        Digitalization
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../gis/geoprocesing-and-reference-and-coordinate-systems/">
+        Geoprocesing and reference and coordinate systems
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../gis/interpolation-and-elevation-models/">
+        Interpolation and elevation models
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          Praktikum
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+          Praktikum
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
@@ -493,7 +558,7 @@ las &lt;- readLAS("D:/Studium/Projekt_1/ALS/BR01.laz")
 summary(las)
 </code></pre></div>
 <p>This should give us the following outputs:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/Fig01.png"><img alt="" src="../assets/Fig01.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/Fig01.png"><img alt="" src="../assets/Fig01.png"/></a></p>
 <p>We can see quite a lot of information is being displayed, but we will not go into every detail. A few points that are quite interesting is that we can see for example the total number of <strong>points</strong> is 1.74 million and based on the coordinates provided in the <strong>extent</strong> attribute we can see that the area covers roughly 130 x 130 m. We can also see that the file currently has no <strong>coordinate reference</strong> system assigned. </p>
 <p>By simply using the readLAS() command, we loaded the complete dataset into R - this is a quite good choice in many situations, but as we can see at the <strong>memory</strong> attribute, we also loaded a quite large dataset of 205.5 MB (hence the original file size of the compressed laz-file was increased by a factor of almost 10 since the original laz-file has a size of approximately 23 MB). </p>
 <p>In some cases, we might be interested in not loading the complete dataset but for example only the positional data while we might not be interested in loading information about intensity of scan-angle. Or we might only be interested in a specific type of returns, for example we might be interested in only using "first return" data (that is all 3D points that were recorded when the laser beam interacted with an object for the first time while we want to disregard any returns that followed) In such cases, the lidR package provides some options to read only parts of the dataset as exemplified in the code below:</p>
@@ -514,14 +579,14 @@ las_fr &lt;- readLAS("D:/00_FUB/3_lehre/2_Projekt_1/1_tree_attributes/Practicals
 <div class="highlight"><pre><span></span><code>names(las@data)
 </code></pre></div>
 <p>This will result in the following output:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/Fig01a.png"><img alt="" src="../assets/Fig01a.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/Fig01a.png"><img alt="" src="../assets/Fig01a.png"/></a></p>
 <p>So we can see that each of the LiDAR point does not only have a X, Y and Z coordinate but many additional attributes that can be used during the analysis. Even though many of these attributes are not typically being used to extract information of the targeted variable (e.g., forest parameters). The only exceptions are Intensity and ReturnNumber which both normally carry some relevant information about the object with which the laser beam interacted. </p>
 <h3 id="2-visualizing-lidar-data-with-lidr">2. Visualizing LiDAR data with lidR<a class="headerlink" href="#2-visualizing-lidar-data-with-lidr" title="Link zu dieser Sektion">¶</a></h3>
 <p>The lidR package takes advantage of the rgl package to provide a versatile and interactive 3D viewer with points coloured by Z coordinates on a black background as default. The very basic way to render a point cloud is the function plot().</p>
 <div class="highlight"><pre><span></span><code>plot(las)
 </code></pre></div>
 <p>This will lead to the following plot:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/Fig02.png"><img alt="" src="../assets/Fig02.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/Fig02.png"><img alt="" src="../assets/Fig02.png"/></a></p>
 <p>Be aware that the plot is actually interactive and in 3D. That is, by clicking and keeping the mouse-button clicked and then moving the mouse, you can rotate and shift the plot. Using the mouse-wheel you can zoom in and out. Try to play around a bit with this until you get familiar with the navigation in the plot.</p>
 <p>As is most R-plots, it is possible to refine and adapt the plot with numerous settings. Here is code for two examples. In the first example, the color of the points (which was determined by the height of the points in the first plot) will be set based on ScanAngle and in the second based on Intensity of the LiDAR returns. In both cases, the background will be set to white.</p>
 <div class="highlight"><pre><span></span><code># Plot las object by scan angle, 
@@ -532,8 +597,8 @@ plot(las, color = "ScanAngle", bg = "white", axis = TRUE, legend = TRUE)
 plot(las, color = "Intensity", breaks = "quantile", bg = "white")
 </code></pre></div>
 <p>This will result in the following two plots:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/Fig03.png"><img alt="" src="../assets/Fig03.png"/></a>
-<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/Fig04.png"><img alt="" src="../assets/Fig04.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/Fig03.png"><img alt="" src="../assets/Fig03.png"/></a>
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/Fig04.png"><img alt="" src="../assets/Fig04.png"/></a></p>
 <p>As you can see, the x and y dimensions are not showing the actual coordinates of the area but start from the origin 0, 0. However, the heights (z axis) actually show their true values. In the current plots these are values above sea level. While these plots are quite nice, there are many cases where a transect view of the point cloud may be more efficient to visually examine the details of a LiDAR point cloud, particularly if the dataset shows a forest. In the lidR package it is also possible to depict transect views, but there are several steps necessary to achieve this. </p>
 <p>First, we have to clip the point-cloud to remain only a small strip (= the transect). There is a dedicated function to do this and we have to define the start point and the end point of the transect as well as a width (in meter). We can do this with the following code:</p>
 <div class="highlight"><pre><span></span><code># make transect plot
@@ -558,7 +623,7 @@ ggplot(las_tr@data, aes(X,Z, color = Z)) +
   scale_color_gradientn(colours = height.colors(50))
 </code></pre></div>
 <p>This will result in the following plot:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/Fig05.png"><img alt="" src="../assets/Fig05.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/Fig05.png"><img alt="" src="../assets/Fig05.png"/></a></p>
 <p>Since creating a transect plot requires several steps and we might be interested in plotting transects a bit more frequently later on, we can define a custom function that allows us to plot a transect view of our dataset. I will not go into details to explain what the function does exactly here, but we will use it a few times in the parts below. Hence, simple run the complete code below in R and the function will become available in the next parts of the tutorial.</p>
 <div class="highlight"><pre><span></span><code># prepare function to make transect plotting more easy
 plot_crossection &lt;- function(las,
@@ -579,7 +644,7 @@ plot_crossection &lt;- function(las,
 <h2 id="ground-classification">Ground classification<a class="headerlink" href="#ground-classification" title="Link zu dieser Sektion">¶</a></h2>
 <p>Classification of ground points is an important step in processing point cloud data. Distinguishing between ground and non-ground points allows creation of a continuous model of terrain elevation often referred to as "digital terrain model" (DTM). DTMs are useful for many applications such as calculating the run-off in hydrological models, determining suitable positions for wind turbines or deriving aspect and slope information. Many algorithms to classify ground points have been reported in the literature and lidR currently provides two of them: Progressive Morphological Filter (PMF) and Cloth Simulation Function (CSF) usable with the function classify_ground(). The lidRplugins package provides an additional algorithm called Multiscale Curvature Classification (MCC).</p>
 <p>The implementation of PMF algorithm in lidR is based on the method described in Zhang et al. (2003) with some technical modifications. The original method is raster-based, while lidR performs point-based morphological operations because lidR is a point cloud oriented software. The main step of the methods are summarised in the  following figure (taken from the lidR book).</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/Fig06.png"><img alt="" src="../assets/Fig06.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/Fig06.png"><img alt="" src="../assets/Fig06.png"/></a></p>
 <p>The pmf() function requires defining the following input parameters: <strong>ws</strong> (window size or sequence of window sizes), and <strong>th</strong> (threshold size or sequence of threshold heights). More experienced users may experiment with these parameters to achieve best classification accuracy, however the lidR also contains the util_makeZhangParam() function that includes the default parameter values described in Zhang et al. (2003).</p>
 <p>To conduct a ground classification on our dataset, we run the following lines of code:</p>
 <div class="highlight"><pre><span></span><code>las &lt;- classify_ground(las, algorithm = pmf(ws = 5, th = 3))
@@ -593,7 +658,7 @@ p2 &lt;- c(476758, 5429075)
 plot_crossection(las, p1 , p2, colour_by = factor(Classification))
 </code></pre></div>
 <p>This results in the following plot</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/Fig07.png"><img alt="" src="../assets/Fig07.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/Fig07.png"><img alt="" src="../assets/Fig07.png"/></a></p>
 <p>We can see that the result is not yet perfect as some points that were classified as ground appear to be rather part of the understorey of the forest (some example points are marked in the black box). In the following we will address this issue be refining the PMF algorithm by using not only a single window size but three different window sizes and providing a sequence of threshold heights. In the given case, the provided settings will lead to a quite decent result, but you can try out other parameters as well. The optimal set of parameters may vary depending on your dataset. For example areas with very rough terrain may require other settings than rather flat areas.</p>
 <div class="highlight"><pre><span></span><code># adjust ground classification algorithm
 ws &lt;- seq(3, 12, 3)
@@ -602,14 +667,14 @@ las &lt;- classify_ground(las, algorithm = pmf(ws = ws, th = th))
 plot_crossection(las, p1 , p2, colour_by = factor(Classification))
 </code></pre></div>
 <p>Running this code will take a bit more time since multiple window sizes and thresholds are applied. Finally, this should result in the following plot:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/Fig08.png"><img alt="" src="../assets/Fig08.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/Fig08.png"><img alt="" src="../assets/Fig08.png"/></a></p>
 <p>This results looks quite nice and almost all of the points that were classified as ground (green color) look plausible. The classification is stored as an additional attribute in the las-file and we can use the attribute to filter the file and obtain only points that were classified as ground point. The following code does exactly this and then plots the ground points:</p>
 <div class="highlight"><pre><span></span><code># filter ground points and plot them
 gnd &lt;- filter_ground(las)
 plot(gnd, size = 3, bg = "white")
 </code></pre></div>
 <p>This will result in the following plot:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/Fig09.png"><img alt="" src="../assets/Fig09.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/Fig09.png"><img alt="" src="../assets/Fig09.png"/></a></p>
 <p>In this tutorial we only get to know one of the methods that is available in lidR to classify ground control points. If you at some point work with an own dataset and face problems in obtaining a high-quality ground classification, it might be worthwhile to examine the alternative methods of the package which are described with more details in the lidR book (see link at the beginning of this tutorial). </p>
 <h2 id="calculate-a-digital-terrain-model">Calculate a digital terrain model<a class="headerlink" href="#calculate-a-digital-terrain-model" title="Link zu dieser Sektion">¶</a></h2>
 <p>Generating a Digital Terrain Model (DTM) is usually the next step in processing that follows classification of ground points. Put simply, a DTM can be described as an “image” of the ground. Methods to generate DTMs have been intensively studied and several algorithms have been proposed for various terrain situations. DTMs are used for a variety of purposes in practice, such as determination of the catchment basins of water retention and stream flow, or the identification of drivable roads to access resources. It also enables users to normalize point clouds i.e. subtract the local terrain from the elevation of points to allow a manipulation of point clouds as if they were acquired on a flat surface.</p>
@@ -627,7 +692,7 @@ dtm_tin &lt;- rasterize_terrain(gnd, res = 0.5, algorithm = tin())
 plot_dtm3d(dtm_tin, bg = "white")
 </code></pre></div>
 <p>This will result in the following plot:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/Fig10.png"><img alt="" src="../assets/Fig10.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/Fig10.png"><img alt="" src="../assets/Fig10.png"/></a></p>
 <p>As you can see there are not many details visible. This is actually a good sign as we would normally assume that a digital terrain model in a forest is rather "smooth" surface since all LiDAR points related to object on the ground are "eliminated" during the ground-classification procedure. The only thing we can see in the figure is that a road is separating the study area into more or less two equally sized parts. The road becomes clearly visible since it is a flat area which interrupts the slightly inclined terrain. Let's have a look at the two other methods to interpolate the ground points.</p>
 <h2 id="invert-distance-weighting">Invert distance weighting<a class="headerlink" href="#invert-distance-weighting" title="Link zu dieser Sektion">¶</a></h2>
 <p>Invert distance weighting (IDW) is one of the simplest and most readily available methods that can be applied to create DTMs. It is based on an assumption that the value at an unsampled point can be approximated as a weighted average of values at points within a certain cut-off distance d, or from a given number k of closest neighbours. Weights are usually inversely proportional to a power p of the distance between the location and the neighbour, which leads to the computing of an estimator.</p>
@@ -638,7 +703,7 @@ dtm_idw &lt;- rasterize_terrain(gnd, algorithm = knnidw(k = 10L, p = 2))
 plot_dtm3d(dtm_idw, bg = "white")
 </code></pre></div>
 <p>This will result in the following plot:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/Fig11.png"><img alt="" src="../assets/Fig11.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/Fig11.png"><img alt="" src="../assets/Fig11.png"/></a></p>
 <h2 id="kriging">Kriging<a class="headerlink" href="#kriging" title="Link zu dieser Sektion">¶</a></h2>
 <p>Kriging is the most advanced approach and utilizes advanced geostatistical interpolation methods that take into account the relationships between the returns and their respective distances from each other. lidR uses the package gstat to perform the kriging. This method is very advanced, difficult to manipulate, and extremely slow to compute, but probably provides the best results with minimal edge artifacts.</p>
 <p>To create a digital terrain model using the kriging method run:</p>
@@ -647,7 +712,7 @@ dtm_kriging &lt;- rasterize_terrain(gnd, algorithm = kriging(k = 40))
 plot_dtm3d(dtm_kriging, bg = "white")
 </code></pre></div>
 <p>This will result in the following plot:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/Fig12.png"><img alt="" src="../assets/Fig12.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/Fig12.png"><img alt="" src="../assets/Fig12.png"/></a></p>
 <p>If we are interested in obtaining a 2D-hillshade image of our terrain model, we can run the following code.</p>
 <div class="highlight"><pre><span></span><code># create hillshade image from digital terrain model
 dtm_prod &lt;- terrain(dtm_kriging, v = c("slope", "aspect"), unit = "radians")
@@ -655,7 +720,7 @@ dtm_hillshade &lt;- shade(slope = dtm_prod$slope, aspect = dtm_prod$aspect)
 plot(dtm_hillshade, col =gray(0:30/30), legend = FALSE)
 </code></pre></div>
 <p>This will lead to the following plot:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/Fig13.png"><img alt="" src="../assets/Fig13.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/Fig13.png"><img alt="" src="../assets/Fig13.png"/></a></p>
 <p>In our example dataset this is not very spectacular since we do not have a pronounced terrain situation and the area is comparably small. If data from a larger area for example covering a mountain chain is used, this option may become more interesting (at least for producing nice visualizations).</p>
 <h2 id="normalize-the-lidar-point-cloud">Normalize the LiDAR point cloud<a class="headerlink" href="#normalize-the-lidar-point-cloud" title="Link zu dieser Sektion">¶</a></h2>
 <p>In many application fields, we might be interested in extracting the height of objects from a LiDAR point cloud. And with height I am referring to the height of objects above the ground and not above sea level. For example, we might want to know how high certain buildings or trees are. With LiDAR data this information can be easily obtained for large areas and with a very good precision of a few centimeters. To convert a standard LiDAR point cloud to a normalized point cloud in which the Z value of each LiDAR point indicates the height of the point above ground, we can simply subtract the digital terrain model from the LiDAR point cloud.</p>
@@ -672,7 +737,7 @@ plot(nlas, size = 4, bg = "white")
 plot(las, size = 4, bg = "white")
 </code></pre></div>
 <p>This will result in two individual plots, which were merged into one in the following plot:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/Fig14.png"><img alt="" src="../assets/Fig14.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/Fig14.png"><img alt="" src="../assets/Fig14.png"/></a></p>
 <p>We can clearly see the difference. While in the original point cloud, the height differences between the trees are less clear due to slope which also exists in the plot, the height differences become clearly visible in the normalized point cloud which all stand on a "flat" ground.</p>
 <p>One consequence of the normalization of the point cloud should be that all LiDAR points classified as ground points should have a Z-value 0 m. With the following plot we can have a look whether this is true:</p>
 <div class="highlight"><pre><span></span><code># this should lead to a situation where all ground points
@@ -689,7 +754,7 @@ dev.off()
 hist(filter_ground(nlas)$Z, breaks = seq(-0.6, 0.6, 0.01), main = "", xlab = "Elevation")
 </code></pre></div>
 <p>This will result in the following plot:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/Fig15.png"><img alt="" src="../assets/Fig15.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/Fig15.png"><img alt="" src="../assets/Fig15.png"/></a></p>
 <p>We can see that the assumption is more or less true but we can also see that the ground points are not all exactly at 0 m but they fluctuate between roughly -0.5 and 0.5 m. This is related to the fact that we used an interpolated DTM with a given grid size. Within a single grid cell of the DTM, the height value is exactly the same in each location of the grid cell. Hence, some ground points may lay below or above this value.</p>
 <p>If we want all ground points to have a value of zero, lidR offers a function to normalize the point cloud using the ground points without a grid-based interpolation. There are still some interpolation going on for the non-ground points but all ground-points will have a value of zero. This method can be executed with the following command:</p>
 <div class="highlight"><pre><span></span><code># create a normalized height point cloud
@@ -701,7 +766,7 @@ nlas &lt;- normalize_height(las, knnidw())
 hist(filter_ground(nlas)$Z, breaks = seq(-0.6, 0.6, 0.01), main = "", xlab = "Elevation")
 </code></pre></div>
 <p>And the corresponding plot confirms that now all ground plots have indeed a Z-value of 0.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/Fig16.png"><img alt="" src="../assets/Fig16.png"/></a> </p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/Fig16.png"><img alt="" src="../assets/Fig16.png"/></a> </p>
 <h2 id="calculate-digital-surface-models-and-canopy-height-models">Calculate digital surface models and canopy height models<a class="headerlink" href="#calculate-digital-surface-models-and-canopy-height-models" title="Link zu dieser Sektion">¶</a></h2>
 <p>Digital Surface Models (DSM) and Canopy Height Models (CHM) are raster layers that represent - more or less - the highest elevation of ALS returns. In the case of a normalized point cloud, the derived surface represents the canopy height (for vegetated areas) and is referred to as CHM. When the original (non-normalized) point cloud with absolute elevations is used, the derived layer represents the elevation of the top of the canopy above sea level, and is referred to as DSM. Both surface models are derived using the same algorithms, with the only difference being the elevation values of the point cloud.</p>
 <p>Different methods exist to create DSMs and CHMs. In the most simple case, a grid can be created with a user-defined pixel size and the elevations of the highest point can be assigned to each grid cell. This is called point-to-raster. </p>
@@ -712,7 +777,7 @@ col &lt;- height.colors(25)
 plot(chm, col = col)
 </code></pre></div>
 <p>This will result in the following plot:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/Fig17.png"><img alt="" src="../assets/Fig17.png"/></a> </p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/Fig17.png"><img alt="" src="../assets/Fig17.png"/></a> </p>
 <p>As we can see the depicted height values are still showing altitudes above sea level. Hence, while we do see height differences of more than 60 m in the study area, not all of these height differences are related to the height of trees. So this would be an example of a "digital elevation model" (DSM) which is a raster which shows the height above sea level of the ground + the objects on the ground at each spatial location. If we are interested in only seeing the height of objects we need a "normalized digital elevation model" (nDSM) or in the case of forests a so called "canopy height model" (CHM). This created by either subtracting the a DTM from a DSM of the same area. Or by directly applying the same algorithm as used for calculating the DSM but this time to the already normalized point cloud:</p>
 <div class="highlight"><pre><span></span><code># point-to-raster method
 chm &lt;- rasterize_canopy(nlas, res = 0.5, algorithm = p2r())
@@ -720,7 +785,7 @@ col &lt;- height.colors(25)
 plot(chm, col = col)
 </code></pre></div>
 <p>This will result in the following plot:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/Fig18.png"><img alt="" src="../assets/Fig18.png"/></a> </p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/Fig18.png"><img alt="" src="../assets/Fig18.png"/></a> </p>
 <p>In some cases, the point-to-raster method has some drawbacks. For example if you have a LiDAR dataset with comparably few number of returns, you might end up with data caps in your elevation model. One alternative approach to calculate the DSMs and nDSMs is the TIN approach we already used to calculate DTMs.</p>
 <p>The triangulation algorithm works by first creating a triangular irregular network (TIN) using first returns only, followed by interpolation within each triangle to compute an elevation value for each pixel of a raster. In its simplest form, this method consists of a strict 2-D triangulation of first returns. Despite being more complex compared to the point-to-raster algorithm, an advantage of the triangulation approach is that it is parameter free and it does not output empty pixels, regardless of the resolution of the output raster (i.e. the entire area is interpolated).</p>
 <p>Like point-to-raster however, the TIN method can lead to gaps and other noise in the surface - referred to as “pits” - that are attributable to first returns that penetrated deep into the canopy. Pits can make individual tree segmentation more difficult and change the texture of the canopy in a unrealistic way. To avoid this issue the CHM is often smoothed in post processing in an attempt to produce a more realistic surface with fewer pits and less noise. To create a surface model using triangulation we use algorithm = dsmtin().</p>
@@ -729,7 +794,7 @@ chm &lt;- rasterize_canopy(las, res = 0.5, algorithm = dsmtin())
 plot(chm, col = col)
 </code></pre></div>
 <p>This results in the following plot:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/Fig19.png"><img alt="" src="../assets/Fig19.png"/></a> </p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/Fig19.png"><img alt="" src="../assets/Fig19.png"/></a> </p>
 <p>In our dataset, the differences are quite little. </p>
 <p>We are now coming towards the end of this tutorial and so far you have learned the most important basic processing steps for LiDAR / laserscanning data. To finish the tutorial we will have a brief look at two additional steps that are the starting points of most LiDAR-analyses conducted in vegetation and forest analyses. </p>
 <h2 id="individual-tree-detection">Individual tree detection<a class="headerlink" href="#individual-tree-detection" title="Link zu dieser Sektion">¶</a></h2>
@@ -746,13 +811,13 @@ plot(chm, col = height.colors(50))
 plot(sf::st_geometry(ttops), add = TRUE, pch = 3)
 </code></pre></div>
 <p>This will take some time for processing and then result in the following plot:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/Fig20.png"><img alt="" src="../assets/Fig20.png"/></a> </p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/Fig20.png"><img alt="" src="../assets/Fig20.png"/></a> </p>
 <p>We can also have a loot at the result in 3D:</p>
 <div class="highlight"><pre><span></span><code># have a look at results in 3d
 x &lt;- plot(nlas, bg = "white", size = 4)
 add_treetops3d(x, ttops)
 </code></pre></div>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/Fig21.png"><img alt="" src="../assets/Fig21.png"/></a> </p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/Fig21.png"><img alt="" src="../assets/Fig21.png"/></a> </p>
 <p>If we are not happy with the results of this comparably simple approach, we can refine the algorithm by adjusting the search window depending on the height of the canopy assuming the trees which are less tall, also have smaller crowns. This can be accomplished by providing the algorithms with a function that describes the relation between the height of the trees and the window size and a sequence of heights for which different window sizes will be used:</p>
 <div class="highlight"><pre><span></span><code># adapt window size with height
 f &lt;- function(x) {x * 0.1 + 3}
@@ -765,7 +830,7 @@ plot(heights, ws, type = "l", ylim = c(0,6))
 plot(chm, col = height.colors(50))
 plot(sf::st_geometry(ttops), add = TRUE, pch = 3)
 </code></pre></div>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/Fig22.png"><img alt="" src="../assets/Fig22.png"/></a> </p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/Fig22.png"><img alt="" src="../assets/Fig22.png"/></a> </p>
 <p>Identifying the optimal parameter is not an easy task and may require some sort of reference data which can for example be obtained by visually interpreting a CHM or by identifying tree stem positions in the field. Even though the latter is often also prone to errors since identifying the exact position of a tree in the field is not a trivial task and on top of this, the stem position on the ground may not directly related to the top of the crown since many trees do not grow exactly vertically.</p>
 <p>The detection of tree tops is normally only the first step for the individual tree delineation/segmentation since it does not yet allow us to identify the tree crown area. lidR provides function for this task as well, but we will not demonstrate this here with our example dataset. Amongst others because our dataset is missing a coordinate reference system (which first would have to be assigned) and the functions will not immediately work. However, feel free to also try out these functions by using the example datasets delivered with lidR. The corresponding data and instruction can be found in the lidR-book (see link at the beginning of the tutorial).</p>
 <h2 id="calculate-point-cloud-metrics">Calculate point cloud metrics<a class="headerlink" href="#calculate-point-cloud-metrics" title="Link zu dieser Sektion">¶</a></h2>
@@ -781,17 +846,17 @@ plot(sf::st_geometry(ttops), add = TRUE, pch = 3)
 <div class="highlight"><pre><span></span><code>a@ptr$names
 </code></pre></div>
 <p>This will result in the following output:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/Fig23.png"><img alt="" src="../assets/Fig23.png"/></a> </p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/Fig23.png"><img alt="" src="../assets/Fig23.png"/></a> </p>
 <p>If we want to see how a 2D representation of one of the metrics looks like in either dataset we can pick out one of the variable names and run:</p>
 <div class="highlight"><pre><span></span><code>plot(a["zq80"], pal = heat.colors, axes = TRUE, key.pos = NULL, reset = FALSE)
 </code></pre></div>
 <p>This will result in:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/Fig24.png"><img alt="" src="../assets/Fig24.png"/></a> </p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/Fig24.png"><img alt="" src="../assets/Fig24.png"/></a> </p>
 <p>or:</p>
 <div class="highlight"><pre><span></span><code>plot(b["zq80"], pal = heat.colors, axes = TRUE, key.pos = NULL, reset = FALSE)
 </code></pre></div>
 <p>This will result in:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/Fig25.png"><img alt="" src="../assets/Fig25.png"/></a> </p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/Fig25.png"><img alt="" src="../assets/Fig25.png"/></a> </p>
 <p>These metrics can then be related for example to forest attributes inventoried in the field and regression models can be trained to first relate the field measured data to the metrics and then predict the trained model to the complete area how which laserscanning data has been collected.</p>
 <p>This was the final step of this Tutorial and you are now all set for working with the point clouds which we will collect during the field week of this course.</p>
 </article>

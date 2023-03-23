@@ -117,12 +117,17 @@
 </li>
 <li class="md-tabs__item">
 <a class="md-tabs__link md-tabs__link--active" href="../01-GUI/">
-        Fabian
+        Prof. Dr. Fassnacht
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../gis/introduction/">
+        GIS
       </a>
 </li>
 <li class="md-tabs__item">
 <a class="md-tabs__link" href="../../schuelerpraktikum/handout/">
-        Schülerpraktikum
+        Praktikum
       </a>
 </li>
 </ul>
@@ -159,13 +164,13 @@
 <li class="md-nav__item md-nav__item--active md-nav__item--nested">
 <input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
 <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
-          Fabian
+          Prof. Dr. Fassnacht
           <span class="md-nav__icon md-icon"></span>
 </label>
 <nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_2">
 <span class="md-nav__icon md-icon"></span>
-          Fabian
+          Prof. Dr. Fassnacht
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--active md-nav__item--nested">
@@ -362,13 +367,73 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
 <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
-          Schülerpraktikum
+          GIS
           <span class="md-nav__icon md-icon"></span>
 </label>
 <nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_3">
 <span class="md-nav__icon md-icon"></span>
-          Schülerpraktikum
+          GIS
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+          R
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_1_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_1">
+<span class="md-nav__icon md-icon"></span>
+          R
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../gis/introduction/">
+        Introduction
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../gis/visualization-and-map/">
+        Visualization and Map
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../gis/attributes-filters-and-metadata/">
+        Attributes, Filters and Metadata
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../gis/digitalization/">
+        Digitalization
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../gis/geoprocesing-and-reference-and-coordinate-systems/">
+        Geoprocesing and reference and coordinate systems
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../gis/interpolation-and-elevation-models/">
+        Interpolation and elevation models
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          Praktikum
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+          Praktikum
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
@@ -398,7 +463,7 @@ After completing this tutorial, the participant knows how to load a Shapefile (v
 <p><a href="https://drive.google.com/file/d/11dSbeH8sMdgBS8nPqvtt3sae62bco02P/view?usp=sharing">Download</a></p>
 <p>This zip-file contains two ESRI Shapefiles (vector-data) - the first one named <strong>gis.osm_landuse_a_free_1.shp</strong> contains a land-use dataset of Southern Italy and the second dataset is a global dataset named <strong>newsweek_data.shp</strong> which contains some demographic information for each country of the Earth.</p>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/02-vector-data-01.png"><img alt="Figure 1: Files contained in the zipped file for Tutorial 2" src="../assets/02-vector-data-01.png"/></a>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/02-vector-data-01.png"><img alt="Figure 1: Files contained in the zipped file for Tutorial 2" src="../assets/02-vector-data-01.png"/></a>
 </p>
 <figcaption>Figure 1: Files contained in the zipped file for Tutorial 2</figcaption>
 </figure>
@@ -407,40 +472,40 @@ After completing this tutorial, the participant knows how to load a Shapefile (v
 <p>After opening QGIS and selecting a new project, the graphical user interface of QGIS will look as demonstrated in Figure 2. In Figure 2, we can use the browser window to navigate to the folder which contains the files we have just downloaded.
 Then we can open the file <strong>gis.osm_landuse_a_free_1.shp</strong> by <strong>simply dragging and dropping the file in the layer window</strong> (marked with 2 in Figure 2).</p>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/02-vector-data-02.png"><img alt="Figure 2: Openning a Shapefile in QGIS" src="../assets/02-vector-data-02.png"/></a>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/02-vector-data-02.png"><img alt="Figure 2: Openning a Shapefile in QGIS" src="../assets/02-vector-data-02.png"/></a>
 </p>
 <figcaption>Figure 2: Openning a Shapefile in QGIS</figcaption>
 </figure>
 <p>This will open the selected shapefile and automatically display it in the main window of QGIS (Section 1 in Figure 1). You should now see something similar to Figure 3. The colours will most likely differ from the ones displayed in Figure 3 as QGIS randomly assigns a colour to each newly loaded shapefile (vector file). How colours can be adapted and how the attributes stored in shapefiles can be used to colour-code and format individual spatial objects (polygons, lines, points) will be explained in the next section.</p>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/02-vector-data-03.png"><img alt="Figure 3: After opening the shapefile in QGIS" src="../assets/02-vector-data-03.png"/></a>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/02-vector-data-03.png"><img alt="Figure 3: After opening the shapefile in QGIS" src="../assets/02-vector-data-03.png"/></a>
 </p>
 <figcaption>Figure 3: After opening the shapefile in QGIS</figcaption>
 </figure>
 <h2 id="basic-visualization-of-shapefiles-in-qgis">Basic visualization of Shapefiles in QGIS<a class="headerlink" href="#basic-visualization-of-shapefiles-in-qgis" title="Link zu dieser Sektion">¶</a></h2>
 <p>As next step we will change the colour of the complete loaded Polygon-shapefile by using the properties dialogue that is available for each dataset loaded into QGIS. In order to do this either double click the entry of the shapefile-layer in the layer window of QGIS as shown in Figure 4 or alternatively perform a right-click on the same layer and from the appearing text menu select <strong>properties</strong>.</p>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/02-vector-data-04.png"><img alt="Figure 4: Double-click the Shapefile layer" src="../assets/02-vector-data-04.png"/></a>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/02-vector-data-04.png"><img alt="Figure 4: Double-click the Shapefile layer" src="../assets/02-vector-data-04.png"/></a>
 </p>
 <figcaption>Figure 4: Double-click the Shapefile layer</figcaption>
 </figure>
 <p>This will open a new window as displayed in Figure 5 with many functionalities. In this tutorial we will focus on the options to adapt the visualization settings of the vector file. To open the corresponding tab in the window select the tab <strong>Symbology</strong> (the corresponding tab may have also been opened as standard setting). </p>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/02-vector-data-05.png"><img alt="Figure 5: The properties window with the **Symbology** tab activated. The latter allows to modify the the visual appearance of the vector file in numerous ways" src="../assets/02-vector-data-05.png"/></a>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/02-vector-data-05.png"><img alt="Figure 5: The properties window with the **Symbology** tab activated. The latter allows to modify the the visual appearance of the vector file in numerous ways" src="../assets/02-vector-data-05.png"/></a>
 </p>
 <figcaption>Figure 5: The properties window with the **Symbology** tab activated. The latter allows to modify the the visual appearance of the vector file in numerous ways</figcaption>
 </figure>
 <p>We will now explore five options to adapt the visual appearance of the shapefile. Everytime we conducted a change and want to see the effects on the visualization in the main QGIS window we have to first confirm our choice by clicking <strong>apply</strong> and then press <strong>ok</strong> to close the <strong>properties</strong> dialogue window. We can later return to the properties dialogue by repeating the steps described above, that is by double-clicking the shapefile-layer as indicated in Figure 4 or by performing a right-click and selecting <strong>Properties</strong>. The first adaptation that we will try out is to change the colour of the whole Shapefile. In order to do this first click the area marked with <strong>1</strong> in Figure 6. This will change the available options in the tab. Then click <strong>Fill color-area</strong> marked with <strong>2</strong>. A new window will open from which you can select any colour you want. Select a colour, press <strong>OK</strong>, then <strong>Apply</strong> and <strong>OK</strong> again. </p>
 <p>You will see that the colour of the shapefile has changed to the colour you selected.</p>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/02-vector-data-06.png"><img alt="Figure 6: Changing the colour of the complete shapefile " src="../assets/02-vector-data-06.png"/></a>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/02-vector-data-06.png"><img alt="Figure 6: Changing the colour of the complete shapefile " src="../assets/02-vector-data-06.png"/></a>
 </p>
 <figcaption>Figure 6: Changing the colour of the complete shapefile</figcaption>
 </figure>
 <p>As a second option we will explore how to not only assign a new colour but also change the style and colour of the outline and the filling of the polygons. to change the fill-style of the polygons</p>
 <p>we first click the area named <strong>Fill</strong> and marked with 1 in Figure 7. Then we can select any fill type we want from the list of option provided below. We could for example select a quite complex pattern such as the one marked with 6. Then, we can further customize the pattern of the filling and also the outline of each polygon by clicking through the areas marked with 2, 3, 4 and 5 and modify colors or line widths etc.</p>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/02-vector-data-07.png"><img alt="Figure 7: Changing the fill pattern and the colour of the outline of the shapefile " src="../assets/02-vector-data-07.png"/></a>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/02-vector-data-07.png"><img alt="Figure 7: Changing the fill pattern and the colour of the outline of the shapefile " src="../assets/02-vector-data-07.png"/></a>
 </p>
 <figcaption>Figure 7: Changing the fill pattern and the colour of the outline of the shapefile</figcaption>
 </figure>
@@ -451,13 +516,13 @@ industrial areas, cemeteries, parks or residential areas. We might be interested
 <p>To make sound use of the information stored in the attribute table, we need to first understand what information is contained in the attribute table. So let us have a look at the table by</p>
 <p>right-clicking on the shapefile-layer and selecting <strong>Open Attribute Table</strong> as demonstrated in Figure 8</p>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/02-vector-data-08.png"><img alt="Figure 8: Opening the attribute table of the shapefile " src="../assets/02-vector-data-08.png"/></a>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/02-vector-data-08.png"><img alt="Figure 8: Opening the attribute table of the shapefile " src="../assets/02-vector-data-08.png"/></a>
 </p>
 <figcaption>Figure 8: Opening the attribute table of the shapefile</figcaption>
 </figure>
 <p>This will open the attribute table of the Shapele in a new window. The window will approximately look like the window shown in Figure 9.</p>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/02-vector-data-09.png"><img alt="Figure 9: The attribute table of the gis.osm landuse a free 1 Shapefile " src="../assets/02-vector-data-09.png"/></a><br/>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/02-vector-data-09.png"><img alt="Figure 9: The attribute table of the gis.osm landuse a free 1 Shapefile " src="../assets/02-vector-data-09.png"/></a><br/>
 </p>
 <figcaption>Figure 9: The attribute table of the gis.osm landuse a free 1 Shapefile</figcaption>
 </figure>
@@ -466,18 +531,18 @@ the data source for our Shapefile. This identifier makes each object in a given 
 <p>we first open the shapefile properties dialogue, as explained above and select the style tab. Then we press the drop-down menu marked with <strong>3</strong> in Figure 6. Here we select the option <strong>categorized</strong>. This will lead to the window shown in Figure 10. Here, we can now use the drop-down-menu marked with <strong>1</strong> to select the
 column from the attribute table which we want to use to colour-code our spatial objects in the Shapele. Here, we will select the class <strong>fclass</strong> and then confirm the choice by pressing the <strong>classify</strong> button marked with <strong>2</strong> in Figure 10.</p>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/02-vector-data-10.png"><img alt="Figure 10: Colour-code the polygons of the Shapefile using the attribute table " src="../assets/02-vector-data-10.png"/></a>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/02-vector-data-10.png"><img alt="Figure 10: Colour-code the polygons of the Shapefile using the attribute table " src="../assets/02-vector-data-10.png"/></a>
 </p>
 <figcaption>Figure 10: Colour-code the polygons of the Shapefile using the attribute table</figcaption>
 </figure>
 <p>This will lead to a situation similar to the one depicted in Figure 11. The colours are again likely to be dierent as QGIS selects the colours randomly. We can now assign meaningful colours to each of the land-cover types by double-clicking any of the colour boxes marked in Figure 11. In the new pop-up dialogue we can assign a new colour and also make more detailed changes to the format of the filling and the outlines by selecting <strong>simple fill</strong> and use the then appearing properties as shown in Figure 12.</p>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/02-vector-data-11.png"><img alt="Figure 11: Visualization options for displaying categories " src="../assets/02-vector-data-11.png"/></a>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/02-vector-data-11.png"><img alt="Figure 11: Visualization options for displaying categories " src="../assets/02-vector-data-11.png"/></a>
 </p>
 <figcaption>Figure 11: Visualization options for displaying categories</figcaption>
 </figure>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/02-vector-data-12.png"><img alt="Figure 12: Colour and format selection for each land cover class " src="../assets/02-vector-data-12.png"/></a>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/02-vector-data-12.png"><img alt="Figure 12: Colour and format selection for each land cover class " src="../assets/02-vector-data-12.png"/></a>
 </p>
 <figcaption>Figure 12: Colour and format selection for each land cover class</figcaption>
 </figure>
@@ -487,7 +552,7 @@ the attribute table. In the exercise of this Tutorial, you will find out how it 
 <p>After learning how to adapt the visualization of a Shapele, you might want to know how you can save these settings for the next time you open QGIS. The easiest way to save the visualization settings but also all other things you have accomplished while working with your data in QGIS is to store the current situation as a QGIS-project. You can do this by </p>
 <p>selecting <strong>Project</strong> -&gt; <strong>Save as...</strong> from the main file menu of QGIS as shown in Figure 13. This will open a new dialoge where you can define an output folder and then enter a name for the QGIS-project and click <strong>save</strong> to save the file. QGIS-project files of the latest version of QGIS have the file format ending <strong>.qgz</strong> while older versions used <strong>.qgs</strong> as standard setting.</p>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/02-vector-data-13.png"><img alt="Figure 13: Saving a QGIS project " src="../assets/02-vector-data-13.png"/></a>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/02-vector-data-13.png"><img alt="Figure 13: Saving a QGIS project " src="../assets/02-vector-data-13.png"/></a>
 </p>
 <figcaption>Figure 13: Saving a QGIS project</figcaption>
 </figure>
@@ -514,7 +579,7 @@ stored on the hard disk of your computer. That means if you delete or move your 
 </ol>
 <p>General advice: Don't be shy to try out a few different options and settings!! This is the only way to learn how things work.</p>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/02-vector-data-14.png"><img alt="Figure 14: Save current map view as image " src="../assets/02-vector-data-14.png"/></a>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/02-vector-data-14.png"><img alt="Figure 14: Save current map view as image " src="../assets/02-vector-data-14.png"/></a>
 </p>
 <figcaption>Figure 14: Save current map view as image</figcaption>
 </figure>

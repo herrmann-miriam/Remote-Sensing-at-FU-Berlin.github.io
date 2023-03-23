@@ -117,12 +117,17 @@
 </li>
 <li class="md-tabs__item">
 <a class="md-tabs__link md-tabs__link--active" href="../../qgis/01-GUI/">
-        Fabian
+        Prof. Dr. Fassnacht
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../gis/introduction/">
+        GIS
       </a>
 </li>
 <li class="md-tabs__item">
 <a class="md-tabs__link" href="../../schuelerpraktikum/handout/">
-        Schülerpraktikum
+        Praktikum
       </a>
 </li>
 </ul>
@@ -159,13 +164,13 @@
 <li class="md-nav__item md-nav__item--active md-nav__item--nested">
 <input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
 <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
-          Fabian
+          Prof. Dr. Fassnacht
           <span class="md-nav__icon md-icon"></span>
 </label>
 <nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_2">
 <span class="md-nav__icon md-icon"></span>
-          Fabian
+          Prof. Dr. Fassnacht
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--nested">
@@ -362,13 +367,73 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
 <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
-          Schülerpraktikum
+          GIS
           <span class="md-nav__icon md-icon"></span>
 </label>
 <nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_3">
 <span class="md-nav__icon md-icon"></span>
-          Schülerpraktikum
+          GIS
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+          R
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_1_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_1">
+<span class="md-nav__icon md-icon"></span>
+          R
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../gis/introduction/">
+        Introduction
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../gis/visualization-and-map/">
+        Visualization and Map
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../gis/attributes-filters-and-metadata/">
+        Attributes, Filters and Metadata
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../gis/digitalization/">
+        Digitalization
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../gis/geoprocesing-and-reference-and-coordinate-systems/">
+        Geoprocesing and reference and coordinate systems
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../gis/interpolation-and-elevation-models/">
+        Interpolation and elevation models
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          Praktikum
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+          Praktikum
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
@@ -400,14 +465,14 @@
 <p>We will now first have a look at the data that we are working with. So please download the dataset given at the link above, unzip the files, and then open the QGIS project by double-clicking the file</p>
 <p><strong>overview.qgz</strong></p>
 <p>Now QGIS should open and show the following:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/gis_1.png"><img alt="" src="../assets/gis_1.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/gis_1.png"><img alt="" src="../assets/gis_1.png"/></a></p>
 <p>As you can see we only have to datasets displayed: The landscape metric showing the proportional forest cover from 0 to 1 (100%) and a transect that intersects the raster in East-West direction.</p>
 <p>In the following we will now extract the raster values for all pixels that the line intersects and use these pixel values to calculate a semivariogram and an autocorrelogram for the proportional forest cover.</p>
 <h2 id="step-2-calculating-the-semivariogram">Step 2: Calculating the Semivariogram<a class="headerlink" href="#step-2-calculating-the-semivariogram" title="Link zu dieser Sektion">¶</a></h2>
 <p>We already learned in today's theoretical lecture how we calculate the mean semivariance Î³ for a lag distance of <em>h</em>. It is actually a quite simple formula where we first calculate the squared difference of all point pairs (<em>z(i)</em> and <em>z(i+h)</em>) that can be derived at a given lag-distance <em>h</em>. We then sum these squared differences and divide the sum by two times the number of point pairs at the given lag-distance <em>(2N(h)</em>):</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/r_1.png"><img alt="" src="../assets/r_1.png"/></a> </p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/r_1.png"><img alt="" src="../assets/r_1.png"/></a> </p>
 <p>A short reminder: the lag-distance is the distance between two points (or pixels). If we have a pixel size of 100 m then a lag distance of 100 m would mean that directly neighboring pixels are paired. If the lag distance would be 300 m then each pixel would be paired with pixels that are located 3 pixels away (in other words, there are two pixels inbetween the two pixels that will be paired). Remember also this graph:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/r_2.png"><img alt="" src="../assets/r_2.png"/></a> </p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/r_2.png"><img alt="" src="../assets/r_2.png"/></a> </p>
 <p>By comparing the semi-variances of point pairs with different lag-distances, we can quantify/depict how the spatial distance influences the correlation between points. Remember, the semi-variance will be low (values show low variance and are hence very similar) for highly correlated values, while it will be high for point-pairs with low correlation.</p>
 <p>Before we proceed with the calculation of the semi-variance, we will have to load our datasets by running the following code:</p>
 <div class="highlight"><pre><span></span><code># load required packages (as usual, please install missing packages)
@@ -435,7 +500,7 @@ pr_for&lt;- unlist(extract(img, shp))
 <div class="highlight"><pre><span></span><code>pr_for
 </code></pre></div>
 <p>This will show us:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/r_3.png"><img alt="" src="../assets/r_3.png"/></a> </p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/r_3.png"><img alt="" src="../assets/r_3.png"/></a> </p>
 <p>These will be the values for which we calculate our semi-variogram. To do this, we will now first derive the spatial resolution of our image as this will determine the rythm of our lag-distances. It would not make sense to select for example a lag distance of 1 m if our pixel size is 10 m as we would not be able to build pairs with pixels that are only 1 m apart.</p>
 <div class="highlight"><pre><span></span><code># get the pixel size of the image using the res() command of the raster package
 res_img &lt;- res(img)[1]
@@ -456,7 +521,7 @@ lag &lt;- dist(tr_pos)
 lag
 </code></pre></div>
 <p>This will result in a quite bix matrix looking like that:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/r_4.png"><img alt="" src="../assets/r_4.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/r_4.png"><img alt="" src="../assets/r_4.png"/></a></p>
 <p>You can interpret this like this: the column named 1 represents the first pixel on the transect. In the rows you can then see the lag distance to each of the pixels that follows. The second column represents the second pixel on the transect, the third column the third pixel and so on. This matrix will help us later on to identify all point pairs with a unique lag distance. </p>
 <p>Next, we calculate the semivariance for all point pairs by running:</p>
 <div class="highlight"><pre><span></span><code>varTP &lt;- dist(pr_for)^2*.5
@@ -474,7 +539,7 @@ TP.split&lt;-split(varTP,lag)
 TP.split
 </code></pre></div>
 <p>Here we can now see the semi-variances for each lag-distance. In the figure below the last few entries are shown where we can see that the number of point pairs constantly decreases and that for the largest lag-distance (22000 m) only one point pair is available:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/r_5.png"><img alt="" src="../assets/r_5.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/r_5.png"><img alt="" src="../assets/r_5.png"/></a></p>
 <p>Next, we calculate the mean semi-variance for each lag-distance by running:</p>
 <div class="highlight"><pre><span></span><code># compute the mean semivariance at each spatial lag
 TP.gamma &lt;- sapply(TP.split,mean) 
@@ -482,7 +547,7 @@ TP.gamma
 </code></pre></div>
 <p>This simply calculates the mean value for each of the lines of values depicted in the preceeding figure.</p>
 <p>This will result in one value (the mean semi-variance) for each lag-distance:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/r_6.png"><img alt="" src="../assets/r_6.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/r_6.png"><img alt="" src="../assets/r_6.png"/></a></p>
 <p>Now we have all the information to plot our semi-variogram by simply plotting the mean semivariance over the lag-distance.</p>
 <p>The corresponding code looks like this:</p>
 <div class="highlight"><pre><span></span><code># extract the values of the unique spatial lags
@@ -492,11 +557,11 @@ plot(lag.uni,TP.gamma,xlab='Spatial Lag (m)',ylab='Semivariance Forest prop. [%]
 abline(v=max(lag)/2,lwd=2,col='dodgerblue',lty=2)
 </code></pre></div>
 <p>The will lead to this graph:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/r_7.png"><img alt="" src="../assets/r_7.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/r_7.png"><img alt="" src="../assets/r_7.png"/></a></p>
 <p>We have now plotted the semi-variogram across all possible lag-distances, however, as we discussed before, the large lag-distances have only very few points left and they might hence have a very limited reliability. Typically it is recommended to only consider lag-distances up to half of the maximum lag-distance. The corresponding lag-distance is marked with the blue dashed line in the graph.</p>
 <p>If we compare this graph with the original raster dataset, we can interpret the semi-variogram a bit. The maximum semivariance is reached at a lag-distance of 2500 m (or five pixels) - i we have a look at the raster dataset we can see that there are several elements of the landscape along the transect that are approximately 5 pixels long. There is a almost forest-free zone 6 pixels at the Eastern start of the transect, then there is a fully forest covered area which also covers 5 pixels, afterwards there is another forest-free zone of 4-5 pixels followed again by a sparsely forested areas with a length of about 6 pixels. At lag-distances smaller than these landscape element sizes, the correlation between the values will be high (the semi-variance low) while at larger lag-distances, they will get small.</p>
 <p>This matches the curve depicted in the semi-variogram. Hence, at the given spatial grain of 500 m, the landscape elements along our transect tend to change every 2500 m and even though there are some more fluctuation afterwards, we could be quite sure that if we take some sort of field measurements and make sure that each maesurement is at least 2500 m away from all other measurements, there should be no problem with spatial autocorrelation in the models we build from these data. </p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/gis_2.png"><img alt="" src="../assets/gis_2.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/gis_2.png"><img alt="" src="../assets/gis_2.png"/></a></p>
 <h2 id="step-3-calculating-the-autocorrelogram">Step 3: Calculating the Autocorrelogram<a class="headerlink" href="#step-3-calculating-the-autocorrelogram" title="Link zu dieser Sektion">¶</a></h2>
 <p>In this part of the tutorial, we will calculate the autocorrelogram. We will here take a slightly different approach and prepare a function to calculate autocorrelation along a simple transect. More detailed explanations of the function are given in the comments of the code. The function looks like this:</p>
 <div class="highlight"><pre><span></span><code># The name of the function is "a.cor" and the it only requires one input variable x where
@@ -524,7 +589,7 @@ a.cor&lt;-function(x){
 }
 </code></pre></div>
 <p>If we run the code above, R will not yet perform an actual analysis yet, but will simple create the a new function called "<strong>a.cor</strong>"which is also visible in the environment window in RStudio (at the very bottom normally):</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/r_8.png"><img alt="" src="../assets/r_8.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/r_8.png"><img alt="" src="../assets/r_8.png"/></a></p>
 <p>We will now apply this function to our vector containing the proportional forest cover values along the transect:</p>
 <div class="highlight"><pre><span></span><code># now that we have our function we can compute the autorcorrelation for all possible lags
 correl&lt;-a.cor(pr_for)
@@ -538,7 +603,7 @@ abline(v=max(tr_pos)/2,col='dodgerblue',lty=2,lwd=2)
 abline(h=0)
 </code></pre></div>
 <p>This will result in the following graph:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/r_10.png"><img alt="" src="../assets/r_10.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/r_10.png"><img alt="" src="../assets/r_10.png"/></a></p>
 <p>As we can see, the curve is very similar to the semi-variogram but mirrored. One thing that might have to be discussed, is the fact that correlations can be positive and negative and hence the optimal lag-distance at which no spatial autocorrelation occurs anymore might be interpreted differently in this graph (the curve starts fluctuating around 0 at approximately 3500-4000 m instead of the maximum semi-variance that was achieved at 2500 m.</p>
 <h2 id="step-4-calculating-a-semivariogram-for-a-raster-file">Step 4: Calculating a Semivariogram for a Raster-file<a class="headerlink" href="#step-4-calculating-a-semivariogram-for-a-raster-file" title="Link zu dieser Sektion">¶</a></h2>
 <p>In the preceeding steps, we calculated the semivariogram and the autocorrelogram in a rather "manual" way, which helps to understand what steps are required to produce the final graphs. On the negative side, the methods we used above are only suitable for a 1D-transect. However, in remote sensing we are typically working with raster datasets and it is of course also possible to calculate variograms for 2D-environments. Then, the pixel-pairs are not only created in the 1D space but in the 2D space. The remaining calculations are the same.</p>
@@ -551,7 +616,7 @@ var_ras &lt;- Variogram(img[[1]])
 plot(var_ras)
 </code></pre></div>
 <p>Running this code, will lead to:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/r_9.png"><img alt="" src="../assets/r_9.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/r_9.png"><img alt="" src="../assets/r_9.png"/></a></p>
 <p>As we can see, this variogram looks a lot smoother than the semi-variogram we computed for the transect. This might be due to the fact, that by considering more pixels in the raster, the number of point pairs is a lot higher and the semi-variogram is less influenced by the the particular landscape structure along the transect. When checking the information provided for the function <strong>Variogram()</strong> (by typing):</p>
 <div class="highlight"><pre><span></span><code>?Variogram
 </code></pre></div>

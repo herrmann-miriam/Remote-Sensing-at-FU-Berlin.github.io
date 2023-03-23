@@ -117,12 +117,17 @@
 </li>
 <li class="md-tabs__item">
 <a class="md-tabs__link md-tabs__link--active" href="../../qgis/01-GUI/">
-        Fabian
+        Prof. Dr. Fassnacht
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../gis/introduction/">
+        GIS
       </a>
 </li>
 <li class="md-tabs__item">
 <a class="md-tabs__link" href="../../schuelerpraktikum/handout/">
-        Schülerpraktikum
+        Praktikum
       </a>
 </li>
 </ul>
@@ -159,13 +164,13 @@
 <li class="md-nav__item md-nav__item--active md-nav__item--nested">
 <input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
 <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
-          Fabian
+          Prof. Dr. Fassnacht
           <span class="md-nav__icon md-icon"></span>
 </label>
 <nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_2">
 <span class="md-nav__icon md-icon"></span>
-          Fabian
+          Prof. Dr. Fassnacht
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--nested">
@@ -367,13 +372,73 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
 <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
-          Schülerpraktikum
+          GIS
           <span class="md-nav__icon md-icon"></span>
 </label>
 <nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_3">
 <span class="md-nav__icon md-icon"></span>
-          Schülerpraktikum
+          GIS
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+          R
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_1_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_1">
+<span class="md-nav__icon md-icon"></span>
+          R
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../gis/introduction/">
+        Introduction
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../gis/visualization-and-map/">
+        Visualization and Map
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../gis/attributes-filters-and-metadata/">
+        Attributes, Filters and Metadata
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../gis/digitalization/">
+        Digitalization
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../gis/geoprocesing-and-reference-and-coordinate-systems/">
+        Geoprocesing and reference and coordinate systems
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../gis/interpolation-and-elevation-models/">
+        Interpolation and elevation models
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          Praktikum
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+          Praktikum
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
@@ -462,7 +527,7 @@ par(new=T)
 plot(ref, col=ref@data$id, add=T)
 </code></pre></div>
 <p>This will result in the following plot:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/Tut_hyp_1.png"><img alt="" src="../assets/Tut_hyp_1.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/Tut_hyp_1.png"><img alt="" src="../assets/Tut_hyp_1.png"/></a></p>
 <p>In the given plot, coniferous stands are depicted in green and broadleaved stands in red. This is because broadleaved stands have a higher reflectance in the near-infrared region than coniferous stands. You can also see that the reference points are depicted in different colors and are mostly crowded in individual forest stands. This is due to the fact, that these stands contain mostly a single species and can hence serve as reliable reference areas to collect samples that we will use to train the algorithm. In total, we consider five tree species, that we will introduce later on. Already now, we can see that one species (Fagus sylvatica) is not occurring in pure stands (this can be seen because pure stands appear just in green or just in red colors). You can see that all the dark blue samples are occurring in rather heterogeneous stands with mixed green and red areas.</p>
 <p>As next step, we will now extract the spectral values of the HyMap image at each of the 250 reference point locations. So we will have 50 spectral signatures for each tree species. To do this we run:</p>
 <div class="highlight"><pre><span></span><code># extract spectral signatures at the reference data points
@@ -482,7 +547,7 @@ for (i in 1:nrow(ref_data_tr)){
 }
 </code></pre></div>
 <p>This will result in the following image:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/Tut_hyp_2.png"><img alt="" src="../assets/Tut_hyp_2.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/Tut_hyp_2.png"><img alt="" src="../assets/Tut_hyp_2.png"/></a></p>
 <p>What is not optimal in this graph is that the x-axis does not show the wavelengths, but the band number of the HyMap sensor. This can be fixed by providing the center-wavelengths of HyMap instead as an array instead of the simple sequence from 1 to 125 (the code part is: <strong>1:125</strong>) as done at the moment. However, because it is not really relevant for this tutorial, we will not spend more time on this for now.</p>
 <p>In the plot, we used the species information to color-code the spectra, but as you can see this graph is quite chaotic, and it is hard to see where the spectra of one species ends and the spectra of another species start. All in all, there seems to be quite a heavy overlap between the spectral signatures of the five species. So let us try to make this plot a bit clearer by plotting the mean spectral signature of each species plus its standard deviations.</p>
 <p>We will need a bit more code to do this. There are definitely ways to code this with less lines of code, however, the solution given below makes the logical flow quite clear and may be easier to understand for people who are not yet professionals in R. For detailed information, please read the comments in the code.</p>
@@ -554,7 +619,7 @@ for (i3 in 1:5){
 }
 </code></pre></div>
 <p>This rather long code will lead to the following plot:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/Tut_hyp_3.png"><img alt="" src="../assets/Tut_hyp_3.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/Tut_hyp_3.png"><img alt="" src="../assets/Tut_hyp_3.png"/></a></p>
 <p>This plot is a lot clearer. We can see the mean spectral signatures of all broadleaved tree species (Quercus robur, Quercus rubra and Fagus sylvatica) have a higher reflectance amplitude than the two coniferous species (Pinus sylvestris and Pseudotsuga Menziesii). We can also see that the SD-values of the spectral signatures of the individual species overlap quite notably. This suggests that the classification might not be that easy. But let us explore, what can be achieved.</p>
 <h2 id="step-2-tree-species-classification-using-the-original-hymap-bands">Step 2: Tree species classification using the original HyMap bands<a class="headerlink" href="#step-2-tree-species-classification-using-the-original-hymap-bands" title="Link zu dieser Sektion">¶</a></h2>
 <p>We will now prepare and run the first classification approach using all 125 bands of the HyMap image. For this, we first prepare two variables. One contains all the spectral signatures of the training data (<strong>trainval</strong>) and one that contains the corresponding response value (the information to which tree species the sample belongs - coded as a number between 1 and 5) (<strong>treespec</strong>).</p>
@@ -581,7 +646,7 @@ tune1 &lt;- tune.svm(trainval, as.factor(treespec), gamma = gammat, cost=costt)
 plot(tune1)
 </code></pre></div>
 <p>As you can see we will test 9 different values for gamma and 11 different cost-values. In theory, it would of course be possible to test even more combinations but the ones selected here are working quite well from our experience. However, feel free to try out some higher and lower values if you are interested in the results. The code above will lead to the following plot:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/Tut_hyp_4.png"><img alt="" src="../assets/Tut_hyp_4.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/Tut_hyp_4.png"><img alt="" src="../assets/Tut_hyp_4.png"/></a></p>
 <p>This plot summarizes the performances obtained with the examined gamma and cost values. The legend is showing the error rate. So that means, the higher we set gamma, the larger the errors were during the parameter tuning. On the other hand, cost did not have a notable effect on the parameter tuning in the given example.</p>
 <p>We will now extract the best identified gamma and cost value by running:</p>
 <div class="highlight"><pre><span></span><code>gamma &lt;- tune1$best.parameters$gamma
@@ -597,7 +662,7 @@ model2 &lt;- svm(trainval, as.factor(treespec), gamma = gamma, cost = cost, prob
 <div class="highlight"><pre><span></span><code>summary(model2)
 </code></pre></div>
 <p>This should show something like this:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/Tut_hyp_5.png"><img alt="" src="../assets/Tut_hyp_5.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/Tut_hyp_5.png"><img alt="" src="../assets/Tut_hyp_5.png"/></a></p>
 <p>So we can see that we have a mean overall accuracy of approximately 72%. This is not bad but also not really good. We can now also apply this classification model to the full image by running:</p>
 <div class="highlight"><pre><span></span><code># set output directory to save the classification map   
 setwd("D:/1_tree_species_Karlsruhe/2_data/results")
@@ -610,7 +675,7 @@ plot(svmPred)
 legend("topright", legend=c("1 = Quercus robur", "2 = Pinus sylvestris", "3 = Quercus rubra", "4 = Fagus sylvatica", "5 = Pseudotsuga menziesii"))
 </code></pre></div>
 <p>This will result in the following tree species map:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/Tut_hyp_6.png"><img alt="" src="../assets/Tut_hyp_6.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/Tut_hyp_6.png"><img alt="" src="../assets/Tut_hyp_6.png"/></a></p>
 <p>On the first glance, this map looks quite plausible. We can see that many of the stands from which we collected the training data (and we hence know, that they are composed of a single species) appear quite homogeneous in the classification map. The quality of the map could be examined with more details by loading the map into QGIS and compare it to the reference maps provided with the tutorial materials and maybe also by comparing the map with additional high-resolution Google or Bing maps which can be visualized in QGIS as well. </p>
 <h2 id="step-3-tree-species-classification-using-pca-bands">Step 3: Tree species classification using PCA bands<a class="headerlink" href="#step-3-tree-species-classification-using-pca-bands" title="Link zu dieser Sektion">¶</a></h2>
 <p>One way to improve the accuracy of supervised classifications, particularly if working with hyperspectral data are feature extraction methods as they allow to compress the feature space and hence reduce colinearity of predictors. In the following we will apply the well-known principal component analysis (PCA) to the hyperspectral image to reduce the original 125 bands to a smaller number of bands carrying most of the variability contained in the image.</p>
@@ -631,7 +696,7 @@ pca &lt;- rasterPCA(hym_img, nSamples=5000, spca=T)
 <div class="highlight"><pre><span></span><code>fviz_eig(pca_mod)
 </code></pre></div>
 <p>This will result in the following plot:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/Tut_hyp_7.png"><img alt="" src="../assets/Tut_hyp_7.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/Tut_hyp_7.png"><img alt="" src="../assets/Tut_hyp_7.png"/></a></p>
 <p>As we can see, the first seven components seem to already carry the vast majority of the variability in the hyperspectral image. Starting from the 8<sup>th</sup> component, the information content seems to be rather low. However, we can also check this by plotting the individual components. We can for example compare the first three components with the last three components by running:</p>
 <div class="highlight"><pre><span></span><code>x11()
 dev.off()
@@ -639,7 +704,7 @@ par(mfrow=c(2,3))
 plot(pca_ras[[c(1:3, 123:125)]])
 </code></pre></div>
 <p>this will result in the following plot:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/Tut_hyp_8.png"><img alt="" src="../assets/Tut_hyp_8.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/Tut_hyp_8.png"><img alt="" src="../assets/Tut_hyp_8.png"/></a></p>
 <p>As we can see, the first three PCs show quite a lot of variation related to the image contents. PC3 does not show too many patterns, due to a few outlayer value in the urban area (the green dot) - but PC3 actually still does contain a lot variation (this would become visible if the image stretched would be adapted). On the other hand, the last three PCs seem to only show random noise. Based on the combination of the eigenvalue plot above and this visual examination we can now decide how many of the PCs we want to use in our classification. For now, we will simply select the first 15 components assuming that most of the variability in the image is covered by these components. Hence, we extract the values of the first 15 PCs from the reference sample locations using:</p>
 <div class="highlight"><pre><span></span><code>trainval_pca &lt;- extract(pca_ras[[1:15]], ref)
 </code></pre></div>
@@ -661,7 +726,7 @@ model_pca2 &lt;- svm(trainval_pca, as.factor(treespec), gamma = gamma2, cost = c
 summary(model_pca2)
 </code></pre></div>
 <p>This will produce the following output (you will additionally see the plot from the parameter tuning, but you are already familiar with this step, so I will not repeat it here):</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/Tut_hyp_9.png"><img alt="" src="../assets/Tut_hyp_9.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/Tut_hyp_9.png"><img alt="" src="../assets/Tut_hyp_9.png"/></a></p>
 <p>As we can see, the classification accuracy using only the first 15 PCA components as input is slightly better than the accuracy we obtained using all hyperspectral bands. Your results might vary slightly, depending on how you set your seed value in the function set.seed().</p>
 <p>Finally, let us also produce a prediction map for this classification approach by running the following code:</p>
 <div class="highlight"><pre><span></span><code># set output directory
@@ -675,7 +740,7 @@ plot(svmPred_pca)
 legend("topright", legend=c("1 = Quercus robur", "2 = Pinus sylvestris", "3 = Quercus rubra", "4 = Fagus sylvatica", "5 = Pseudotsuga menz."))
 </code></pre></div>
 <p>Which will result in:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/Tut_hyp_10.png"><img alt="" src="../assets/Tut_hyp_10.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/Tut_hyp_10.png"><img alt="" src="../assets/Tut_hyp_10.png"/></a></p>
 <p>This map looks quite similar as the one from the preceeding classification. This is no surprise as the classification accuracies were also similar.</p>
 <h2 id="step-4-tree-species-classification-using-a-combination-of-feature-selection-vsurf-and-feature-extraction-pca">Step 4: Tree species classification using a combination of feature selection (VSURF) and feature extraction (PCA)<a class="headerlink" href="#step-4-tree-species-classification-using-a-combination-of-feature-selection-vsurf-and-feature-extraction-pca" title="Link zu dieser Sektion">¶</a></h2>
 <p>In this final step of the Tutorial, we will now add another step. We will use the first 30 components of the PCA as our starting input dataset. Then we will run a feature selection algorithm on these 30 components and use the selected components to train the SVM classification.</p>
@@ -692,7 +757,7 @@ The column ids of this set of selected variables can be accessed with the comman
 <div class="highlight"><pre><span></span><code>vsurf_pca$varselect.pred
 </code></pre></div>
 <p>If we run it, we can see the following output:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/Tut_hyp_11.png"><img alt="" src="../assets/Tut_hyp_11.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/Tut_hyp_11.png"><img alt="" src="../assets/Tut_hyp_11.png"/></a></p>
 <p>We can see that the first three PCs got selected but also some lower ranked PCs like 26 and 27.</p>
 <p>As next step, we will build a subset of our predictor feature space currently containing 30 PCs to a new dataframe containing only the 11 PCs selected by VSURF. For this we run:</p>
 <div class="highlight"><pre><span></span><code>trainval_vsurf &lt;- trainval_pca2[,vsurf_pca$varselect.pred]
@@ -717,7 +782,7 @@ model_vsurf2 &lt;- svm(trainval_vsurf, as.factor(treespec), gamma = gamma3, cost
 summary(model_vsurf2)
 </code></pre></div>
 <p>This will result in the following output:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/Tut_hyp_12.png"><img alt="" src="../assets/Tut_hyp_12.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/Tut_hyp_12.png"><img alt="" src="../assets/Tut_hyp_12.png"/></a></p>
 <p>As we can see, we could increase the classification accuracy by almost 10% with this additional feature selection step. This is quite a lot! As last step, we can now also produce the corresponding classification map by running:</p>
 <div class="highlight"><pre><span></span><code># set output directory to save classification map
 setwd("D:/1_tree_species_Karlsruhe/2_data/results")
@@ -730,7 +795,7 @@ plot(svmPred_vsurf)
 legend("topright", legend=c("1 = Quercus robur", "2 = Pinus sylvestris", "3 = Quercus rubra", "4 = Fagus sylvatica", "5 = Pseudotsuga menz."))
 </code></pre></div>
 <p>Which will result in the following map:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/Tut_hyp_13.png"><img alt="" src="../assets/Tut_hyp_13.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/Tut_hyp_13.png"><img alt="" src="../assets/Tut_hyp_13.png"/></a></p>
 <p>We have now created three tree species maps using our hyperspectral image and the reference data. Feel free to have a closer look at the maps and think about how they differ and which one is agreeing best with the reference maps as well as with the visual impression when comparing the maps with high-resolution Google and Bing images in QGIS.</p>
 <h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Link zu dieser Sektion">¶</a></h2>
 <p>If you want to practice a bit more with the code, try to run another classification applying the VSURF variable selection to the original 125 bands of HyMap. How does this affect the classification accuracy?</p>

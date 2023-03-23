@@ -117,12 +117,17 @@
 </li>
 <li class="md-tabs__item">
 <a class="md-tabs__link md-tabs__link--active" href="../01-GUI/">
-        Fabian
+        Prof. Dr. Fassnacht
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../gis/introduction/">
+        GIS
       </a>
 </li>
 <li class="md-tabs__item">
 <a class="md-tabs__link" href="../../schuelerpraktikum/handout/">
-        Schülerpraktikum
+        Praktikum
       </a>
 </li>
 </ul>
@@ -159,13 +164,13 @@
 <li class="md-nav__item md-nav__item--active md-nav__item--nested">
 <input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
 <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
-          Fabian
+          Prof. Dr. Fassnacht
           <span class="md-nav__icon md-icon"></span>
 </label>
 <nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_2">
 <span class="md-nav__icon md-icon"></span>
-          Fabian
+          Prof. Dr. Fassnacht
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--active md-nav__item--nested">
@@ -357,13 +362,73 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
 <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
-          Schülerpraktikum
+          GIS
           <span class="md-nav__icon md-icon"></span>
 </label>
 <nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_3">
 <span class="md-nav__icon md-icon"></span>
-          Schülerpraktikum
+          GIS
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+          R
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_1_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_1">
+<span class="md-nav__icon md-icon"></span>
+          R
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../gis/introduction/">
+        Introduction
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../gis/visualization-and-map/">
+        Visualization and Map
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../gis/attributes-filters-and-metadata/">
+        Attributes, Filters and Metadata
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../gis/digitalization/">
+        Digitalization
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../gis/geoprocesing-and-reference-and-coordinate-systems/">
+        Geoprocesing and reference and coordinate systems
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../gis/interpolation-and-elevation-models/">
+        Interpolation and elevation models
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          Praktikum
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+          Praktikum
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
@@ -394,25 +459,25 @@ In this Tutorial we will learn how to load and visualize raster files in  QGIS. 
 <h2 id="loading-a-raster-file-in-qgis">Loading a raster file in QGIS<a class="headerlink" href="#loading-a-raster-file-in-qgis" title="Link zu dieser Sektion">¶</a></h2>
 <p>Similarly as learned in the last tutorial, we can open a raster file by <strong>simply dragging and dropping the file from the browser-window to the layer window</strong> (see Figure 1). </p>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/03-raster-data-01.png"><img alt="Figure 1: Opening a raster file via drag and drop in QGIS" src="../assets/03-raster-data-01.png"/></a>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/03-raster-data-01.png"><img alt="Figure 1: Opening a raster file via drag and drop in QGIS" src="../assets/03-raster-data-01.png"/></a>
 </p>
 <figcaption>Figure 1: Opening a raster file via drag and drop in QGIS</figcaption>
 </figure>
 <p>Alternatively, we can also use the main file-menu of QGIS to add a raster file / raster layer as seen in the Figure 2. This option was not described in the previous tutorials on vector files, but this also works with vector files.</p>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/03-raster-data-02.png"><img alt="Figure 2: Opening a raster file via the file menu of QGIS" src="../assets/03-raster-data-02.png"/></a>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/03-raster-data-02.png"><img alt="Figure 2: Opening a raster file via the file menu of QGIS" src="../assets/03-raster-data-02.png"/></a>
 </p>
 <figcaption>Figure 2: Opening a raster file via the file menu of QGIS</figcaption>
 </figure>
 <p>If you chose the option to use the file menu, a new window will pop-up and you will then have to select the path to the raster file you want to open by clicking the button marked with 1 in Figure 3.</p>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/03-raster-data-03.png"><img alt="Figure 3: Open file dialogue menu of QGIS" src="../assets/03-raster-data-03.png"/></a>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/03-raster-data-03.png"><img alt="Figure 3: Open file dialogue menu of QGIS" src="../assets/03-raster-data-03.png"/></a>
 </p>
 <figcaption>Figure 3: Open file dialogue menu of QGIS</figcaption>
 </figure>
 <p>Once we have successfully opened the raster file, it should be displayed in the main visualization window of QGIS, similarly as shown in Figure 04.</p>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/03-raster-data-04.png"><img alt="Figure 4: Open file dialogue menu of QGIS" src="../assets/03-raster-data-04.png"/></a>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/03-raster-data-04.png"><img alt="Figure 4: Open file dialogue menu of QGIS" src="../assets/03-raster-data-04.png"/></a>
 </p>
 <figcaption>Figure 4: View after loading the raster file</figcaption>
 </figure>
@@ -421,12 +486,12 @@ In this Tutorial we will learn how to load and visualize raster files in  QGIS. 
 <p>To better understand how the optimization of the visualization of raster files works, it is important to have a good understanding how raster files are structured. Raster files can be pictured as a grid of pixels where each pixel contains a value. The range of these values depends on the data source for the raster data. They could for example originate from a model simulation that predicted air temperature. Then each pixel might have a value between approximately -30 and +50 showing the air temperature above the Earth surface in Degree Celsius. The values might also contain information about the altitude above (and below) sea level and might then range from -413 m (deepest point below sea level on a land surface, an area close to the Dead sea) to 8848 m (top of the Mount Everest). 
 In our case, the raster dataset stems from a satellite sensor which measures the amount of electromagnetic radiation reflected in certain wavelengths of the electromagnetic spectrum. In simpler words, one could say that the satellite sensor measures the amount of different colours (careful - this is a very simple way of putting it and physically not really correct) at certain locations (pixels) on the Earth surface and then stores this information into individual raster layers (see Figure 5). In our case, the satellite raster dataset consists of 10 raster layers that store information on how much blue, green and red light (and some additional colours that humans cannot see with their eyes) have been reflected in the different areas of the Earth surface that were observed by the satellite. Each raster layer contains information on one colour. Hence, our raster dataset can be pictured as a stack of individual raster layers or images which will be called <strong>bands</strong> or <strong>channels</strong> in the following (Figure 6 )<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>.</p>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/03-raster-data-05.png"><img alt="Figure 5: Structure of raster data" src="../assets/03-raster-data-05.png"/></a>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/03-raster-data-05.png"><img alt="Figure 5: Structure of raster data" src="../assets/03-raster-data-05.png"/></a>
 </p>
 <figcaption>Figure 5: Structure of raster data</figcaption>
 </figure>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/03-raster-data-06.png"><img alt="Figure 6: Raster stack" src="../assets/03-raster-data-06.png"/></a>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/03-raster-data-06.png"><img alt="Figure 6: Raster stack" src="../assets/03-raster-data-06.png"/></a>
 </p>
 <figcaption>Figure 6: Raster stack</figcaption>
 </figure>
@@ -434,14 +499,14 @@ In our case, the raster dataset stems from a satellite sensor which measures the
 <p>So let us try this with our satellite image. To change the visualization settings of the loaded raster data,</p>
 <p>we either perform a right click on the raster layer in the layer window of QGIS and select properties or alternatively, we can perform a double-click on the same layer. This will open up the properties window, where we will select the <strong>Symbology</strong> tab. (marked with the red box in Figure 7)<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup></p>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/03-raster-data-07.png"><img alt="Figure 7: Raster symbology" src="../assets/03-raster-data-07.png"/></a>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/03-raster-data-07.png"><img alt="Figure 7: Raster symbology" src="../assets/03-raster-data-07.png"/></a>
 </p>
 <figcaption>Figure 7: Raster symbology window of QGIS</figcaption>
 </figure>
 <p>Now we will assign the satellite bands which collected information on blue, green and red colours to the corresponding channels of QGIS. The red channel of QGIS (marked with <strong>2</strong> in Figure 7) is currently assigned to Channel 1. We will now change this by</p>
 <p>Clicking the drop down menu for the <strong>Red Band</strong> (marked with <strong>2</strong> in Figure 7) and select Band 03, which corresponds to the band of the satellite that collected information on electromagnetic radiation that corresponds to red light. Analogously, we will select Band 02 for the <strong>Green Band</strong> of QGIS (marked with <strong>3</strong> in Figure 7 normally, this channel should already be correct) and then Band 01 for the <strong>Blue band</strong> of QGIS (marked with <strong>4</strong> in Figure 7). Then we select <strong>Apply</strong> and then <strong>OK</strong> to see how this changes the visualization of the image (Figure 8).</p>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/03-raster-data-08.png"><img alt="Figure 8: View after adjusting the settings" src="../assets/03-raster-data-08.png"/></a>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/03-raster-data-08.png"><img alt="Figure 8: View after adjusting the settings" src="../assets/03-raster-data-08.png"/></a>
 </p>
 <figcaption>Figure 8: View after adjusting the settings</figcaption>
 </figure>
@@ -450,14 +515,14 @@ that water has very low reflectance values across all wavelengths (<strong>colou
 <p>To do this,</p>
 <p>We return to the <strong>Properties</strong> window and select the <strong>Symbology</strong> tab. Now we will click the area marked with <strong>6</strong> in Figure 7 to open some additional options to load minimum and maximum values for each raster layer as depicted in Figure 9.</p>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/03-raster-data-09.png"><img alt="Figure 9: Raster symbology - advanced settings" src="../assets/03-raster-data-09.png"/></a>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/03-raster-data-09.png"><img alt="Figure 9: Raster symbology - advanced settings" src="../assets/03-raster-data-09.png"/></a>
 </p>
 <figcaption>Figure 9: Raster symbology window in QGIS - advanced settings</figcaption>
 </figure>
 <p>There are three options available to automatically derive minimum and maximum pixel values between which the available range of colours intensities will be spanned. These minimum and maximum values are marked with <strong>1</strong> in Figure 9. To estimate the minimum and maximum values, QGIS uses a set of random pixel values that it collects in the image. Then it applies some statistics on the pixel values to understand how the pixel values are distributed in the value range. The three options to calculate the statistics are <strong>cumulative count cut</strong>, <strong>min / max</strong> and <strong>mean ± standard deviation</strong> (box marked with <strong>2</strong> in Figure 9).</p>
 <p>So why do we have to use such statistics to improve the visualization? This can be explained best using a histogram. A histogram shows the distribution of values of a dataset by plotting the frequency of values occurring in a defined value range on the y-axis and the value ranges themselves on the x axis. In Figure 10 an example for a histogram of the pixel values of a raster image is shown. In the upper part of Figure 10 one can see the histogram of the full value range of the raster image with values between 0 and 255 (which would indicate an eight bit image). In this histogram one can clearly see that there are hardly any very low values (close to 0) and also hardly any very high values (close to 255), while most values accumulate in the middle of the value range (between around 60 and 180).</p>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/03-raster-data-10.png"><img alt="Figure 10: A histogram" src="../assets/03-raster-data-10.png"/></a>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/03-raster-data-10.png"><img alt="Figure 10: A histogram" src="../assets/03-raster-data-10.png"/></a>
 </p>
 <figcaption>Figure 10: A histogram of raster values</figcaption>
 </figure>
@@ -468,32 +533,32 @@ that water has very low reflectance values across all wavelengths (<strong>colou
 <p>selecting the option <strong>mean +- standard deviation</strong> and keeping the default settings. We confirm by pressing <strong>Apply</strong> and <strong>OK</strong>.</p>
 <p>This will result in the image shown in (Figure 11)<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup></p>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/03-raster-data-11.png"><img alt="Figure 11: View after adjusting the image stretch" src="../assets/03-raster-data-11.png"/></a>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/03-raster-data-11.png"><img alt="Figure 11: View after adjusting the image stretch" src="../assets/03-raster-data-11.png"/></a>
 </p>
 <figcaption>Figure 11: View after adjusting the image stretch</figcaption>
 </figure>
 <p>The colour of the sea has turned from very dark or black to blue which may match better what we would expect to see. However, one can also see that the land surface areas seems to be quite bright now compared to the sea. So adjusting visualization options is often a compromise and it might not be possible to show all areas/surface types in their optimal settings at the same time.</p>
 <p>In the new visualization settings, the sea appears blue but also shows some more details in compared to the earlier two visualization settings. However, might there be ways to further  adapt the visualization to see even more details of the sea? </p>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/03-raster-data-12.png"><img alt="Figure 12: Zoom tool" src="../assets/03-raster-data-12.png"/></a>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/03-raster-data-12.png"><img alt="Figure 12: Zoom tool" src="../assets/03-raster-data-12.png"/></a>
 </p>
 <figcaption>Figure 12: The zoom tool of QGIS</figcaption>
 </figure>
 <p>Indeed there are! One solution is to adapt the value range again but this time only considering pixels from the sea. In QGIS, there is one option to do this which we will explore as next step. First, we use the zoom-tool of QGIS (marked in Figure 12) to zoom into an area where only sea is visible by</p>
 <p>clicking the <strong>zoom</strong> tool-button and then dragging a square within an area of the image which is only covered by the sea. This will lead to a view where only blue areas are visible in the QGIS visualization window (as shown in Figure 14). Next, we will repeat the steps to optimize the value ranges as we have learned before. That is, we will open the properties window, select the <strong>symbology</strong> tab and open the option to automatically estimate minimum and maximum values by clicking the area marked with <strong>6</strong> in Figure 7. The only thing we will do difffferent this time, is that we will change the dropdown menu marked with 3 in Figure 9 from <strong>Whole Raster</strong> to <strong>Current canvas</strong>. Then we will press <strong>Apply</strong> and then <strong>OK</strong> and close the Properties window.</p>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/03-raster-data-13.png"><img alt="Figure 13: View after applying the zoom tooll" src="../assets/03-raster-data-13.png"/></a>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/03-raster-data-13.png"><img alt="Figure 13: View after applying the zoom tooll" src="../assets/03-raster-data-13.png"/></a>
 </p>
 <figcaption>Figure 13: View after applying the zoom tool to zoom into an area only covered by the sea</figcaption>
 </figure>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/03-raster-data-14.png"><img alt="Figure 14: View after optimizing the visualization settings for the sea" src="../assets/03-raster-data-14.png"/></a>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/03-raster-data-14.png"><img alt="Figure 14: View after optimizing the visualization settings for the sea" src="../assets/03-raster-data-14.png"/></a>
 </p>
 <figcaption>Figure 14: View after optimizing the visualization settings for the sea</figcaption>
 </figure>
 <p>The will lead to a new visualization as shown in Figure 14. As you can see, the formerly uniformely blue image turned into a quite colorful image where lots of fine details about the sea surface became visible. By activating the <strong>Current canvas</strong> option, QGIS calculated the statistics only for pixels located in the currently visible part of the image. That is, only sea pixels were considered to derive the min and max values. If you now use the <strong>zoom-out</strong> button, located next to the <strong>zoom-in</strong> button, you can see that all the other areas in the image are very bright and no details can be seen anymore in these areas (Figure 15). This is because all of the land-surface areas have notably higher pixel values than the pixels located in the sea and are hence mostly assigned the maximum value of the defined range. You can also re-open the properties window and the style tab and have a look at the current value.</p>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/03-raster-data-15.png"><img alt="Figure 15: View of the full image after the adaptation of the visualization options to improve the level of details displayed in sea areas" src="../assets/03-raster-data-15.png"/></a>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/03-raster-data-15.png"><img alt="Figure 15: View of the full image after the adaptation of the visualization options to improve the level of details displayed in sea areas" src="../assets/03-raster-data-15.png"/></a>
 </p>
 <figcaption>Figure 15: View of the full image after the adaptation of the visualization options to improve the level of details displayed in sea areas</figcaption>
 </figure>
@@ -508,7 +573,7 @@ that water has very low reflectance values across all wavelengths (<strong>colou
 </li>
 </ol>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/03-raster-data-16.png"><img alt="Figure 16: Export current view as image" src="../assets/03-raster-data-16.png"/></a>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/03-raster-data-16.png"><img alt="Figure 16: Export current view as image" src="../assets/03-raster-data-16.png"/></a>
 </p>
 <figcaption>Figure 16: Save current view to image</figcaption>
 </figure>

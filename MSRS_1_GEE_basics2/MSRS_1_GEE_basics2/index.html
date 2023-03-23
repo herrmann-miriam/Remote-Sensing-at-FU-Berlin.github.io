@@ -117,12 +117,17 @@
 </li>
 <li class="md-tabs__item">
 <a class="md-tabs__link md-tabs__link--active" href="../../qgis/01-GUI/">
-        Fabian
+        Prof. Dr. Fassnacht
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../gis/introduction/">
+        GIS
       </a>
 </li>
 <li class="md-tabs__item">
 <a class="md-tabs__link" href="../../schuelerpraktikum/handout/">
-        Schülerpraktikum
+        Praktikum
       </a>
 </li>
 </ul>
@@ -159,13 +164,13 @@
 <li class="md-nav__item md-nav__item--active md-nav__item--nested">
 <input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
 <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
-          Fabian
+          Prof. Dr. Fassnacht
           <span class="md-nav__icon md-icon"></span>
 </label>
 <nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_2">
 <span class="md-nav__icon md-icon"></span>
-          Fabian
+          Prof. Dr. Fassnacht
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--nested">
@@ -362,13 +367,73 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
 <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
-          Schülerpraktikum
+          GIS
           <span class="md-nav__icon md-icon"></span>
 </label>
 <nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_3">
 <span class="md-nav__icon md-icon"></span>
-          Schülerpraktikum
+          GIS
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+          R
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_1_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_1">
+<span class="md-nav__icon md-icon"></span>
+          R
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../gis/introduction/">
+        Introduction
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../gis/visualization-and-map/">
+        Visualization and Map
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../gis/attributes-filters-and-metadata/">
+        Attributes, Filters and Metadata
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../gis/digitalization/">
+        Digitalization
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../gis/geoprocesing-and-reference-and-coordinate-systems/">
+        Geoprocesing and reference and coordinate systems
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../gis/interpolation-and-elevation-models/">
+        Interpolation and elevation models
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          Praktikum
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+          Praktikum
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
@@ -649,10 +714,10 @@ bricked_files &lt;-brick("yearly_LS_ts.tif")
 plot(bricked_files)
 </code></pre></div>
 <p>This will results in a plot that looks more or less like this:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/ts_02.png"><img alt="" src="../assets/ts_02.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/ts_02.png"><img alt="" src="../assets/ts_02.png"/></a></p>
 <p>As you can see, not all of the bands (annual NDVI mosaics) contain data and for some of the years only parts of the study area have observations. For the moment, we will not do anything about this. This is also a somewhat expected outcome of how we calculated our mosaics.</p>
 <p>Next, we have to define a vector which contains the dates matching the satellite data's acquisition times. In this case a simple numeric vector with the years is sufficient. Even though the bands of the raster stack were renamed in the GEE  (I made some progress since the last Tutorial...), I did not yet find a way to access this information in R. If you load the "yearly_LS_ts.tif" in QGIS, you can see that the information is theoretically there:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/ts_01.png"><img alt="" src="../assets/ts_01.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/ts_01.png"><img alt="" src="../assets/ts_01.png"/></a></p>
 <p>However, I still have to figure out how to access these names in R - the typical "names()" command shows other filenames. If you have a close look at the Figure above, you will see that for three years of our time series, no mosaic was created. These are the years for which no cloud-free satellite acquisitions were available. So instead of 34 years (1986-2019) we only have 31 years in our time series. We don't have data for the years 1986, 1990 and 1993. We will manually account for this while creating the corresponding vector: </p>
 <div class="highlight"><pre><span></span><code># Set year range for analysis (number of years have to be the same as number of bands)
 years2 &lt;-seq(1986, 2019)
@@ -687,7 +752,7 @@ writeRaster(rRaster[[3]], paste0(results,"/mk_tau.tif"), overwrite=T)
 <div class="highlight"><pre><span></span><code>plot(rRaster)
 </code></pre></div>
 <p>This will results in the following graph:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/ts_03.png"><img alt="" src="../assets/ts_03.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/ts_03.png"><img alt="" src="../assets/ts_03.png"/></a></p>
 <p>On the top left, we can see the Theil-Sen slope which is slightly positive for many parts of the study area but also shows some areas with strong negative trends. On the top right, we can see the p-values of the Mann-Kendall trend test, which indicate quite low values for most of the study area. Finally, we can see how monoton the trends are as represented in the Mann-Kendall tau value shown in the bottom left panel. In this case, the Theil-Sen slope and the tau values show quite comparable patterns, which indicates that all occurring changes happened rather continuously.</p>
 <p>In the next step, we will use the calculated p-values to mask out areas for which the identified trends were not significant. For this, we will first create three p-value masks with different significance levels:</p>
 <div class="highlight"><pre><span></span><code>##################################
@@ -742,7 +807,7 @@ for(i in 1:length(p_values)){
 <div class="highlight"><pre><span></span><code>plot(tau_masked)
 </code></pre></div>
 <p>This will show the following plot:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/ts_04.png"><img alt="" src="../assets/ts_04.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/ts_04.png"><img alt="" src="../assets/ts_04.png"/></a></p>
 <p>The other results were stored to the harddisc and can either be loaded in R again or visualized in QGIS.</p>
 <h2 id="step-3-identify-turning-points">Step 3: Identify turning points<a class="headerlink" href="#step-3-identify-turning-points" title="Link zu dieser Sektion">¶</a></h2>
 <p>As last step, we will analyse the annual NDVI mosaics to identify turning points using the pettitt-test. The pettitt test is a comparably simple test which is only able to identify the single, strongest turning point in a time series. We will continue using the already loaded datasets in R. To apply the test to the full raster-stack we will follow a different approach this time, as the due to the way the pettitt test is implemented in R, the calc()-function we applied above is not working smoothly with our dataset.</p>
@@ -751,7 +816,7 @@ for(i in 1:length(p_values)){
 head(vals)
 </code></pre></div>
 <p>running this code will result in the following output:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/ts_05.png"><img alt="" src="../assets/ts_05.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/ts_05.png"><img alt="" src="../assets/ts_05.png"/></a></p>
 <p>It is not important, that in this case all the values show NaN values, this is simply due to the fact that the borders of the image do not contain (as you can also see in the plots of the study area above). However, what is important to understand is that in the derived variable vals, each row contains the time series of a single pixel. Hence, we can now simply apply the pettitt-test to each of the rows using a for-loop and store the results:</p>
 <div class="highlight"><pre><span></span><code># create empty matrix to store results
 res &lt;- matrix(nrow=nrow(vals), ncol=2)
@@ -797,7 +862,7 @@ values(pettitt.p.val) &lt;- res[,2]
 plot(pettitt.p.val)
 </code></pre></div>
 <p>This will lead to the following plot:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/ts_06.png"><img alt="" src="../assets/ts_06.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/ts_06.png"><img alt="" src="../assets/ts_06.png"/></a></p>
 <p>We could run the exactly same code to obtain the main result of the pettitt test which is the id of the point in time series at which the turning point was identified. However, the id is currently a value between 1 and 31 (the number of observations in the annual time series of each pixel). More interesting for us would it be to directly have the year in which the change occurred. This requires that we overwrite the ids currently stored in the variable res[,1] with the corresponding years, stored in the "years" variable.</p>
 <p>To accomplish this we run the following code.</p>
 <div class="highlight"><pre><span></span><code># copy the results concerning turning points in a new variable
@@ -820,19 +885,19 @@ values(pettitt.timep) &lt;- turnp
 plot(pettitt.timep)
 </code></pre></div>
 <p>This will results in the following plot:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/ts_07.png"><img alt="" src="../assets/ts_07.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/ts_07.png"><img alt="" src="../assets/ts_07.png"/></a></p>
 <p>Finally, we can mask out all pixels for which the pettitt test was not significant by first creating a p-value mask:</p>
 <div class="highlight"><pre><span></span><code>mask &lt;- pettitt.p.val &lt; 00.5
 plot(mask)
 </code></pre></div>
 <p>Which at the selected p-value looks like this:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/ts_08.png"><img alt="" src="../assets/ts_08.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/ts_08.png"><img alt="" src="../assets/ts_08.png"/></a></p>
 <p>And then apply the mask to the turning point raster:</p>
 <div class="highlight"><pre><span></span><code>timep_fin &lt;- mask(pettitt.timep, mask, maskvalue=0, updatevalue=NA)
 plot(timep_fin)
 </code></pre></div>
 <p>This will result in the final image of today's Tutorial:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../assets/ts_09.png"><img alt="" src="../assets/ts_09.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/ts_09.png"><img alt="" src="../assets/ts_09.png"/></a></p>
 </article>
 </div>
 </div>
