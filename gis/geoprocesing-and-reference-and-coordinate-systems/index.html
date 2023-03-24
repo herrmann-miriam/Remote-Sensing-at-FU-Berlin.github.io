@@ -526,6 +526,16 @@
 <p>Das Raster <code>temperatur</code> wird auf das Polygonobjekt <code>dissolve</code> zugeschnitten und als neues <code>R-Objekt</code> <code>clip_raster</code> gespeichert.</p>
 <div class="highlight"><pre><span></span><code><span class="n">clip_raster</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">mask</span><span class="p">(</span><span class="n">temperatur</span><span class="p">,</span><span class="w"> </span><span class="n">dissolve</span><span class="p">)</span>
 </code></pre></div>
+<h3 id="reprojection-des-bezirke_ortsteile">Reprojection des bezirke_ortsteile<a class="headerlink" href="#reprojection-des-bezirke_ortsteile" title="Link zu dieser Sektion">¶</a></h3>
+<p>Print the original projection (Coordinate Reference System). Look in the 5. line for the current projection.</p>
+<div class="highlight"><pre><span></span><code><span class="n">bezirke_ortsteile</span><span class="w"> </span>
+</code></pre></div>
+<p>Reproject bezirke_ortsteile. Replace 4326 with the desired EPSG code</p>
+<div class="highlight"><pre><span></span><code><span class="n">reproj</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">st_transform</span><span class="p">(</span><span class="n">bezirke_ortsteile</span><span class="p">,</span><span class="w"> </span><span class="m">4326</span><span class="p">)</span><span class="w"> </span>
+</code></pre></div>
+<p>Look in the 5. line. The projection is now WGS 84 which corresponds to the 4326 code.</p>
+<div class="highlight"><pre><span></span><code><span class="n">reproj</span>
+</code></pre></div>
 <h2 id="export">Export<a class="headerlink" href="#export" title="Link zu dieser Sektion">¶</a></h2>
 <p>Im letzten Teil des Tutorials wird gezeigt, wie man die Ergebnisse in verschiedenen Formaten, wie Shapefiles oder Raster, exportieren kann.</p>
 <h3 id="export-der-shapefiles">Export der Shapefiles<a class="headerlink" href="#export-der-shapefiles" title="Link zu dieser Sektion">¶</a></h3>
@@ -535,6 +545,7 @@
 <span class="nf">st_write</span><span class="p">(</span><span class="n">dissolve</span><span class="p">,</span><span class="w"> </span><span class="s">"dissolve.shp"</span><span class="p">,</span><span class="w"> </span><span class="n">overwrite</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">,</span><span class="w"> </span><span class="n">append</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
 <span class="nf">st_write</span><span class="p">(</span><span class="n">union</span><span class="p">,</span><span class="w"> </span><span class="s">"union.shp"</span><span class="p">,</span><span class="w"> </span><span class="n">overwrite</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">,</span><span class="w"> </span><span class="n">append</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
 <span class="nf">st_write</span><span class="p">(</span><span class="n">clip</span><span class="p">,</span><span class="w"> </span><span class="s">"clip.shp"</span><span class="p">,</span><span class="w"> </span><span class="n">overwrite</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">,</span><span class="w"> </span><span class="n">append</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
+<span class="nf">st_write</span><span class="p">(</span><span class="n">reproj</span><span class="p">,</span><span class="w"> </span><span class="s">"reproj.shp"</span><span class="p">,</span><span class="w"> </span><span class="n">overwrite</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">,</span><span class="w"> </span><span class="n">append</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
 </code></pre></div>
 <h3 id="export-des-rasters-clip">Export des Rasters clip<a class="headerlink" href="#export-des-rasters-clip" title="Link zu dieser Sektion">¶</a></h3>
 <p>Das erstellte Raster <code>clip_raster</code> wird im Arbeitsverzeichnis als neue Datei gespeichert.</p>
