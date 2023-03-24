@@ -526,14 +526,14 @@
 <p>Das Raster <code>temperatur</code> wird auf das Polygonobjekt <code>dissolve</code> zugeschnitten und als neues <code>R-Objekt</code> <code>clip_raster</code> gespeichert.</p>
 <div class="highlight"><pre><span></span><code><span class="n">clip_raster</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">mask</span><span class="p">(</span><span class="n">temperatur</span><span class="p">,</span><span class="w"> </span><span class="n">dissolve</span><span class="p">)</span>
 </code></pre></div>
-<h3 id="reprojection-des-bezirke_ortsteile">Reprojection des bezirke_ortsteile<a class="headerlink" href="#reprojection-des-bezirke_ortsteile" title="Link zu dieser Sektion">¶</a></h3>
-<p>Print the original projection (Coordinate Reference System). Look in the 5. line for the current projection.</p>
+<h3 id="reprojection-von-bezirke_ortsteile">Reprojection von bezirke_ortsteile<a class="headerlink" href="#reprojection-von-bezirke_ortsteile" title="Link zu dieser Sektion">¶</a></h3>
+<p>Gibt die ursprüngliche Projektion (Koordinatenreferenzsystem) aus. In der 5. Zeile finden Sie die aktuelle Projektion.</p>
 <div class="highlight"><pre><span></span><code><span class="n">bezirke_ortsteile</span><span class="w"> </span>
 </code></pre></div>
-<p>Reproject bezirke_ortsteile. Replace 4326 with the desired EPSG code</p>
+<p>Reprojiziert bezirke_ortsteile. Ersetzen Sie 4326 durch den gewünschten EPSG-Code</p>
 <div class="highlight"><pre><span></span><code><span class="n">reproj</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">st_transform</span><span class="p">(</span><span class="n">bezirke_ortsteile</span><span class="p">,</span><span class="w"> </span><span class="m">4326</span><span class="p">)</span><span class="w"> </span>
 </code></pre></div>
-<p>Look in the 5. line. The projection is now WGS 84 which corresponds to the 4326 code.</p>
+<p>In der 5. Zeile finden Sie die neue Projektion, sie ist jetzt WGS 84, was dem Code 4326 entspricht.</p>
 <div class="highlight"><pre><span></span><code><span class="n">reproj</span>
 </code></pre></div>
 <h2 id="export">Export<a class="headerlink" href="#export" title="Link zu dieser Sektion">¶</a></h2>
