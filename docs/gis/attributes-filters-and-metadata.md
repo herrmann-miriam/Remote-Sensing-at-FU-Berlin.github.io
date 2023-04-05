@@ -32,7 +32,7 @@ Wir laden das Shapefile der Bezirke von Berlin in den Arbeitsspeicher:
 ```r
 bez_shp <- st_read("Berlin_Bezirke.shp")
 ```
-
+blub
 Und werfen einen kurzen Blick auf das Shapefile:
 
 ```r
