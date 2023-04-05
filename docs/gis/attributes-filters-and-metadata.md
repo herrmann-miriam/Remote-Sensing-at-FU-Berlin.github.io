@@ -1,13 +1,17 @@
-# Überblick
-Zum Abschluss der Sitzung wollen wir einen Teil der heute durchgeführten Operationen mit R wiederholen
+Zum Abschluss der Sitzung wollen wir einen Teil der heute durchgeführten Operationen mit R wiederholen.
 
 In diesem Skript wird
 - ein Shapefile geladen
+
 - die Attributtabelle eines Shapefiles aufgerufen
-- Geographische Berechnungen werden eingeführt (Flächeninhalt Polygon)
-- Berechnungen mit der Attributtabelle durchgeführt
-- Objekte anhand von Attributen ausgewählt
-- Objekte zweier Shapefiles anhand ihrer geographischen Beziehung verglichen
+
+- der Flächeninhalt von Polygonen berechnet
+
+- in der Attributtabelle gerechnet
+
+- eine Objektauswahl anhand von Attributen durchgeführt
+
+- Eine Objektauswahl anhand von geographischen Beziehungen durchgeführt
 
 
 # 1. Vorbereitung
@@ -21,12 +25,12 @@ library(sf)
 Folgende Dateien werden im Working Directory benötigt:
 Berlin_Bezirke.shp
 
-Wenn nötig: Umsetzen des working directorys auf den Ordner mit dem Shapefile
+Wenn nötig: Umsetzen des working directorys auf den Ordner mit dem Shapefile:
+(Hier bitte eigenen Pfad einfügen!)
 
 ```r
 # setwd("H:/2_Lehre/GIS_Lecture_SS2023/04_Daten_Hausaufgabe_Neu")
 ```
-Hier eigenen Pfad einfügen!
 
 Wir laden das Shapefile der Bezirke von Berlin in den Arbeitsspeicher:
 ```r
@@ -47,8 +51,8 @@ Wenn wir und die Datei anschauen sehen wir, dass sie die Daten der Attributtabel
 bez_shp
 ```
 
-Wenn das Shapefile mit dem Befehl "st_read" Eingelesen wird die Attributtabelle direkt mit eingelesen
-Mit den Daten kann gearbeitet werden wie mit einem data.frame,das heißt die meisten "normalen" R Befehle können angewendet werden.
+Wenn das Shapefile mit dem Befehl "st_read" Eingelesen wird, wird die Attributtabelle direkt mit eingelesen.
+Mit den Daten kann gearbeitet werden wie mit einem data.frame, das heißt die meisten "normalen" R Befehle können angewendet werden.
 
 Wenn wir nur die Attributtabelle aufrufen wollen können wir die Geometrie Spalten mit "st_drop_geometry" entfernen. So wird die Attributtabelle wie in ArcGIS angezeigt.
 
@@ -103,9 +107,13 @@ Anahnd der Spalte "BezirkName" kann z.B. der Bezirk Tempelhof-Schöneberg ausgew
 Die Auswahl treffen wir mit einem logischen Ausdruck:
 
 Wir wählen von der Datei bez_shp -> bez_shp
+
 alle Spalten (Über eckige Klappern mit Komma) -> [XXX,]
+
 Bei denen in der Spalte "BezirkName" -> bez_shp$BezirkName
+
 Steht -> ==
+
 "Tempelhof-Schöneberg"
 
 ```r
@@ -132,7 +140,7 @@ https://github.com/rstudio/cheatsheets/blob/main/sf.pdf
 
 Beispielhaft werden die Bezirke gewählt, die an Tempelhof-Schöneberg grenzen.
 
-mit dem folgenden Befehlt wird angezeigt welche Polygone den Kriterien entsprechen:
+Mit dem folgenden Befehlt wird angezeigt welche Polygone den Kriterien entsprechen:
 
 ```r
 st_touches(bez_shp, tempsch_shp, sparse = F)
